@@ -662,8 +662,8 @@ function renderEditorialGallery() {
     const grid = document.getElementById('editorial-grid');
     if (!grid) return;
 
-    // Slice the first 3 items from database
-    const items = galleryData.slice(0, 3);
+    // Slice the first 8 items from database
+    const items = galleryData.slice(0, 8);
     grid.innerHTML = '';
 
     items.forEach(item => {

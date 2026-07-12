@@ -17,62 +17,62 @@ const lightboxOpenBtn = document.getElementById('lightbox-open-btn');
 const lightboxClose = document.getElementById('lightbox-close');
 
 let currentFilter = 'all';
+let currentLangFilter = 'all';
 let currentView = 'grid';
 
+// ───── Language display names & flag emojis ─────
+const langMeta = {
+    all: { label: 'All Languages', flag: '🌐' },
+    en:  { label: 'English',       flag: '🇬🇧' },
+    ar:  { label: 'Arabic',        flag: '🇸🇦' },
+    zh:  { label: 'Chinese',       flag: '🇨🇳' },
+    ja:  { label: 'Japanese',      flag: '🇯🇵' }
+};
+
+// ───── Create Card ─────
 function createCard(item) {
     const card = document.createElement('article');
-    card.className = 'gallery-card';
+    card.className = 'editorial-card';
     card.setAttribute('data-category', item.category);
     card.setAttribute('data-id', item.id);
+    card.setAttribute('data-lang', item.language);
+
+    const labelTopLeft = item.category.toUpperCase();
+    const labelTopRight = `👁️ ${item.stats.views.toUpperCase()}`;
+    const labelBottomLeft = item.tags[0] ? item.tags[0].toUpperCase() : 'MINIMAL';
+    const labelBottomRight = item.tags[1] ? item.tags[1].toUpperCase() : 'DESIGN';
+
+    // Language badge for the card
+    const meta = langMeta[item.language] || langMeta.en;
+    const langBadge = `<span class="card-lang-badge" title="${meta.label}">${meta.flag}</span>`;
 
     card.innerHTML = `
-        <div class="card-image-wrap">
-            <img src="${item.image}" alt="${item.title}" class="card-image-main" loading="lazy">
-            <span class="card-badge-floating">
-                <span class="badge-star">★</span> ${item.category}
-            </span>
-            <button class="card-favorite-btn" aria-label="Favorite design" onclick="event.stopPropagation(); this.classList.toggle('active');">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                </svg>
-            </button>
+        <div class="editorial-card-header">
+            <span class="editorial-label-mini">${labelTopLeft}</span>
+            <span class="editorial-label-mini">${labelTopRight}</span>
         </div>
-        <div class="card-content-modern">
-            <div class="card-header-row">
-                <h3 class="card-title-modern">${item.title}</h3>
-                <span class="card-price-modern">👁️ ${item.stats.views}</span>
+        
+        <h3 class="editorial-card-title">${item.title}</h3>
+        
+        <div class="editorial-image-container">
+            <img src="${item.image}" alt="${item.title}" class="editorial-card-image" loading="lazy">
+            <div class="editorial-emblem">${item.emoji}</div>
+        </div>
+        
+        <div class="editorial-brand-mark">VIBEGALLERY</div>
+        
+        <div class="editorial-card-footer">
+            <span class="editorial-label-mini">${labelBottomLeft}</span>
+            <div class="editorial-footer-right">
+                ${langBadge}
+                <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="editorial-link-mini" onclick="event.stopPropagation();">
+                    ${labelBottomRight} ›
+                </a>
             </div>
-            <span class="card-subtitle-modern">${item.subtitle}</span>
-            <p class="card-description-modern">${item.description}</p>
-            
-            <div class="card-specs-row">
-                <span class="spec-item">
-                    <span class="spec-icon">❤️</span>
-                    <span class="spec-label">${item.stats.likes} Likes</span>
-                </span>
-                <span class="spec-item">
-                    <span class="spec-icon">🔗</span>
-                    <span class="spec-label">${item.stats.shares} Shares</span>
-                </span>
-                <span class="spec-item">
-                    <span class="spec-icon">${item.emoji}</span>
-                    <span class="spec-label">Vibe Avatar</span>
-                </span>
-            </div>
-
-            <div class="card-tags-modern">
-                ${item.tags.map(tag => `<span class="tag-pill">${tag}</span>`).join('')}
-            </div>
-
-            <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="card-action-btn" onclick="event.stopPropagation();">
-                View Details
-            </a>
         </div>
     `;
 
-    // Card click opens lightbox
     card.addEventListener('click', () => openLightbox(item));
-
     return card;
 }
 
@@ -80,15 +80,16 @@ function createCard(item) {
 function renderGallery() {
     const searchTerm = searchInput.value.toLowerCase().trim();
 
-    // Render ALL designs on catalog page matching query
     const filtered = galleryData.filter(item => {
         const matchesCategory = currentFilter === 'all' || item.category === currentFilter;
+        const matchesLang = currentLangFilter === 'all' || item.language === currentLangFilter;
         const matchesSearch = !searchTerm ||
             item.title.toLowerCase().includes(searchTerm) ||
             item.description.toLowerCase().includes(searchTerm) ||
             item.tags.some(tag => tag.toLowerCase().includes(searchTerm)) ||
-            item.category.toLowerCase().includes(searchTerm);
-        return matchesCategory && matchesSearch;
+            item.category.toLowerCase().includes(searchTerm) ||
+            item.language.toLowerCase().includes(searchTerm);
+        return matchesCategory && matchesLang && matchesSearch;
     });
 
     galleryGrid.innerHTML = '';
@@ -98,12 +99,23 @@ function renderGallery() {
         resultCount.textContent = 'No designs found';
     } else {
         emptyState.classList.add('hidden');
-        resultCount.textContent = `Showing ${filtered.length} design${filtered.length !== 1 ? 's' : ''}`;
+        const total = filtered.length;
+        resultCount.textContent = `Showing ${total} design${total !== 1 ? 's' : ''}`;
         filtered.forEach(item => galleryGrid.appendChild(createCard(item)));
     }
 }
 
-// ───── Sidebar Filter Vertical Tabs ─────
+// ───── Language Filter Pills ─────
+document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentLangFilter = btn.dataset.lang;
+        renderGallery();
+    });
+});
+
+// ───── Sidebar Category Tabs ─────
 document.querySelectorAll('.vertical-tab').forEach(tab => {
     tab.addEventListener('click', () => {
         document.querySelectorAll('.vertical-tab').forEach(t => t.classList.remove('active'));
@@ -132,13 +144,21 @@ document.querySelectorAll('.view-btn').forEach(btn => {
 
 // ───── Lightbox ─────
 function openLightbox(item) {
+    const meta = langMeta[item.language] || langMeta.en;
     lightboxImage.src = item.image;
     lightboxImage.alt = item.title;
     lightboxTitle.textContent = item.title;
     lightboxDesc.textContent = item.description;
-    lightboxCategory.textContent = item.category;
+    lightboxCategory.textContent = item.category.toUpperCase();
     lightboxTags.textContent = item.tags.join(' · ');
-    lightboxOpenBtn.href = item.link;
+    if (lightboxOpenBtn) lightboxOpenBtn.href = item.link;
+
+    // Update language indicator in lightbox if present
+    const langIndicator = document.getElementById('lightbox-lang');
+    if (langIndicator) {
+        langIndicator.textContent = `${meta.flag} ${meta.label}`;
+    }
+
     lightboxOverlay.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
 }
@@ -152,15 +172,14 @@ lightboxClose.addEventListener('click', closeLightbox);
 lightboxOverlay.addEventListener('click', (e) => {
     if (e.target === lightboxOverlay) closeLightbox();
 });
-
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeLightbox();
 });
 
 // ───── Intersection Observer for Animations ─────
 const observerOptions = {
-    threshold: 0.15,
-    rootMargin: '0px 0px -40px 0px'
+    threshold: 0.1,
+    rootMargin: '0px 0px -30px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -171,10 +190,13 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe grid cards
-document.querySelectorAll('.gallery-card').forEach(el => {
-    observer.observe(el);
-});
+// Re-observe after render
+function observeCards() {
+    document.querySelectorAll('.editorial-card').forEach(el => {
+        observer.observe(el);
+    });
+}
 
 // ───── Initialize ─────
 renderGallery();
+observeCards();
