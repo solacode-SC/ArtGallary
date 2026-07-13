@@ -1,0 +1,37 @@
+# Dependencies
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Builds
+dist
+build
+
+# Version Control
+.git
+.gitignore
+
+# Agent Scaffolding & Customizations
+.agents
+.gemini
+*.vanilla
+
+# Configuration & IDE
+.vscode
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Docker / DevOps Scaffolding
+Dockerfile.*
+docker-compose.*
+Makefile
+README.md
+.env
+.env.production
+.env.development
+.dockerignore
