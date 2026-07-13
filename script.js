@@ -120,10 +120,8 @@ function renderGallery() {
 // ───── Filter Tabs ─────
 document.querySelectorAll('.nav-tab').forEach(tab => {
     tab.addEventListener('click', () => {
-        document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        currentFilter = tab.dataset.filter;
-        renderGallery();
+        const filter = tab.dataset.filter;
+        window.location.href = `gallery.html?filter=${filter}`;
     });
 });
 
@@ -657,7 +655,6 @@ animateCounters();
     });
 })();
 
-// ───── Render AMOS packaging style Editorial Gallery ─────
 function renderEditorialGallery() {
     const grid = document.getElementById('editorial-grid');
     if (!grid) return;
@@ -670,7 +667,6 @@ function renderEditorialGallery() {
         const card = document.createElement('article');
         card.className = 'editorial-card';
         
-        // Map labels dynamically based on categories & tags
         const labelTopLeft = item.category.toUpperCase();
         const labelTopRight = `👁️ ${item.stats.views.toUpperCase()}`;
         const labelBottomLeft = item.tags[0] ? item.tags[0].toUpperCase() : 'MINIMAL';
@@ -699,9 +695,7 @@ function renderEditorialGallery() {
             </div>
         `;
 
-        // Click opens lightbox details modal (same current logic!)
         card.addEventListener('click', () => openLightbox(item));
-        
         grid.appendChild(card);
     });
 }
