@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="صحيفة النور - خواطر فلسفية ونصوص أدبية في تطوير الذات والارتقاء الروحي والمهني.">
+    <title>صَحِيفَةُ النُّور | فلسفة النمو والتطوير</title>
+    
+    <!-- Google Fonts: Cairo for branding headers and Alexandria for elegant content paragraphs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Alexandria:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="journal-wrapper">
+        
+        <!-- ==========================================================================
+             Section 1: Hero Banner (Oval Portrait, Titles, & Floating Photos)
+             ========================================================================== -->
+        <header class="journal-hero-header">
+            
+            <!-- Left side: Oval photo overlay & decorative leaves (RTL Right side) -->
+            <div class="hero-visual-block">
+                <div class="oval-mask-frame">
+                    <img src="assets/garden_planter.png" alt="لقطة الطبيعة والضوء الجانبي" class="hero-mask-img">
+                    
+                    <!-- SVG Decorative leaves overlay -->
+                    <div class="leaf-line-overlay">
+                        <svg viewBox="0 0 100 100" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5">
+                            <path d="M50,90 Q40,60 50,10" />
+                            <path d="M50,70 Q25,60 15,55" />
+                            <path d="M50,50 Q25,40 10,35" />
+                            <path d="M50,30 Q25,20 12,15" />
+                            <path d="M50,65 Q75,55 85,50" />
+                            <path d="M50,45 Q75,35 90,30" />
+                            <path d="M50,25 Q75,15 88,10" />
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Floating Mini circular picture overlaying the arch -->
+                <div class="floating-img-card card-mountain" aria-hidden="true">
+                    <div class="circle-inner-frame">
+                        <img src="assets/mountain.png" alt="القمة الجبلية الضبابية">
+                    </div>
+                </div>
+
+                <span class="hero-photo-tag">#لقطة_النهار</span>
+            </div>
+
+            <!-- Right side: Titles & Golden Tilted Polaroid card (RTL Left side) -->
+            <div class="hero-text-block">
+                <div class="category-tag-row">
+                    <span class="category-tag-lbl">تنسيق الصحيفة</span>
+                </div>
+                
+                <div class="title-with-floating-wrap">
+                    <h1 class="hero-main-title">لا تُقَارِنْ!</h1>
+                    
+                    <!-- Floating polaroid card next to the title -->
+                    <div class="floating-img-card card-sunset" aria-hidden="true">
+                        <div class="polaroid-inner-frame">
+                            <img src="assets/sunset.png" alt="الغروب الذهبي فوق السحاب">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- ==========================================================================
+             Section 2: Middle Section (Poetic text & double-bordered square card)
+             ========================================================================== -->
+        <section class="journal-middle-section">
+            <div class="section-container grid-two-cols">
+                
+                <!-- Right Column (RTL): Poetic text blocks -->
+                <div class="text-content-column">
+                    <p class="poetic-intro-desc">
+                        <span class="intro-first-letter">لا</span> تقارن بدايتك بمواسم حصاد الآخرين؛ فكل نبتة تنمو في وقتها الخاص وتثمر في أوانها المقدر لها. مهما عظمت أحلامك، فإن الخوف من الخطوة الأولى يبقيها سراباً. اخرج من دائرة راحتك المعتادة، وابدأ رحلة البناء والعمل اليوم.
+                    </p>
+
+                    <!-- Section LEARN -->
+                    <article class="concept-card-block">
+                        <h2 class="concept-title">تَعَلَّمْ</h2>
+                        <p class="concept-desc">
+                            العلم رحلة مستمرة لا تنتهي. حتى أولئك الذين بلغوا ذروة الاحتراف والاتقان، يبدأون كل صباح كمتعلمين يبحثون عن الأفضل ليعودوا قادة ملهمين.
+                        </p>
+                    </article>
+
+                    <!-- Section LEFT -->
+                    <article class="concept-card-block">
+                        <h2 class="concept-title">دَعْ خَلْفَكَ</h2>
+                        <p class="concept-desc">
+                            تخلَّ عن كل ما يعيق تقدمك ويشتت تركيزك، أو يجلب الضوضاء السلبية لمسيرتك المهنية والروحية. النقاء يولد من التخلي عن الشوائب.
+                        </p>
+                    </article>
+                </div>
+
+                <!-- Left Column (RTL): Double bordered square photo card -->
+                <div class="visual-card-column">
+                    <div class="double-border-box">
+                        <img src="assets/garden_planter.png" alt="الحديقة الجانبية العتيقة" class="square-card-img">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             Section 3: Bottom Section (Offset square card & Lead block)
+             ========================================================================== -->
+        <section class="journal-bottom-section">
+            <div class="section-container grid-two-cols reversed">
+                
+                <!-- Right Column (RTL): Offset square photo card (order 1 on mobile/desktops) -->
+                <div class="visual-card-column offset-card">
+                    <div class="double-border-box offset-border">
+                        <img src="assets/garden_planter.png" alt="الحديقة الجانبية العتيقة مقربة" class="square-card-img">
+                    </div>
+                </div>
+
+                <!-- Left Column (RTL): Section LEAD & Signatures -->
+                <div class="text-content-column">
+                    
+                    <!-- Section LEAD -->
+                    <article class="concept-card-block">
+                        <h2 class="concept-title">قُدْ مَسِيرَتَكَ</h2>
+                        <p class="concept-desc">
+                            كن قائداً لنفسك أولاً قبل أن تقود الآخرين. وجّه خطواتك نحو الغايات النبيلة، وابحث عن التوصيات والقدوات الصالحة والمجتمعات المحفزة التي تدفعك للنمو والارتقاء.
+                        </p>
+                    </article>
+
+                    <!-- Signatures footer -->
+                    <div class="signatures-footer-row">
+                        <div class="sig-block">
+                            <span class="sig-title">مستوحى من</span>
+                            <span class="sig-handle">@haanily_</span>
+                        </div>
+                        <div class="sig-block text-left">
+                            <span class="sig-title">كُتب بواسطة</span>
+                            <span class="sig-handle">@irfnsrch_</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+</body>
+<script src="app.js"></script>
+</html>

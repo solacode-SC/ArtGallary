@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StrongMe — Личный интерактивный дневник</title>
+  <meta name="description" content="StrongMe — современный интерактивный дневник с поддержкой напоминаний, трекером привычек и ежедневными цитатами-подсказками.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header>
+      <div class="header-left">
+        <a href="#" class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 14h-1.5a3 3 0 0 0-3-3H6.5a3 3 0 0 0-3 3H2"/>
+              <path d="M2 14v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4"/>
+              <path d="M22 14h-2a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2v-6z"/>
+              <path d="M6 14v-4a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v4"/>
+            </svg>
+          </div>
+          StrongMe
+        </a>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="header-right">
+        <!-- Language Selector -->
+        <button class="header-control-btn" id="btn-language">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span>English</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="header-control-btn" id="btn-theme-toggle" aria-label="Сменить тему">
+          <!-- Sun Icon (Light Mode Default) -->
+          <svg id="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <!-- Moon Icon (Hidden by Default in Light Theme) -->
+          <svg id="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <!-- User Menu -->
+        <div class="profile-menu" id="profile-menu-trigger">
+          <div class="avatar-circle">D</div>
+          <span>Dong</span>
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Layout Body -->
+    <div class="main-layout">
+      
+      <!-- Left Sidebar Dates -->
+      <aside class="sidebar-calendar" id="sidebar-dates-list">
+        <!-- Will be dynamically populated by JS -->
+      </aside>
+
+      <!-- Main Notebook spread area -->
+      <main class="notebook-area">
+        
+        <div class="notebook-container">
+          
+          <!-- Binder steel rings in middle -->
+          <div class="notebook-rings">
+            <div class="ring-cluster">
+              <div class="ring-loop"></div>
+              <div class="ring-loop"></div>
+            </div>
+            <div class="ring-cluster">
+              <div class="ring-loop"></div>
+              <div class="ring-loop"></div>
+            </div>
+            <div class="ring-cluster">
+              <div class="ring-loop"></div>
+              <div class="ring-loop"></div>
+            </div>
+          </div>
+
+          <!-- Left Page -->
+          <section class="notebook-page left">
+            <!-- Left holes -->
+            <div class="page-holes-left">
+              <div class="hole-cluster">
+                <div class="hole"></div>
+                <div class="hole"></div>
+              </div>
+              <div class="hole-cluster">
+                <div class="hole"></div>
+                <div class="hole"></div>
+              </div>
+              <div class="hole-cluster">
+                <div class="hole"></div>
+                <div class="hole"></div>
+              </div>
+            </div>
+
+            <!-- Page Weather/Date Row -->
+            <div class="page-header-row">
+              <div class="date-weather">
+                <div class="weather-icon" id="weather-display">☀️</div>
+                <div class="date-txt-group">
+                  <span class="day-name" id="selected-day-name">Tuesday</span>
+                  <span class="date-full" id="selected-date-full">Jul 29, 2025</span>
+                </div>
+              </div>
+              
+              <button class="btn-settings" aria-label="Фильтры">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="4" y1="21" x2="4" y2="14"/>
+                  <line x1="4" y1="10" x2="4" y2="3"/>
+                  <line x1="12" y1="21" x2="12" y2="12"/>
+                  <line x1="12" y1="8" x2="12" y2="3"/>
+                  <line x1="20" y1="21" x2="20" y2="16"/>
+                  <line x1="20" y1="12" x2="20" y2="3"/>
+                  <line x1="1" y1="14" x2="7" y2="14"/>
+                  <line x1="9" y1="8" x2="15" y2="8"/>
+                  <line x1="17" y1="16" x2="23" y2="16"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Polaroid frame -->
+            <div class="polaroid-card">
+              <div class="polaroid-image-frame">
+                <img src="images/flowers_field.png" id="polaroid-img" alt="Polaroid Memory">
+              </div>
+              <div class="polaroid-caption" id="polaroid-caption">充满鲜花的世界到底在哪里</div>
+            </div>
+
+            <!-- Bottom Weekly calendar strip -->
+            <div class="weekly-strip" id="weekly-days-strip">
+              <!-- Will be dynamically populated by JS -->
+            </div>
+
+            <!-- Streak indicator banner -->
+            <div class="streak-banner">
+              <div class="streak-title">
+                🔥 <span id="streak-count-txt">1 Day Streak</span>
+              </div>
+              <span class="streak-desc">You're on fire! Keep the flame lit every day!</span>
+            </div>
+          </section>
+
+          <!-- Right Page -->
+          <section class="notebook-page right">
+            <!-- Right holes -->
+            <div class="page-holes-right">
+              <div class="hole-cluster">
+                <div class="hole"></div>
+                <div class="hole"></div>
+              </div>
+              <div class="hole-cluster">
+                <div class="hole"></div>
+                <div class="hole"></div>
+              </div>
+              <div class="hole-cluster">
+                <div class="hole"></div>
+                <div class="hole"></div>
+              </div>
+            </div>
+
+            <!-- Prompt box -->
+            <div class="prompt-card">
+              <div class="prompt-meta">
+                <div class="prompt-category">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+                    <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+                  </svg>
+                  <span>Savor the Moment</span>
+                </div>
+                <div class="prompt-time" id="prompt-time-txt">10:00 PM</div>
+              </div>
+              
+              <div class="prompt-text" id="prompt-content-txt">
+                I slow down to hear the flowers bloom and feel the gentle touch of the breeze.
+              </div>
+              
+              <div class="prompt-actions">
+                <button class="prompt-act-btn" id="btn-copy-prompt" aria-label="Скопировать цитату" title="Copy text">
+                  <svg viewBox="0 0 24 24">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                  </svg>
+                </button>
+                <button class="prompt-act-btn" id="btn-like-prompt" aria-label="В избранное" title="Like prompt">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
+                </button>
+                <button class="prompt-act-btn" id="btn-share-prompt" aria-label="Поделиться" title="Share" style="position: relative;">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+                    <polyline points="16 6 12 2 8 6"/>
+                    <line x1="12" y1="2" x2="12" y2="15"/>
+                  </svg>
+                  
+                  <!-- Share Menu -->
+                  <ul class="share-dropdown" id="share-menu">
+                    <li class="share-item" id="share-twitter">Twitter</li>
+                    <li class="share-item" id="share-clipboard">Copy Link</li>
+                  </ul>
+                </button>
+              </div>
+            </div>
+
+            <!-- Journal Lined Pad -->
+            <div class="journal-instructions">
+              <span>✍️</span>
+              <span id="journal-instruction-txt">Use the card's prompt to take a small action, make a decision, affirm a belief, or reflect on an idea, and write it down:</span>
+            </div>
+
+            <div class="writing-lines-container">
+              <textarea class="journal-textarea" id="journal-text-editor" placeholder="Feel free to journal your current thoughts or anything else you'd like..."></textarea>
+            </div>
+
+            <!-- Location Row -->
+            <div class="location-row">
+              <span class="location-icon">📍</span>
+              <input type="text" class="location-input" id="journal-location-input" placeholder="Where are you right now...">
+            </div>
+
+            <!-- Auto-save state message -->
+            <span class="save-status-indicator" id="save-indicator">Saved locally</span>
+          </section>
+
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="tooltip-toast" id="toast-notif">Текст скопирован!</div>
+
+  <script src="app.js"></script>
+</body>
+</html>

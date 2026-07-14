@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="نماء - بوابة التعليم الذكي وتنمية المهارات الشخصية بتصميم لوحي ثلاثي الأعمدة تفاعلي ومساعد ذكاء اصطناعي مدمج.">
+    <title>نَمَاء | منصة التعلم الذكي</title>
+    
+    <!-- Google Fonts: Tajawal for clean headings and Alexandria for geometric body numerals -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Alexandria:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="app-layout-wrapper">
+        
+        <!-- COLUMN 1: Vertical Navigation Menu Sidebar (Mirrored to Far Right Edge) -->
+        <nav class="vertical-sidebar" aria-label="شريط التنقل الرئيسي">
+            <div class="sidebar-top">
+                <a href="#" class="logo-icon-link" aria-label="الصفحة الرئيسية لنماء">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                    </svg>
+                </a>
+                <ul class="nav-links">
+                    <li>
+                        <a href="#" class="nav-item-link active" aria-label="لوحة القيادة" data-target="dashboard">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+                                <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+                            </svg>
+                            <span class="active-dot"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item-link" aria-label="المساقات الدراسية" data-target="courses">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                                <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item-link" aria-label="دفتر الملاحظات" data-target="notebook">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10 9 9 9 8 9"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item-link" aria-label="الإنجازات والجوائز" data-target="achievements">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="8" r="7"/>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-bottom">
+                <button class="sidebar-icon-btn" aria-label="الإعدادات">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                    </svg>
+                </button>
+                <div class="sidebar-profile-avatar" title="الملف الشخصي">
+                    <img src="assets/dashboard_sophia.png" alt="الملف الشخصي">
+                </div>
+            </div>
+        </nav>
+
+        <!-- COLUMN 2: Center Main Workspace (Pills, Upcoming Classes, In-progress lists) -->
+        <main class="center-main-workspace" aria-label="لوحة العمل الرئيسية">
+            
+            <!-- Welcome Header -->
+            <!-- SUBPAGE 1: Dashboard Overview (Active by default) -->
+            <div class="subpage-view active" id="view-dashboard">
+                
+                <!-- Welcome Header -->
+                <section class="welcome-header">
+                    <div class="welcome-title-wrap">
+                        <h2 class="welcome-text">صباح الخير، صوفيا 👋</h2>
+                    </div>
+                    <!-- Ask AI Button with soft red gradient glow -->
+                    <button class="ask-ai-btn" id="btn-ask-ai" aria-label="اسأل المساعد الذكي">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                            <path d="M12 2a10 10 0 0 1 7.54 16.59l.06.06a1 1 0 0 1-1.2 1.2l-.06-.06A10 10 0 1 1 12 2zm1 5h-2v2h2V7zm0 4h-2v6h2v-6z"/>
+                        </svg>
+                        <span>اسأل الذكاء الاصطناعي</span>
+                    </button>
+                </section>
+
+                <!-- Category Filter Pills -->
+                <section class="category-filters-wrapper" style="margin-top: 24px;">
+                    <div class="category-filters" id="category-filters">
+                        <button class="filter-pill active" data-subject="all">
+                            <span class="pill-dot" style="background-color: #EF4444;"></span>
+                            <span>جميع المواد</span>
+                        </button>
+                        <button class="filter-pill" data-subject="english">
+                            <span class="pill-dot" style="background-color: #8B5CF6;"></span>
+                            <span>اللغة الإنجليزية</span>
+                        </button>
+                        <button class="filter-pill" data-subject="business">
+                            <span class="pill-dot" style="background-color: #10B981;"></span>
+                            <span>إدارة الأعمال</span>
+                        </button>
+                        <button class="filter-pill" data-subject="chemistry">
+                            <span class="pill-dot" style="background-color: #F59E0B;"></span>
+                            <span>الكيمياء</span>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Upcoming Class Cards Grid -->
+                <section class="upcoming-classes-section" style="margin-top: 28px;">
+                    <div class="section-title-row">
+                        <h3 class="section-title">محاضراتك القادمة</h3>
+                        <a href="#" class="view-all-link">عرض الكل</a>
+                    </div>
+                    <div class="class-cards-grid" id="class-cards-grid">
+                        <!-- Cards populated via app.js -->
+                    </div>
+                </section>
+
+                <!-- In Progress Learning Content rows -->
+                <section class="in-progress-section" style="margin-top: 28px;">
+                    <div class="section-title-row">
+                        <h3 class="section-title">مساقات قيد المتابعة</h3>
+                        <a href="#" class="view-all-link">عرض الكل</a>
+                    </div>
+                    <div class="progress-rows-list" id="progress-rows-list">
+                        <!-- Rows populated via app.js -->
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- SUBPAGE 2: Courses Curriculum -->
+            <div class="subpage-view" id="view-courses" style="display: none;">
+                <section class="subpage-header">
+                    <h2 class="welcome-text">خطة المساقات الأكاديمية</h2>
+                    <p class="subpage-desc">تفاصيل الساعات المعتمدة ومعدلات الإنجاز التراكمية للمساقات المسجلة</p>
+                </section>
+
+                <div class="courses-detailed-grid" style="margin-top: 28px;">
+                    <!-- Course Card 1: Physics -->
+                    <div class="detailed-course-card">
+                        <div class="detailed-card-header">
+                            <span class="course-badge physics-bg">PHYS101</span>
+                            <h4 class="detailed-card-title">الفيزياء العامة وتطبيقاتها</h4>
+                        </div>
+                        <p class="course-hours-info">عدد الساعات المعتمدة: ٣ ساعات دراسية</p>
+                        <div class="course-progress-bar-wrap">
+                            <div class="progress-bar-fill" style="width: 44%; background-color: var(--color-green);"></div>
+                        </div>
+                        <span class="progress-bar-lbl">٤٤٪ من إجمالي الوحدات الدراسية</span>
+                    </div>
+
+                    <!-- Course Card 2: Chemistry -->
+                    <div class="detailed-course-card">
+                        <div class="detailed-card-header">
+                            <span class="course-badge chemistry-bg">CHEM102</span>
+                            <h4 class="detailed-card-title">مبادئ الكيمياء التأسيسية</h4>
+                        </div>
+                        <p class="course-hours-info">عدد الساعات المعتمدة: ٤ ساعات دراسية</p>
+                        <div class="course-progress-bar-wrap">
+                            <div class="progress-bar-fill" style="width: 44%; background-color: var(--color-orange);"></div>
+                        </div>
+                        <span class="progress-bar-lbl">٤٤٪ من إجمالي الوحدات الدراسية</span>
+                    </div>
+
+                    <!-- Course Card 3: Business -->
+                    <div class="detailed-course-card">
+                        <div class="detailed-card-header">
+                            <span class="course-badge business-bg">GEOG102</span>
+                            <h4 class="detailed-card-title">الجغرافيا الاقتصادية وإدارة الأعمال</h4>
+                        </div>
+                        <p class="course-hours-info">عدد الساعات المعتمدة: ٢ ساعات دراسية</p>
+                        <div class="course-progress-bar-wrap">
+                            <div class="progress-bar-fill" style="width: 44%; background-color: var(--color-purple);"></div>
+                        </div>
+                        <span class="progress-bar-lbl">٤٤٪ من إجمالي الوحدات الدراسية</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUBPAGE 3: Smart Notebook -->
+            <div class="subpage-view" id="view-notebook" style="display: none;">
+                <section class="subpage-header">
+                    <h2 class="welcome-text">دفتر الملاحظات الأكاديمي</h2>
+                    <p class="subpage-desc">سجل مذكراتك ومحاضراتك الهامة وحفظها محلياً بتنسيق أنيق</p>
+                </section>
+
+                <div class="notebook-wrapper-grid" style="margin-top: 28px;">
+                    <!-- Note Form -->
+                    <form class="notebook-entry-form" id="notebook-form">
+                        <h4 class="form-title">إضافة ملاحظة جديدة</h4>
+                        <div class="form-group-item">
+                            <label for="note-title">عنوان الملاحظة</label>
+                            <input type="text" id="note-title" required placeholder="مثال: معادلات شروودنجر والذرة">
+                        </div>
+                        <div class="form-group-item">
+                            <label for="note-content">محتوى الملاحظة الأكاديمية</label>
+                            <textarea id="note-content" required placeholder="اكتب تفاصيل الملاحظة هنا..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-save-note">حفظ في المذكرة</button>
+                    </form>
+
+                    <!-- Saved Notes List -->
+                    <div class="notes-list-sidebar">
+                        <h4 class="notes-list-heading">المذكرات المحفوظة</h4>
+                        <div class="notes-list-thread" id="notes-list-thread">
+                            <!-- Populated dynamically via app.js -->
+                            <div class="empty-notes-msg">لا توجد ملاحظات محفوظة حالياً. يمكنك تدوين ملاحظة جديدة.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUBPAGE 4: Achievements Medals -->
+            <div class="subpage-view" id="view-achievements" style="display: none;">
+                <section class="subpage-header">
+                    <h2 class="welcome-text">لوحة الشرف والأوسمة</h2>
+                    <p class="subpage-desc">الجوائز والشهادات الأكاديمية التكريمية التي تم فتحها</p>
+                </section>
+
+                <div class="achievements-medals-grid" style="margin-top: 28px;">
+                    <!-- Medal 1: Unlocked -->
+                    <div class="medal-card-item unlocked">
+                        <div class="medal-card-icon">🥇</div>
+                        <h4 class="medal-card-title">فارس المنطق الفلسفي</h4>
+                        <p class="medal-card-desc">مُنح لتخطي التكليف الأول لمساق الفلسفة بنجاح والتحصيل الكامل.</p>
+                        <span class="medal-card-status unlocked">تم الفتح ✅</span>
+                    </div>
+
+                    <!-- Medal 2: Unlocked -->
+                    <div class="medal-card-item unlocked">
+                        <div class="medal-card-icon">🧪</div>
+                        <h4 class="medal-card-title">مستكشف أسرار المادة</h4>
+                        <p class="medal-card-desc">مُنح لتخطي الاختبار التمهيدي لمساق الكيمياء العامة.</p>
+                        <span class="medal-card-status unlocked">تم الفتح ✅</span>
+                    </div>
+
+                    <!-- Medal 3: Locked -->
+                    <div class="medal-card-item locked">
+                        <div class="medal-card-icon">💼</div>
+                        <h4 class="medal-card-title">رائد أعمال الغد</h4>
+                        <p class="medal-card-desc">قيد القفل. يتطلب إكمال مساق الجغرافيا وإدارة الأعمال بنسبة ١٠٠٪.</p>
+                        <span class="medal-card-status locked">مغلق 🔒</span>
+                    </div>
+
+                    <!-- Medal 4: Locked -->
+                    <div class="medal-card-item locked">
+                        <div class="medal-card-icon">⚡</div>
+                        <h4 class="medal-card-title">طاقة الإنجاز الأكاديمية</h4>
+                        <p class="medal-card-desc">قيد القفل. يتطلب تسجيل نشاط دراسي مستمر لأكثر من ١٠ ساعات.</p>
+                        <span class="medal-card-status locked">مغلق 🔒</span>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- COLUMN 3: Left Profile Overview & Progress Charts (Mirrored to Far Left Edge) -->
+        <aside class="left-profile-sidebar" aria-label="الملف الأكاديمي والإنجازات">
+            
+            <!-- Mini Header Actions -->
+            <div class="profile-header-actions">
+                <button class="icon-action-btn" aria-label="المحادثات">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                </button>
+                <button class="icon-action-btn" aria-label="الإعدادات الشخصية">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Profile Summary Card -->
+            <div class="profile-user-summary">
+                <div class="profile-photo-wrap">
+                    <img src="assets/dashboard_sophia.png" alt="صوفيا جيش">
+                </div>
+                <h3 class="profile-user-name">صوفيا جيش</h3>
+            </div>
+
+            <!-- Academic Badges grid -->
+            <div class="academic-stats-grid">
+                <div class="stat-box">
+                    <span class="stat-icon" style="background-color: rgba(245, 158, 11, 0.1); color: #F59E0B;">🏆</span>
+                    <span class="stat-val" id="profile-points">١٠٠</span>
+                    <span class="stat-lbl">نقطة</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-icon" style="background-color: rgba(16, 185, 129, 0.1); color: #10B981;">🏅</span>
+                    <span class="stat-val">٣٢</span>
+                    <span class="stat-lbl">وساماً</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-icon" style="background-color: rgba(139, 92, 246, 0.1); color: #8B5CF6;">📜</span>
+                    <span class="stat-val">٣٢</span>
+                    <span class="stat-lbl">شهادة</span>
+                </div>
+            </div>
+
+            <!-- Active study tracking stats -->
+            <div class="study-activity-tracker">
+                <div class="tracker-header">
+                    <div class="tracker-info">
+                        <span class="tracker-title-label">ساعات النشاط</span>
+                        <div class="tracker-hours-wrap">
+                            <span class="tracker-hours" id="timer-hours">٣.٥</span>
+                            <span class="tracker-hours-lbl">ساعة</span>
+                        </div>
+                    </div>
+                    <div class="tracker-action">
+                        <!-- Toggle switch to simulate active learning time ticking -->
+                        <span class="tracker-badge">نتائج ممتازة! 👍</span>
+                    </div>
+                </div>
+                <!-- Study Timer Toggle Button -->
+                <div class="timer-toggle-wrapper">
+                    <label class="timer-toggle-label" for="study-timer-toggle">مؤقت المذاكرة النشط</label>
+                    <button class="timer-toggle-switch" id="study-timer-toggle" aria-pressed="false">
+                        <span class="switch-handle"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Segmented Ring Chart Progress (Contents 140) -->
+            <div class="content-progress-card">
+                <div class="ring-chart-svg-wrapper">
+                    <svg class="ring-chart" width="130" height="130">
+                        <circle class="ring-track" cx="65" cy="65" r="48" stroke-width="12" fill="transparent"/>
+                        
+                        <!-- Segment 1: Green (Passed - 84% equivalent) -->
+                        <circle class="ring-segment color-green" cx="65" cy="65" r="48" stroke-width="12" fill="transparent" stroke-dasharray="301.59" stroke-dashoffset="60"/>
+                        
+                        <!-- Segment 2: Orange (43%) -->
+                        <circle class="ring-segment color-orange" cx="65" cy="65" r="48" stroke-width="12" fill="transparent" stroke-dasharray="301.59" stroke-dashoffset="180"/>
+                        
+                        <!-- Segment 3: Blue (32%) -->
+                        <circle class="ring-segment color-blue" cx="65" cy="65" r="48" stroke-width="12" fill="transparent" stroke-dasharray="301.59" stroke-dashoffset="240"/>
+                    </svg>
+                    <!-- Center Overlay text label -->
+                    <div class="ring-chart-overlay">
+                        <span class="overlay-value" id="ring-total-contents">١٤٠</span>
+                        <span class="overlay-label">محتوى تعليمي</span>
+                    </div>
+                </div>
+                <div class="chart-labels-legend">
+                    <div class="legend-chip"><span class="chip-color green"></span><span>المجتازة (٨٤٪)</span></div>
+                    <div class="legend-chip"><span class="chip-color orange"></span><span>قيد الدراسة (٤٣٪)</span></div>
+                </div>
+            </div>
+
+            <!-- Double summary cards links -->
+            <div class="summary-cards-grid">
+                <div class="summary-card">
+                    <span class="summary-card-val">١٢٠</span>
+                    <span class="summary-card-lbl">محتوى متاح</span>
+                    <a href="#" class="summary-view-btn">عرض الكل</a>
+                </div>
+                <div class="summary-card">
+                    <span class="summary-card-val">١٢٠</span>
+                    <span class="summary-card-lbl">ساعة تدريبية</span>
+                    <a href="#" class="summary-view-btn">عرض الكل</a>
+                </div>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- Ask AI Chatbot Overlay Panel (Glassmorphism Slide out) -->
+    <div class="ai-chat-overlay" id="ai-chat-panel" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <span class="chat-bot-icon">🤖</span>
+                    <div class="chat-bot-text">
+                        <h4 class="chat-bot-title">مساعد نَمَاء الذكي</h4>
+                        <span class="chat-bot-status">نشط الآن لمساعدتك</span>
+                    </div>
+                </div>
+                <button class="chat-close-btn" id="btn-close-chat" aria-label="إغلاق المحادثة">×</button>
+            </div>
+            
+            <!-- Message thread -->
+            <div class="chat-messages-thread" id="chat-messages-thread">
+                <div class="message bot-msg">
+                    <p class="msg-text">أهلاً بك صوفيا! أنا المساعد الذكي الخاص بك لمساقاتك الدراسية. يمكنك سؤالي عن المحاضرات القادمة، أو الواجبات الدراسية، أو طلب شرح لأي مادة علمية.</p>
+                </div>
+            </div>
+
+            <!-- Message Input box -->
+            <form class="chat-input-bar" id="chat-input-form">
+                <input type="text" id="chat-user-input" placeholder="اكتب سؤالك هنا عن مساقاتك الدراسية..." required autocomplete="off">
+                <button type="submit" class="btn-send-message" aria-label="إرسال رسالة">➔</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>

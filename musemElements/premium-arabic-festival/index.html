@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="مهرجان جذور - الفعالية السنوية الكبرى للموسيقى والفنون بتجربة تخييم فريدة ومشاركة ألمع نجوم الفن. احجز تذكرتك الآن.">
+    <title>مَهْرَجَانُ جُذُور | الموسيقى والفن الطبيعي</title>
+    
+    <!-- Google Fonts: Tajawal for headings and Alexandria for numbers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Alexandria:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Top Navigation Header -->
+    <header class="festival-header">
+        
+        <!-- Top bar: Newsletter & Social (RTL Mirrored) -->
+        <div class="header-top-bar">
+            <div class="header-top-container">
+                <!-- Right: Newsletter Signup Form -->
+                <div class="newsletter-signup-wrap">
+                    <form class="newsletter-form" id="newsletter-form">
+                        <label for="newsletter-email">القائمة البريدية:</label>
+                        <input type="email" id="newsletter-email" required placeholder="البريد الإلكتروني...">
+                        <button type="submit" class="btn-newsletter-join">انضم الآن</button>
+                    </form>
+                </div>
+                
+                <!-- Center: Bubbly Bolder Title Logo -->
+                <div class="header-logo-wrap">
+                    <a href="#" class="festival-logo-text">مهرجان جذور</a>
+                </div>
+
+                <!-- Left: Social Links -->
+                <div class="header-social-links">
+                    <a href="#" aria-label="فيسبوك" class="social-icon-link">🔵</a>
+                    <a href="#" aria-label="تويتر" class="social-icon-link">🕊️</a>
+                    <a href="#" aria-label="إنستغرام" class="social-icon-link">📸</a>
+                    <a href="#" aria-label="يوتيوب" class="social-icon-link">📺</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="header-navigation-bar" aria-label="التنقل الرئيسي للمهرجان">
+            <ul class="nav-menu-list">
+                <li><a href="#tickets-section" class="nav-menu-item">التذاكر</a></li>
+                <li><a href="#lineup-section" class="nav-menu-item">جدول الفعاليات</a></li>
+                <li><a href="#experience-section" class="nav-menu-item">التجربة والأنشطة</a></li>
+                <li><a href="#info-section" class="nav-menu-item">معلومات الزوار</a></li>
+                <li><a href="#news-section" class="nav-menu-item">الأخبار</a></li>
+                <li><a href="#gallery-section" class="nav-menu-item">معرض الصور</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- Main Content Container Split Grid -->
+    <main class="festival-workspace-wrapper">
+        <div class="festival-layout-grid">
+            
+            <!-- RIGHT COLUMN: Poster Lineup Card (Mirrored for RTL) -->
+            <section class="lineup-poster-panel" id="lineup-section" aria-label="الملصق الرسمي لجدول فعاليات الفنانين">
+                <div class="poster-pin-decorator" aria-hidden="true">📌</div> <!-- Red push pin -->
+                
+                <div class="poster-inner-paper">
+                    <h3 class="poster-logo-heading">مهرجان جذور</h3>
+                    <div class="poster-date-badge">٢٢ - ٢٤ مايو، ٢٠٢٦</div>
+                    
+                    <!-- Lineup Filter/Search Bar -->
+                    <div class="poster-search-box">
+                        <input type="text" id="artist-filter-input" placeholder="البحث عن فنان دراسي أو فرقة..." aria-label="البحث عن فنان">
+                    </div>
+
+                    <!-- Days Schedule list -->
+                    <div class="poster-days-container">
+                        
+                        <!-- Friday schedule -->
+                        <div class="poster-day-block" data-day="friday">
+                            <h4 class="day-title">الجمعة</h4>
+                            <div class="artists-grid-list">
+                                <span class="artist-item">ريبلشن</span> • 
+                                <span class="artist-item">أتومسفير</span> • 
+                                <span class="artist-item">نـهـكـو</span> • 
+                                <span class="artist-item">تاروس رايلي</span> • 
+                                <span class="artist-item">ساتسانغ</span> • 
+                                <span class="artist-item">إيرث كراي</span> • 
+                                <span class="artist-item">أرايس روتس</span> • 
+                                <span class="artist-item">ناشونال فايبز</span>
+                            </div>
+                        </div>
+
+                        <!-- Saturday schedule -->
+                        <div class="poster-day-block" data-day="saturday">
+                            <h4 class="day-title">السبت</h4>
+                            <div class="artists-grid-list">
+                                <span class="artist-item">ستيك فيجر</span> • 
+                                <span class="artist-item">شون بول</span> • 
+                                <span class="artist-item">ترايبال سيدز</span> • 
+                                <span class="artist-item">تريفور هول</span> • 
+                                <span class="artist-item">ذا غرين</span> • 
+                                <span class="artist-item">دوب إنك</span> • 
+                                <span class="artist-item">إيا تيرا</span> • 
+                                <span class="artist-item">بومبين أوغليز</span> • 
+                                <span class="artist-item">سينسي ترايلز</span>
+                            </div>
+                        </div>
+
+                        <!-- Sunday schedule -->
+                        <div class="poster-day-block" data-day="sunday">
+                            <h4 class="day-title">الأحد</h4>
+                            <div class="artists-grid-list">
+                                <span class="artist-item">داميان مارلي</span> • 
+                                <span class="artist-item">صبلايم ويث روم</span> • 
+                                <span class="artist-item">آيس كيوب</span> • 
+                                <span class="artist-item">جيمي كليف</span> • 
+                                <span class="artist-item">كومون كينغز</span> • 
+                                <span class="artist-item">هيري</span> • 
+                                <span class="artist-item">دوران جونز</span> • 
+                                <span class="artist-item">مايك لوف</span> • 
+                                <span class="artist-item">كيزنامدي</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <div class="poster-footer-credits">
+                        <p class="credits-location">ساحة المعارض والفعاليات الطبيعية بمحمية الغابة الحمراء</p>
+                        <a href="https://juzoorfestival.com" class="credits-url-link">juzoormusicfestival.com</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LEFT COLUMN: Tickets, Video, Instagram, Campaign & Timer (Mirrored) -->
+            <div class="festival-multimedia-panel">
+                
+                <!-- Tickets Voucher Card Section -->
+                <section class="tickets-voucher-card" id="tickets-section" aria-label="حجز تذاكر المهرجان">
+                    <h3 class="voucher-title">التذاكر متاحة الآن !!!</h3>
+                    
+                    <div class="ticket-vouchers-grid">
+                        
+                        <!-- Voucher 1: 3-Day -->
+                        <button class="ticket-voucher-btn" data-ticket-type="3day" data-ticket-price="450">
+                            <div class="voucher-notch-top"></div>
+                            <span class="ticket-voucher-lbl">تذكرة ٣ أيام كاملة</span>
+                            <span class="ticket-voucher-price">٤٥٠ ر.س</span>
+                            <span class="ticket-voucher-action">احجز الآن</span>
+                            <div class="voucher-notch-bottom"></div>
+                        </button>
+
+                        <!-- Voucher 2: 1-Day -->
+                        <button class="ticket-voucher-btn" data-ticket-type="1day" data-ticket-price="180">
+                            <div class="voucher-notch-top"></div>
+                            <span class="ticket-voucher-lbl">تذكرة اليوم الواحد</span>
+                            <span class="ticket-voucher-price">١٨٠ ر.س</span>
+                            <span class="ticket-voucher-action">احجز الآن</span>
+                            <div class="voucher-notch-bottom"></div>
+                        </button>
+
+                        <!-- Voucher 3: VIP Redwood -->
+                        <button class="ticket-voucher-btn vip" data-ticket-type="redwood" data-ticket-price="950">
+                            <div class="voucher-notch-top"></div>
+                            <span class="ticket-voucher-lbl">تذكرة ريدوود الفاخرة</span>
+                            <span class="ticket-voucher-price">٩٥٠ ر.س</span>
+                            <span class="ticket-voucher-action">احجز الآن</span>
+                            <div class="voucher-notch-bottom"></div>
+                        </button>
+
+                    </div>
+                </section>
+
+                <!-- Filmstrip Video Container -->
+                <section class="multimedia-video-section" aria-label="العرض المرئي للمهرجان">
+                    <div class="filmstrip-frame-container" id="video-strip-btn" title="تشغيل فيديو كليب المهرجان">
+                        <!-- Filmstrip perforated holes graphic elements -->
+                        <div class="filmstrip-holes top">
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                        
+                        <div class="video-thumbnail-overlay" style="background-image: url('assets/grid_sunset.png');">
+                            <div class="video-play-btn-glow">
+                                <span class="play-triangle">▶</span>
+                            </div>
+                        </div>
+
+                        <div class="filmstrip-holes bottom">
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Bottom grids: Instagram feed & Camp Clean campaign -->
+                <div class="bottom-widgets-split-grid">
+                    
+                    <!-- Instagram grid feed -->
+                    <section class="instagram-feed-widget" id="gallery-section" aria-label="معرض صور إنستغرام المهرجان">
+                        <span class="insta-logo-icon">📸</span>
+                        <div class="insta-photos-grid">
+                            <div class="insta-cell">
+                                <img src="assets/grid_sunset.png" alt="غروب المهرجان">
+                                <span class="insta-caption-text">غروب ساحر</span>
+                            </div>
+                            <div class="insta-cell">
+                                <img src="assets/grid_valley.png" alt="موقع التخييم">
+                                <span class="insta-caption-text">تخييم طبيعي</span>
+                            </div>
+                            <div class="insta-cell">
+                                <img src="assets/grid_relax.png" alt="الاسترخاء">
+                                <span class="insta-caption-text">فن واسترخاء</span>
+                            </div>
+                            <div class="insta-cell">
+                                <img src="assets/grid_artist.png" alt="الفنان">
+                                <span class="insta-caption-text">حضور جماهيري</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Campaign & Countdown Timer Stack -->
+                    <div class="campaign-timer-stack">
+                        
+                        <!-- Keep Camp Clean card -->
+                        <section class="camp-campaign-card" id="experience-section" aria-label="حملة المحافظة على البيئة">
+                            <h3 class="campaign-heading">حافظ على نظافة مخيمنا</h3>
+                            <p class="campaign-desc">كن صديقاً للبيئة وساهم في حماية الغطاء النباتي الطبيعي لمحمية ريدوود أثناء تخييمك.</p>
+                            <button class="btn-campaign-more" id="btn-campaign-modal">اعرف المزيد</button>
+                        </section>
+
+                        <!-- Countdown Timer Card -->
+                        <section class="countdown-timer-card" aria-label="عداد تنازلي للمهرجان">
+                            <div class="timer-values-row" id="countdown-clock">
+                                <div class="timer-col">
+                                    <span class="timer-val-num" id="time-days">٧٧</span>
+                                    <span class="timer-val-lbl">يوم</span>
+                                </div>
+                                <div class="timer-col divider">:</div>
+                                <div class="timer-col">
+                                    <span class="timer-val-num" id="time-hours">٢٣</span>
+                                    <span class="timer-val-lbl">ساعة</span>
+                                </div>
+                                <div class="timer-col divider">:</div>
+                                <div class="timer-col">
+                                    <span class="timer-val-num" id="time-minutes">١٠</span>
+                                    <span class="timer-val-lbl">دقيقة</span>
+                                </div>
+                                <div class="timer-col divider">:</div>
+                                <div class="timer-col">
+                                    <span class="timer-val-num" id="time-seconds">٥٤</span>
+                                    <span class="timer-val-lbl">ثانية</span>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Bottom Footer Layout (repeating palm leaves overlay) -->
+    <footer class="festival-footer">
+        <div class="footer-palm-leaves-wrap" aria-hidden="true">
+            <!-- SVG custom palm leaves row decoration -->
+            <svg class="palm-leaves-svg" viewBox="0 0 1200 80" preserveAspectRatio="none">
+                <path d="M0,80 C150,20 350,20 500,80 C650,20 850,20 1000,80 C1100,60 1150,40 1200,80 L1200,80 L0,80 Z" fill="#142B1E"/>
+                <!-- Palm leaves outlines -->
+                <path d="M40,80 L50,50 L42,52 L55,42 L45,45 L60,35 L48,40 L65,30 L55,35 L70,40 L58,42 L72,50 L62,52 L70,80 Z" fill="#C5A059" fill-opacity="0.2"/>
+                <path d="M300,80 L310,45 L302,47 L315,35 L305,38 L320,25 L308,30 L325,20 L315,25 L330,30 L318,32 L332,40 L322,42 L330,80 Z" fill="#C5A059" fill-opacity="0.2"/>
+                <path d="M600,80 L610,50 L602,52 L615,42 L605,45 L620,35 L608,40 L625,30 L615,35 L630,40 L618,42 L632,50 L622,52 L630,80 Z" fill="#C5A059" fill-opacity="0.2"/>
+                <path d="M900,80 L910,45 L902,47 L915,35 L905,38 L920,25 L908,30 L925,20 L915,25 L930,30 L918,32 L932,40 L922,42 L930,80 Z" fill="#C5A059" fill-opacity="0.2"/>
+            </svg>
+        </div>
+        
+        <div class="footer-content-wrap">
+            <div class="footer-links-row">
+                <a href="#" class="footer-link">الصحافة والشركاء</a> • 
+                <a href="#" class="footer-link">سياسة الخصوصية</a> • 
+                <a href="#" class="footer-link">الشروط والأحكام</a> • 
+                <a href="#" class="footer-link">اتصل بنا</a>
+            </div>
+            <p class="footer-copyright-text">© ٢٠٢٦ مهرجان جذور للموسيقى والفنون الأكاديمي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- Ticket Checkout Drawer Modal overlay -->
+    <div class="modal-overlay" id="checkout-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-card">
+            <button class="modal-close-btn" id="btn-close-checkout" aria-label="إغلاق التذاكر">×</button>
+            <h3 class="modal-title">تأكيد حجز التذكرة</h3>
+            
+            <form id="checkout-form" class="modal-form-body">
+                <div class="form-group">
+                    <label for="select-quantity">عدد التذاكر المطلوب</label>
+                    <select id="select-quantity">
+                        <option value="1">تذكرة واحدة (١)</option>
+                        <option value="2">تذكرتان (٢)</option>
+                        <option value="3">ثلاث تذاكر (٣)</option>
+                        <option value="4">أربع تذاكر (٤)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="input-buyer-name">اسم صاحب الحجز</label>
+                    <input type="text" id="input-buyer-name" required placeholder="مثال: يوسف أحمد">
+                </div>
+                <div class="form-group">
+                    <label for="input-buyer-email">البريد الإلكتروني لإرسال التذاكر</label>
+                    <input type="email" id="input-buyer-email" required placeholder="example@email.com">
+                </div>
+                
+                <!-- Dynamic calculation display -->
+                <div class="price-summary-row">
+                    <span class="summary-lbl">إجمالي قيمة التذاكر:</span>
+                    <span class="summary-val-price" id="checkout-total-price">٠ ر.س</span>
+                </div>
+
+                <button type="submit" class="btn-checkout-submit">تأكيد الشراء والحجز</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Video full-screen overlay modal -->
+    <div class="modal-overlay" id="video-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-card video-card-large">
+            <button class="modal-close-btn" id="btn-close-video" aria-label="إغلاق الفيديو">×</button>
+            <div class="video-iframe-wrapper">
+                <!-- Simulating a premium video playback overlay -->
+                <div class="simulated-player-box">
+                    <div class="simulated-player-bg" style="background-image: url('assets/grid_sunset.png');"></div>
+                    <div class="player-overlay-content">
+                        <h4>المقطع الدعائي الرسمي لمهرجان جذور ٢٠٢٦</h4>
+                        <p>تخييم متكامل في قلب محمية الغابة الحمراء الطبيعية برفقة نخبة من الفنانين الاستثنائيين.</p>
+                        <span class="playing-status-indicator">🔔 جاري تشغيل المقطع بصوت محيطي...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Campaign Details overlay modal -->
+    <div class="modal-overlay" id="campaign-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-card">
+            <button class="modal-close-btn" id="btn-close-campaign" aria-label="إغلاق">×</button>
+            <h3 class="modal-title" style="margin: 20px 24px 8px 24px;">المخيم البيئي النظيف</h3>
+            <div class="modal-form-body" style="font-size: 0.82rem; line-height: 1.6; color: var(--color-primary);">
+                <p>خلال مشاركتك في مهرجان جذور، يرجى الالتزام بالمعايير البيئية التالية لضمان سلامة المحمية الطبيعية:</p>
+                <ul style="margin: 12px 20px 12px 0; list-style-type: square; display: flex; flex-direction: column; gap: 8px;">
+                    <li>يرجى جمع النفايات والتخلص منها في الحاويات المخصصة المنتشرة في موقع التخييم.</li>
+                    <li>يمنع إشعال النيران مباشرة على التربة؛ يرجى استخدام مواقد التخييم المرتفعة المعتمدة.</li>
+                    <li>ساهم في حماية الغطاء النباتي والأشجار المعمرة وتجنب إلحاق الأذى بأغصان أشجار السرو الحمراء.</li>
+                </ul>
+                <p>مساهمتك تعني بقاء هذه المحمية مكاناً جميلاً ومشرقاً للجميع في السنوات القادمة.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>

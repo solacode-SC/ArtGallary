@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision Art Museum - Vincent van Gogh</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Immersive Blurred Museum Background -->
+    <div class="museum-bg" style="background-image: url('https://images.unsplash.com/photo-1580136579312-94651dfd596d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');">
+        <div class="bg-blur-overlay"></div>
+    </div>
+
+    <!-- Main Glass OS Screen Wrapper -->
+    <div class="screen-wrapper">
+
+        <!-- Top Browser Address Bar (glassmorphism pill) -->
+        <header class="top-nav-bar">
+            <div class="nav-btn-group">
+                <button class="nav-icon-btn"><i class="fa-solid fa-book-open"></i></button>
+                <button class="nav-icon-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="nav-icon-btn"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            
+            <div class="address-input-wrapper">
+                <i class="fa-solid fa-lock"></i>
+                <span class="url-text">ArtMuseum.com</span>
+                <i class="fa-solid fa-microphone"></i>
+            </div>
+            
+            <div class="nav-btn-group">
+                <button class="nav-icon-btn"><i class="fa-solid fa-plus"></i></button>
+                <button class="nav-icon-btn"><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
+                <button class="nav-icon-btn"><i class="fa-solid fa-copy"></i></button>
+            </div>
+        </header>
+
+        <!-- Left Toolbar (glassmorphism vertical pill) -->
+        <aside class="left-toolbar">
+            <button class="tool-btn active"><i class="fa-solid fa-paintbrush"></i></button>
+            <button class="tool-btn"><i class="fa-solid fa-heart"></i></button>
+            <button class="tool-btn"><i class="fa-solid fa-user"></i></button>
+        </aside>
+
+        <!-- 3D Carousel Section -->
+        <section class="carousel-section">
+            <div class="carousel-container" id="carousel">
+                <!-- Cards will be dynamically injected/manipulated by main.js to support 3D angle depth -->
+                
+                <!-- Card 1 (Starry Night) -->
+                <div class="carousel-card active" data-index="0">
+                    <div class="card-image-box">
+                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="The Starry Night">
+                        
+                        <!-- Top Floating Card Controls -->
+                        <div class="card-top-controls">
+                            <button class="control-circle-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="control-pill-btn"><i class="fa-solid fa-expand"></i> Expand</button>
+                            <button class="control-circle-btn"><i class="fa-solid fa-ellipsis"></i></button>
+                        </div>
+                    </div>
+                    <!-- Frosted Glass Info Overlay -->
+                    <div class="card-details-panel">
+                        <div class="panel-header">
+                            <h2 class="painting-title">The Starry Night</h2>
+                            <span class="painting-date">June 1889</span>
+                        </div>
+                        <p class="painting-quote">"I look at the stars and with all my being feel that I am a part of one of these stars."</p>
+                        <div class="panel-meta">
+                            <p><strong>Medium:</strong> Oil on canvas</p>
+                            <p><strong>Dimensions:</strong> 29 × 36 1/4 in.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 (Self Portrait) -->
+                <div class="carousel-card right-1" data-index="1">
+                    <div class="card-image-box">
+                        <img src="https://images.unsplash.com/photo-1580136579312-94651dfd596d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Self-Portrait">
+                        <div class="card-top-controls">
+                            <button class="control-circle-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="control-pill-btn"><i class="fa-solid fa-expand"></i> Expand</button>
+                            <button class="control-circle-btn"><i class="fa-solid fa-ellipsis"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-details-panel">
+                        <div class="panel-header">
+                            <h2 class="painting-title">Self-Portrait</h2>
+                            <span class="painting-date">Sept 1889</span>
+                        </div>
+                        <p class="painting-quote">"They say—and I am very willing to believe it—that it is difficult to know oneself—but it's not easy to paint oneself either."</p>
+                        <div class="panel-meta">
+                            <p><strong>Medium:</strong> Oil on canvas</p>
+                            <p><strong>Dimensions:</strong> 25 1/2 × 21 1/4 in.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 (Sunflowers) -->
+                <div class="carousel-card right-2" data-index="2">
+                    <div class="card-image-box">
+                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sunflowers">
+                        <div class="card-top-controls">
+                            <button class="control-circle-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="control-pill-btn"><i class="fa-solid fa-expand"></i> Expand</button>
+                            <button class="control-circle-btn"><i class="fa-solid fa-ellipsis"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-details-panel">
+                        <div class="panel-header">
+                            <h2 class="painting-title">Sunflowers</h2>
+                            <span class="painting-date">August 1888</span>
+                        </div>
+                        <p class="painting-quote">"The sunflower is mine, in a way."</p>
+                        <div class="panel-meta">
+                            <p><strong>Medium:</strong> Oil on canvas</p>
+                            <p><strong>Dimensions:</strong> 37 3/8 × 29 in.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 (Irises) -->
+                <div class="carousel-card left-2" data-index="3">
+                    <div class="card-image-box">
+                        <img src="https://images.unsplash.com/photo-1578301978018-3005759f48f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Irises">
+                        <div class="card-top-controls">
+                            <button class="control-circle-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="control-pill-btn"><i class="fa-solid fa-expand"></i> Expand</button>
+                            <button class="control-circle-btn"><i class="fa-solid fa-ellipsis"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-details-panel">
+                        <div class="panel-header">
+                            <h2 class="painting-title">Irises</h2>
+                            <span class="painting-date">May 1889</span>
+                        </div>
+                        <p class="painting-quote">"It is the lightning conductor for my illness, because I feel that I can keep myself from going mad by painting."</p>
+                        <div class="panel-meta">
+                            <p><strong>Medium:</strong> Oil on canvas</p>
+                            <p><strong>Dimensions:</strong> 28 × 36 5/8 in.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 (Café Terrace) -->
+                <div class="carousel-card left-1" data-index="4">
+                    <div class="card-image-box">
+                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Café Terrace at Night">
+                        <div class="card-top-controls">
+                            <button class="control-circle-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="control-pill-btn"><i class="fa-solid fa-expand"></i> Expand</button>
+                            <button class="control-circle-btn"><i class="fa-solid fa-ellipsis"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-details-panel">
+                        <div class="panel-header">
+                            <h2 class="painting-title">Café Terrace</h2>
+                            <span class="painting-date">Sept 1888</span>
+                        </div>
+                        <p class="painting-quote">"Here you have a night picture without any black, done with nothing but beautiful blue, violet and green."</p>
+                        <div class="panel-meta">
+                            <p><strong>Medium:</strong> Oil on canvas</p>
+                            <p><strong>Dimensions:</strong> 31 3/4 × 25 3/4 in.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Bottom Artist Info Widget -->
+        <footer class="bottom-artist-bar">
+            <button class="nav-arrow btn-prev"><i class="fa-solid fa-chevron-left"></i></button>
+            
+            <div class="artist-profile-pill">
+                <img src="https://images.unsplash.com/photo-1580136579312-94651dfd596d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Vincent van Gogh" class="artist-avatar">
+                <div class="artist-details">
+                    <h3>Vincent van Gogh</h3>
+                    <p>1853 - 1890 | Zundert, Netherlands</p>
+                </div>
+                <button class="artist-search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            
+            <button class="nav-arrow btn-next"><i class="fa-solid fa-chevron-right"></i></button>
+        </footer>
+
+        <!-- Carousel Pagination Dots -->
+        <div class="pagination-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+    </div>
+
+    <!-- Fullscreen Lightbox Modal -->
+    <div class="lightbox-modal" id="lightbox">
+        <button class="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="Expanded Painting" class="lightbox-img">
+            <div class="lightbox-details">
+                <h2 id="lightbox-title"></h2>
+                <p id="lightbox-date"></p>
+                <p id="lightbox-desc" class="painting-quote"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

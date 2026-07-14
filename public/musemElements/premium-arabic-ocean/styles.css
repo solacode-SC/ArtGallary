@@ -1,0 +1,1165 @@
+/* ==========================================================================
+   CSS Design System - عالم المحيط (Ocean. Donation Portal)
+   ========================================================================== */
+
+:root {
+    --bg-dark-base: #0F172A;         /* Dark Abyss Base */
+    --bg-surface: rgba(255, 255, 255, 0.06); /* Glassmorphic Base */
+    
+    --color-primary: #3B82F6;       /* Bright Electric Marine Blue */
+    --color-primary-hover: #60A5FA;
+    --color-accent-gold: #F59E0B;   /* Sunset Gold */
+    --color-coral: #F43F5E;          /* Coral Pink */
+    
+    --text-white: #FFFFFF;           /* Crisp White */
+    --text-silver: #E2E8F0;          /* Silver Gray */
+    --text-muted: #94A3B8;           /* Muted Slate */
+    
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 32px;
+    
+    --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    
+    --font-heading: 'Tajawal', sans-serif;
+    --font-body: 'Alexandria', sans-serif;
+    
+    --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.2);
+    --shadow-card: 0 16px 48px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Resets --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- Cinematic Moving Background --- */
+body {
+    background-color: var(--bg-dark-base);
+    color: var(--text-silver);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+    overflow-y: auto; /* Enable scroll for rich section blocks */
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Background image pan/zoom pseudo-element */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url('assets/ocean_bg.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+    transform-origin: center;
+    animation: slowOceanPan 30s infinite ease-in-out;
+}
+
+/* Dark gradient mask and blur layer */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, rgba(15, 23, 42, 0.88) 100%);
+    z-index: -1;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+@keyframes slowOceanPan {
+    0% { transform: scale(1) translate(0, 0); }
+    50% { transform: scale(1.08) translate(-1%, -1%); }
+    100% { transform: scale(1) translate(0, 0); }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    color: var(--text-white);
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   Header Navigation Bar (RTL Mirrored)
+   ========================================================================== */
+.ocean-header {
+    background-color: transparent;
+    position: relative;
+    z-index: 500;
+    padding: 24px 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Logo */
+.ocean-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 1.55rem;
+    font-weight: 950;
+    font-family: var(--font-heading);
+    letter-spacing: -0.5px;
+    color: var(--text-white);
+}
+
+.logo-dot {
+    color: var(--color-primary);
+}
+
+/* Center Navigation links */
+.header-center-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-item {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-silver);
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-item:hover, .nav-item.active {
+    color: var(--color-primary);
+}
+
+.nav-arrow {
+    font-size: 0.6rem;
+    transition: var(--transition-smooth);
+}
+
+.nav-item:hover .nav-arrow {
+    transform: translateY(2px);
+}
+
+.nav-badge {
+    background-color: var(--color-accent-gold);
+    color: var(--bg-dark-base);
+    font-size: 0.5rem;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-right: 4px;
+}
+
+/* Left actions (No profile picture) */
+.header-left-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.btn-donor-list-trigger {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-white);
+    border-radius: 30px;
+    padding: 8px 18px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition-smooth);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.btn-donor-list-trigger:hover {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    transform: translateY(-1px);
+}
+
+.icon-list {
+    width: 14px;
+    height: 14px;
+}
+
+.btn-upgrade-action {
+    background-color: var(--color-primary);
+    color: var(--text-white);
+    border: none;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.25);
+    transition: var(--transition-smooth);
+}
+
+.btn-upgrade-action:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Hero Split Widescreen Layout
+   ========================================================================== */
+.ocean-hero-workspace {
+    height: calc(100vh - 86px);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.workspace-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr; /* RTL: 1fr Text (Right), 1.1fr Graphics (Left) */
+    align-items: center;
+    gap: 40px;
+}
+
+/* --- RIGHT COLUMN: Info Block --- */
+.hero-info-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-content-box {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 480px;
+}
+
+.fire-badge {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(245, 158, 11, 0.1);
+    border: 1.5px solid rgba(245, 158, 11, 0.25);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.62rem;
+    font-weight: 800;
+    color: var(--color-accent-gold);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.hero-main-title {
+    font-size: 2.8rem;
+    font-weight: 950;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    color: var(--text-white);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.coral-icon {
+    font-size: 2.2rem;
+    vertical-align: middle;
+}
+
+.hero-subtitle {
+    font-size: 0.82rem;
+    color: var(--text-silver);
+    line-height: 1.75;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Selector Capsule Widget */
+.donation-selection-capsule {
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1.5px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px;
+    box-shadow: var(--shadow-soft);
+    margin-top: 12px;
+}
+
+.amount-picker-row {
+    display: flex;
+    gap: 6px;
+    padding-right: 12px;
+}
+
+.amount-pill {
+    background: none;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--text-silver);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.amount-pill:hover {
+    color: var(--color-primary);
+}
+
+.amount-pill.active {
+    background-color: rgba(59, 130, 246, 0.15);
+    color: var(--color-primary);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.btn-donate-now {
+    background-color: var(--color-primary);
+    color: var(--text-white);
+    border: none;
+    border-radius: 30px;
+    padding: 10px 24px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+}
+
+.btn-donate-now:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateX(-2px); /* Moves left in RTL */
+}
+
+.btn-donate-now .btn-arrow {
+    font-size: 0.8rem;
+    transition: var(--transition-smooth);
+}
+
+.btn-donate-now:hover .btn-arrow {
+    transform: translateX(-4px);
+}
+
+/* --- LEFT COLUMN: 3D Papercut Wave Viewport --- */
+.hero-graphics-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.papercut-waves-viewport {
+    position: relative;
+    width: 480px;
+    height: 480px;
+    overflow: visible; /* Allows donor card bubble to float freely */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Widescreen 3D Ocean Waves Design Wrapper --- */
+.waves-design-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+}
+
+.waves-design-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-lg); /* Match container rounded edges */
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+    transition: var(--transition-smooth);
+}
+
+.waves-design-wrapper:hover .waves-design-img {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 20px 56px rgba(59, 130, 246, 0.25);
+}
+
+@keyframes floatBoat {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-6px) rotate(-3deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+.animate-float {
+    animation: floatBoat 4.5s infinite ease-in-out;
+}
+
+/* Floating Live Donor Card bubble (Abnormal Fluid Glass Design) */
+.donor-card-bubble {
+    position: absolute;
+    top: 100px;
+    left: 30px; /* RTL visual floating on left */
+    z-index: 25;
+    background-color: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    border-radius: 30% 70% 70% 30% / 50% 60% 40% 50%; /* Asymmetric organic blob */
+    padding: 12px 22px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+    transform-origin: center;
+    transition: var(--transition-smooth);
+}
+
+.donor-card-bubble:hover {
+    border-radius: 50% 50% 50% 50%;
+    transform: scale(1.06) rotate(-2deg);
+    border-color: var(--color-primary);
+}
+
+.donor-heart-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: rgba(244, 63, 94, 0.15);
+    border: 1px solid var(--color-coral);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    animation: heartBreathing 2s infinite ease-in-out;
+}
+
+@keyframes heartBreathing {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.donor-info-block {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.donor-amount {
+    font-size: 0.68rem;
+    font-weight: 900;
+    color: var(--color-primary-hover);
+}
+
+.donor-name {
+    font-size: 0.58rem;
+    color: var(--text-silver);
+}
+
+.badge-award {
+    font-size: 1rem;
+}
+
+@keyframes bounceSlow {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+.animate-bounce-slow {
+    animation: bounceSlow 5.5s infinite ease-in-out;
+}
+
+/* ==========================================================================
+   Scroll down explorer indicator
+   ========================================================================== */
+.scroll-down-arrow-wrap {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+.scroll-arrow-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-silver);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+    backdrop-filter: blur(8px);
+}
+
+.scroll-arrow-btn svg {
+    width: 14px;
+    height: 14px;
+}
+
+.scroll-arrow-btn:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    transform: translateY(3px);
+}
+
+/* ==========================================================================
+   Section 2: Campaigns & Initiatives (Visual Fillers)
+   ========================================================================== */
+.campaigns-section {
+    padding: 120px 0 80px 0;
+    position: relative;
+    z-index: 100;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section-title-row {
+    text-align: center;
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.section-badge-label {
+    font-size: 0.58rem;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    color: var(--color-accent-gold);
+    text-transform: uppercase;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--text-white);
+}
+
+.section-desc {
+    font-size: 0.82rem;
+    color: var(--text-silver);
+}
+
+.campaigns-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.campaign-card {
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1.5px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: var(--shadow-soft);
+}
+
+/* Aligned grid layout (No asymmetric offsets) */
+.campaign-card:hover {
+    transform: translateY(-6px);
+    background-color: rgba(255, 255, 255, 0.07);
+    border-color: rgba(59, 130, 246, 0.35);
+    box-shadow: var(--shadow-card);
+}
+
+/* Premium Rounded Image container (No organic clipping) */
+.campaign-card-image-wrap {
+    height: 190px;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-md); /* Clean standard rounded corners */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transition: var(--transition-smooth);
+}
+
+.campaign-card:hover .campaign-card-image-wrap {
+    transform: scale(1.02);
+}
+
+.campaign-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.campaign-card:hover .campaign-card-img {
+    transform: scale(1.06);
+}
+
+.campaign-badge-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.campaign-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.campaign-card-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--text-white);
+}
+
+.campaign-card-desc {
+    font-size: 0.72rem;
+    color: var(--text-silver);
+    line-height: 1.75;
+}
+
+/* ==========================================================================
+   Section 3: Ocean Statistics Counters
+   ========================================================================== */
+.stats-section {
+    padding: 60px 0 100px 0;
+    position: relative;
+    z-index: 100;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1.5px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius-md);
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 950;
+    color: var(--color-accent-gold);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.72rem;
+    color: var(--text-silver);
+}
+
+/* ==========================================================================
+   Footer Section Layout
+   ========================================================================== */
+.ocean-footer {
+    background-color: rgba(15, 23, 42, 0.85);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    padding: 80px 0 30px 0;
+    position: relative;
+    z-index: 100;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr 1fr;
+    gap: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding-bottom: 40px;
+    margin-bottom: 24px;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer-brand p {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    max-width: 360px;
+}
+
+.footer-links-col h4 {
+    font-size: 0.82rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.footer-links-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links-col a {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    transition: var(--transition-smooth);
+}
+
+.footer-links-col a:hover {
+    color: var(--color-primary-hover);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.68rem;
+    color: var(--text-muted);
+}
+
+.designer-credit {
+    font-weight: 800;
+}
+
+/* ==========================================================================
+   Side Donors stack history Drawer (RTL Mirrored: Slides from Right)
+   ========================================================================== */
+.donors-drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-smooth);
+}
+
+.donors-drawer-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.drawer-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0; /* Slides from right in RTL */
+    width: 400px;
+    background-color: #0f172a;
+    border-left: 2px solid var(--color-primary);
+    box-shadow: -20px 0 50px rgba(0,0,0,0.3);
+    padding: 40px 28px;
+    transform: translateX(100%);
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.donors-drawer-overlay.open .drawer-container {
+    transform: translateX(0);
+}
+
+.drawer-close-btn {
+    position: absolute;
+    top: 16px;
+    left: 16px; /* RTL placed left */
+    background: none;
+    border: 1.5px solid var(--color-primary);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    transition: var(--transition-smooth);
+}
+
+.drawer-close-btn:hover {
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+}
+
+.drawer-title {
+    font-size: 1.15rem;
+    font-weight: 900;
+    margin-bottom: 24px;
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 12px;
+}
+
+.donors-scroll-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.donor-stack-item {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-md);
+    border: 1.5px solid rgba(255, 255, 255, 0.08);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: var(--shadow-soft);
+}
+
+.donor-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.donor-dot.blue { background-color: var(--color-primary); }
+.donor-dot.gold { background-color: var(--color-accent-gold); }
+.donor-dot.coral { background-color: var(--color-coral); }
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-info strong {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--text-white);
+}
+
+.item-info span {
+    font-size: 0.62rem;
+    color: var(--text-muted);
+}
+
+/* Quick Donate form inside Drawer */
+.drawer-quick-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    border-top: 1.5px dashed rgba(255, 255, 255, 0.1);
+    padding-top: 24px;
+}
+
+.form-title {
+    font-size: 0.88rem;
+    font-weight: 900;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--color-primary);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    font-size: 0.72rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    color: var(--text-white);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.btn-drawer-submit {
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    border: 2px solid var(--color-primary);
+    padding: 11px 0;
+    border-radius: var(--radius-sm);
+    font-size: 0.72rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(29, 78, 216, 0.15);
+    transition: var(--transition-smooth);
+}
+
+.btn-drawer-submit:hover {
+    background-color: transparent;
+    color: var(--color-primary);
+}
+
+/* ==========================================================================
+   Success receipt Dialog widget
+   ========================================================================== */
+.receipt-dialog-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-smooth);
+}
+
+.receipt-dialog-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.receipt-card {
+    background-color: #0f172a;
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    max-width: 380px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    box-shadow: var(--shadow-card);
+    transform: scale(0.92);
+    transition: var(--transition-smooth);
+}
+
+.receipt-dialog-overlay.open .receipt-card {
+    transform: scale(1);
+}
+
+.success-check {
+    width: 44px;
+    height: 44px;
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.receipt-title {
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: var(--text-white);
+}
+
+.receipt-msg {
+    font-size: 0.72rem;
+    color: var(--text-silver);
+    line-height: 1.7;
+    white-space: pre-line;
+}
+
+.btn-receipt-ok {
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    border: 2px solid var(--color-primary);
+    padding: 8px 24px;
+    border-radius: var(--radius-sm);
+    font-size: 0.72rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.btn-receipt-ok:hover {
+    background-color: transparent;
+    color: var(--color-primary);
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+.animate-fade {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade.delay-1 { animation-delay: 0.15s; }
+.animate-fade.delay-2 { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   Responsive Viewport collapses
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .campaigns-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 960px) {
+    .ocean-hero-workspace {
+        height: auto;
+        padding: 60px 0;
+    }
+    
+    .workspace-container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    
+    .hero-info-col {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .info-content-box {
+        align-items: center;
+    }
+    
+    .fire-badge {
+        align-self: center;
+    }
+    
+    .papercut-waves-viewport {
+        width: 100%;
+        max-width: 440px;
+        height: 440px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-center-nav {
+        display: none; /* Collapses menu links on small mobile screens */
+    }
+    
+    .hero-main-title {
+        font-size: 2.1rem;
+    }
+    
+    .donation-selection-capsule {
+        flex-direction: column;
+        gap: 12px;
+        border-radius: var(--radius-md);
+        width: 100%;
+        padding: 12px;
+    }
+    
+    .amount-picker-row {
+        width: 100%;
+        justify-content: center;
+        padding-right: 0;
+    }
+    
+    .btn-donate-now {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .campaigns-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .drawer-container {
+        width: 100%;
+    }
+}

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="منصة عالم المحيط - ساهم وتبرع لدعم الفعاليات المائية وحماية التنوع البيئي في المحيطات والبحار.">
+    <title>عَالَمُ المُحِيطِ | منصة التبرع الرسمية</title>
+    
+    <!-- Google Fonts: Tajawal, Alexandria -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Alexandria:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ==========================================================================
+         Header Navigation Bar
+         ========================================================================== -->
+    <header class="ocean-header">
+        <div class="header-container">
+            
+            <!-- Right: Logo -->
+            <div class="header-right-logo">
+                <a href="#" class="ocean-logo" aria-label="رئيسية عالم المحيط">
+                    <span class="logo-text">مُحِيط<span class="logo-dot">.</span></span>
+                </a>
+            </div>
+
+            <!-- Center: Navigation links (Alexandria) -->
+            <nav class="header-center-nav" aria-label="أقسام البوابة">
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-item active">الرئيسية</a></li>
+                    <li><a href="#" class="nav-item">الفعاليات <span class="nav-arrow">▾</span></a></li>
+                    <li><a href="#" class="nav-item">التبرع <span class="nav-arrow">▾</span></a></li>
+                    <li><a href="#" class="nav-item">بوابة الاكتتاب <span class="nav-badge">جديد</span></a></li>
+                </ul>
+            </nav>
+
+            <!-- Left: User actions (No profile picture) -->
+            <div class="header-left-actions">
+                <button class="btn-donor-list-trigger" id="btn-donor-drawer-trigger" title="سجل المتبرعين">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-list">
+                        <path d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zM12 6v6l4 2"/>
+                    </svg>
+                    <span>المساهمات</span>
+                </button>
+                <button class="btn-upgrade-action" id="btn-upgrade">ترقية الحساب</button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         Hero Section split workspace (RTL Mirrored: Info Right, Waves Left)
+         ========================================================================== -->
+    <main class="ocean-hero-workspace">
+        <div class="workspace-container">
+            
+            <!-- RIGHT COLUMN: Widescreen Info block (50%) -->
+            <section class="hero-info-col" aria-label="تفاصيل التبرعات">
+                
+                <div class="info-content-box animate-fade">
+                    
+                    <!-- Fire Collection Badge -->
+                    <div class="fire-badge">
+                        <span class="badge-fire-icon">🔥</span>
+                        <span>تم جمع ١٢٨٪ من المستهدف</span>
+                    </div>
+
+                    <!-- Main calligraphic title -->
+                    <h1 class="hero-main-title">
+                        عَالَمُ المُرْجَانِ <span class="coral-icon">🪸</span><br>وَالمُحِيطَاتِ
+                    </h1>
+                    
+                    <p class="hero-subtitle">
+                        المحيطات والفعاليات المثالية لحماية البيئة المائية، تبرعك اليوم يساهم مباشرة في إنقاذ الشعاب المرجانية وتنظيف قاع البحار.
+                    </p>
+
+                    <!-- Dynamic Donation Selector Capsule widget -->
+                    <div class="donation-selection-capsule">
+                        
+                        <div class="amount-picker-row" id="amount-picker">
+                            <button class="amount-pill active" data-value="3">$٣</button>
+                            <button class="amount-pill" data-value="10">$١٠</button>
+                            <button class="amount-pill" data-value="25">$٢٥</button>
+                            <button class="amount-pill" data-value="100">$١٠٠</button>
+                        </div>
+                        
+                        <button class="btn-donate-now" id="btn-donate-submit">
+                            <span>تبرع الآن</span>
+                            <span class="btn-arrow">➜</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- LEFT COLUMN: 3D Graphics Viewport (Stunning Rendered Card) -->
+            <section class="hero-graphics-col" aria-label="المجسم البحري التفاعلي">
+                <div class="papercut-waves-viewport" id="waves-interactive-panel">
+                    
+                    <!-- Rendered Design Wrapper -->
+                    <div class="waves-design-wrapper animate-float">
+                        <img src="assets/waves_design.png" alt="مجسم المحيط ثلاثي الأبعاد" class="waves-design-img">
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Bottom center scroll down indicators -->
+    <div class="scroll-down-arrow-wrap">
+        <button class="scroll-arrow-btn" id="btn-scroll-explore" aria-label="تصفح للأسفل">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <line x1="12" y1="5" x2="12" y2="19"/>
+                <polyline points="19 12 12 19 5 12"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- ==========================================================================
+         Section 2: Campaigns & Initiatives
+         ========================================================================== -->
+    <section class="campaigns-section" id="section-campaigns">
+        <div class="container">
+            
+            <div class="section-title-row">
+                <span class="section-badge-label">مبادراتنا البيئية</span>
+                <h2 class="section-title">حملات حماية الحياة البحرية في العالم</h2>
+                <p class="section-desc">نحن نعمل مع شركائنا المحليين والدوليين لإطلاق مبادرات مستدامة لمعالجة الأزمات البيئية الأكثر إلحاحاً.</p>
+            </div>
+
+            <div class="campaigns-cards-grid">
+                
+                <!-- Campaign 1 -->
+                <div class="campaign-card animate-scroll">
+                    <div class="campaign-card-image-wrap">
+                        <img src="assets/lake.png" alt="إعادة استزراع المرجان" class="campaign-card-img">
+                        <span class="campaign-badge-icon">🪸</span>
+                    </div>
+                    <div class="campaign-card-body">
+                        <h3 class="campaign-card-title">إعادة استزراع المرجان</h3>
+                        <p class="campaign-card-desc">زرعنا أكثر من ١٥,٠٠٠ مستعمرة مرجانية في البحر الأحمر لضمان تكاثر الأسماك واستعادة الموائل الطبيعية.</p>
+                    </div>
+                </div>
+
+                <!-- Campaign 2 -->
+                <div class="campaign-card animate-scroll delay-1">
+                    <div class="campaign-card-image-wrap">
+                        <img src="assets/sailing.png" alt="تنظيف قاع المحيطات" class="campaign-card-img">
+                        <span class="campaign-badge-icon">♻️</span>
+                    </div>
+                    <div class="campaign-card-body">
+                        <h3 class="campaign-card-title">تنظيف قاع المحيطات</h3>
+                        <p class="campaign-card-desc">أزلنا ما يزيد عن ٥٠ طناً من المخلفات البلاستيكية والشباك المهجورة التي تهدد الحياة الفطرية البحرية.</p>
+                    </div>
+                </div>
+
+                <!-- Campaign 3 -->
+                <div class="campaign-card animate-scroll delay-2">
+                    <div class="campaign-card-image-wrap">
+                        <img src="assets/oman.png" alt="حماية السلاحف الخضراء" class="campaign-card-img">
+                        <span class="campaign-badge-icon">🐢</span>
+                    </div>
+                    <div class="campaign-card-body">
+                        <h3 class="campaign-card-title">حماية السلاحف الخضراء</h3>
+                        <p class="campaign-card-desc">قمنا بتأمين وحماية شواطئ وضع البيض لأكثر من ٢,٠٠٠ سلحفاة بحرية مهددة بالانقراض في الجزر والمحميات.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 3: Ocean Statistics Counter
+         ========================================================================== -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                
+                <div class="stat-item">
+                    <span class="stat-number">١٥,٠٠٠+</span>
+                    <span class="stat-label">شعب مرجانية مزروعة</span>
+                </div>
+
+                <div class="stat-item">
+                    <span class="stat-number">٥٠+ طن</span>
+                    <span class="stat-label">مخلفات بلاستيكية مزالة</span>
+                </div>
+
+                <div class="stat-item">
+                    <span class="stat-number">٢,٢٠٠+</span>
+                    <span class="stat-label">متطوع نشط عالمياً</span>
+                </div>
+
+                <div class="stat-item">
+                    <span class="stat-number">٨ مناطق</span>
+                    <span class="stat-label">محميات بحرية مدعومة</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         Footer Section
+         ========================================================================== -->
+    <footer class="ocean-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo-text">مُحِيط<span class="logo-dot">.</span></span>
+                    <p>منصة رقمية ريادية مخصصة لتمويل ودعم مبادرات الحفاظ على التنوع البيولوجي وحماية البيئات البحرية حول العالم.</p>
+                </div>
+                <div class="footer-links-col">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#">الرئيسية</a></li>
+                        <li><a href="#">حملات التبرع</a></li>
+                        <li><a href="#">الفعاليات البيئية</a></li>
+                        <li><a href="#">الشركاء والمانحين</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-col">
+                    <h4>الخصوصية والدعم</h4>
+                    <ul>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">شروط الاستخدام</a></li>
+                        <li><a href="#">مركز الدعم والاتصال</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة &copy; ٢٠٢٦ منصة عالم المحيط.</p>
+                <span class="designer-credit">/ ui.poly.volt</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================================================
+         Side Slide-out Donors History Drawer (RTL: Slides from Right)
+         ========================================================================== -->
+    <div class="donors-drawer-overlay" id="donors-drawer" aria-hidden="true">
+        <div class="drawer-container">
+            <button class="drawer-close-btn" id="btn-close-drawer" aria-label="إغلاق">&times;</button>
+            <h3 class="drawer-title">سجل المساهمات الأخيرة</h3>
+            
+            <div class="donors-scroll-stack">
+                
+                <!-- Donor 1 -->
+                <div class="donor-stack-item">
+                    <span class="donor-dot blue"></span>
+                    <div class="item-info">
+                        <strong>سارة الأحمد (السعودية)</strong>
+                        <span>تبرعت بـ $١٠٠ • قبل دقيقتين</span>
+                    </div>
+                </div>
+
+                <!-- Donor 2 -->
+                <div class="donor-stack-item">
+                    <span class="donor-dot gold"></span>
+                    <div class="item-info">
+                        <strong>جون ديفيد (كندا)</strong>
+                        <span>تبرع بـ $٢٥ • قبل ٥ دقائق</span>
+                    </div>
+                </div>
+
+                <!-- Donor 3 -->
+                <div class="donor-stack-item">
+                    <span class="donor-dot coral"></span>
+                    <div class="item-info">
+                        <strong>نيها كاكار (أمريكا)</strong>
+                        <span>تبرعت بـ $٣ • قبل ١٢ دقيقة</span>
+                    </div>
+                </div>
+
+                <!-- Donor 4 -->
+                <div class="donor-stack-item">
+                    <span class="donor-dot blue"></span>
+                    <div class="item-info">
+                        <strong>خالد منصور (الإمارات)</strong>
+                        <span>تبرع بـ $٥٠ • قبل ٢٠ دقيقة</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Fast Quick Form inside Drawer -->
+            <form class="drawer-quick-form" id="quick-donate-form">
+                <h4 class="form-title">تبرع سريع باسم مخصص</h4>
+                <div class="form-group">
+                    <label for="form-donor-name">الاسم (أو اكتب فاعل خير)</label>
+                    <input type="text" id="form-donor-name" value="فاعل خير" required>
+                </div>
+                <div class="form-group">
+                    <label for="form-donor-country">البلد</label>
+                    <input type="text" id="form-donor-country" value="الوطن العربي" required>
+                </div>
+                <button type="submit" class="btn-drawer-submit">تأكيد التبرع</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         Donation Success Receipt Dialog Box
+         ========================================================================== -->
+    <div class="receipt-dialog-overlay" id="receipt-success-dialog" aria-hidden="true">
+        <div class="receipt-card">
+            <span class="success-check">✓</span>
+            <h3 class="receipt-title">شكراً لمساهمتك النبيلة!</h3>
+            <p class="receipt-msg" id="receipt-msg"></p>
+            <button class="btn-receipt-ok" id="btn-receipt-ok">حسناً، سعيد بالمساهمة</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
