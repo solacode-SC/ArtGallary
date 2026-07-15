@@ -1,0 +1,45 @@
+# Dependency directories
+node_modules/
+
+# Build outputs
+dist/
+build/
+out/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor / IDE configuration
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Agent Scaffolding & Customizations
+.agents/
+.gemini/
+*.vanilla
+
+# Test coverage
+coverage/
+.nyc_output/

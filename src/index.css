@@ -290,7 +290,7 @@ body {
     overflow: hidden;
     background: 
         linear-gradient(to bottom, rgba(11, 14, 26, 0.35) 0%, rgba(11, 14, 26, 0.1) 40%, rgba(11, 14, 26, 0.82) 100%), 
-        url('assets/images/hero_bg.jpg') no-repeat center center / cover;
+        url('/assets/images/hero_bg.jpg') no-repeat center center / cover;
     color: #FFFFFF;
 }
 
@@ -1401,7 +1401,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 0;
-    background-image: url('assets/images/hero_bg.jpg');
+    background-image: url('/assets/images/hero_bg.jpg');
     background-size: cover;
     background-position: center bottom;
     filter: brightness(0.55) contrast(1.05);
