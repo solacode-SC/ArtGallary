@@ -143,6 +143,36 @@ function Home() {
                 
                 <div className="editorial-image-container">
                   <img src={item.image} alt={item.title} className="editorial-card-image" loading="lazy" />
+                  <div className="editorial-card-overlay">
+                    <button 
+                      className="card-preview-action-btn"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setLightboxItem(item);
+                      }}
+                      title="Open Interactive Preview Card"
+                    >
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>
+                      <span>Preview Card</span>
+                    </button>
+                    <a 
+                      href={item.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="card-external-action-btn"
+                      onClick={(e) => e.stopPropagation()}
+                      title="Open in new tab"
+                    >
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                    </a>
+                  </div>
                   <div className="editorial-emblem">{item.emoji}</div>
                 </div>
                 
@@ -150,15 +180,16 @@ function Home() {
                 
                 <div className="editorial-card-footer">
                   <span className="editorial-label-mini">{labelBottomLeft}</span>
-                  <a 
-                    href={item.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="editorial-link-mini"
-                    onClick={(e) => e.stopPropagation()}
+                  <button 
+                    className="editorial-link-mini card-footer-preview-btn"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setLightboxItem(item);
+                    }}
+                    title="Open Preview Card"
                   >
-                    {labelBottomRight} ›
-                  </a>
+                    PREVIEW ›
+                  </button>
                 </div>
               </article>
             );
@@ -244,7 +275,12 @@ function Home() {
       </footer>
 
       {/* Lightbox Modal */}
-      <Lightbox item={lightboxItem} onClose={() => setLightboxItem(null)} />
+      <Lightbox 
+        item={lightboxItem} 
+        items={featuredItems}
+        onNavigate={(newItem) => setLightboxItem(newItem)}
+        onClose={() => setLightboxItem(null)} 
+      />
     </>
   );
 }
