@@ -1,0 +1,53 @@
+:root {
+    /* ── Brand Palette ── */
+    --color-bg-deep:     #08061a;   /* deepest void */
+    --color-bg-dark:     #0d0a22;   /* main background */
+    --color-bg-surface:  #120e28;   /* card surface */
+    --color-bg-elevated: #1a1435;   /* elevated panels */
+
+    /* Signature yellow */
+    --color-accent:         #ffd600;
+    --color-accent-hover:   #ffe040;
+    --color-accent-glow:    rgba(255, 214, 0, 0.35);
+
+    /* Character card accent colors */
+    --color-pink:        #e83e8c;
+    --color-pink-bg:     #2b0a1a;
+    --color-teal:        #20c997;
+    --color-teal-bg:     #04201a;
+    --color-blue:        #4dabf7;
+    --color-blue-bg:     #041426;
+    --color-purple:      #cc5de8;
+    --color-purple-bg:   #1e0830;
+    --color-yellow:      #ffd600;
+    --color-yellow-bg:   #1c1500;
+    --color-red:         #ff6b6b;
+    --color-red-bg:      #250808;
+
+    /* Typography */
+    --font-heading: 'Press Start 2P', monospace;
+    --font-arabic:  'Cairo', 'Tajawal', sans-serif;
+
+    /* Spacing */
+    --space-xs:  8px;
+    --space-sm:  16px;
+    --space-md:  24px;
+    --space-lg:  48px;
+    --space-xl:  80px;
+    --space-2xl: 120px;
+
+    /* Borders */
+    --radius-sm:  6px;
+    --radius-md:  12px;
+    --radius-lg:  20px;
+
+    /* Pixel border */
+    --pixel-border: 3px solid var(--color-accent);
+
+    /* Transitions */
+    --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-smooth: cubic-bezier(0.25, 0.8, 0.25, 1);
+    --trans-fast:  all 0.15s var(--ease-smooth);
+    --trans-med:   all 0.3s var(--ease-smooth);
+    --trans-bounce: all 0.4s var(--ease-bounce);
+}

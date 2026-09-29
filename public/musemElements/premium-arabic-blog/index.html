@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="صوان - منصة تدوين ومقالات أسبوعية ملهمة في نمط الحياة، السفر، التنفس العميق وجودة الحياة الشخصية.">
+    <title>مدونة صِوان | جودة الحياة والنمو الشخصي</title>
+    
+    <!-- Google Fonts: Tajawal, Alexandria -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Alexandria:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Main Navigation Header (RTL Mirrored) -->
+    <header class="blog-header">
+        <div class="header-container">
+            
+            <!-- Right: Logo & Hamburger (RTL mirrored to start) -->
+            <div class="header-right-logo">
+                <button class="hamburger-menu-btn" id="btn-hamburger-toggle" aria-label="فتح القائمة الجانبية">
+                    ☰
+                </button>
+                <a href="#" class="blog-logo" aria-label="رئيسية صوان">
+                    <span class="logo-text">صِوَان</span>
+                </a>
+            </div>
+
+            <!-- Center: Navigation Links -->
+            <nav class="header-center-nav" aria-label="الروابط الأساسية">
+                <a href="#" class="nav-link active" data-category="all">الرئيسية</a>
+                <a href="#" class="nav-link" data-category="travel">سفر وترحال</a>
+                <a href="#" class="nav-link" data-category="ideas">أفكار إبداعية</a>
+                <a href="#" class="nav-link" data-category="lifestyle">نمط الحياة</a>
+                <a href="#" class="nav-link" data-category="music">موسيقى وفنون</a>
+            </nav>
+
+            <!-- Left: Search toggle & Subscribe Button (RTL mirrored to end) -->
+            <div class="header-left-actions">
+                <!-- Search bar input panel (slides in) -->
+                <div class="search-input-wrap" id="search-bar-wrap">
+                    <input type="text" id="search-input-field" placeholder="ابحث عن مقال...">
+                </div>
+                
+                <button class="search-toggle-btn" id="btn-search-toggle" aria-label="بحث">
+                    🔍
+                </button>
+                <button class="btn-subscribe-header" id="btn-subscribe-header">اشترك بالنشرة</button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main Grid layout split (RTL: Feed on Right, Sidebar on Left) -->
+    <div class="blog-workspace-layout">
+        
+        <!-- RIGHT PANEL: Blog Feed column (2.2fr) -->
+        <main class="blog-feed-panel" aria-label="أحدث المقالات">
+            <div class="feed-container" id="blog-feed-container">
+                <!-- Articles dynamically generated via app.js -->
+            </div>
+        </main>
+
+        <!-- LEFT PANEL: Sidebar column (1fr) -->
+        <aside class="blog-sidebar-panel" aria-label="معلومات إضافية">
+            
+            <!-- Card 1: Author Card -->
+            <div class="sidebar-card author-card">
+                <div class="author-avatar-wrap">
+                    <img src="assets/avatar_dashboard_1783349584363.png" alt="ديفيد باين" class="author-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'60\' height=\'60\' fill=\'%23121420\'%3E%3Ccircle cx=\'30\' cy=\'30\' r=\'28\'/%3E%3C/svg%3E'">
+                </div>
+                <h4 class="author-name">ديفيد باين</h4>
+                <p class="author-bio">مستشار وباحث في نمط الحياة الصحي وجودة الحياة الشخصية. أكتب لمساعدتك في بناء روتين يومي متوازن وخالٍ من التوتر.</p>
+                
+                <!-- Social sharing chips -->
+                <div class="author-social-row">
+                    <a href="#" class="social-chip-btn pin" title="بينتريست">P</a>
+                    <a href="#" class="social-chip-btn link" title="لينكد إن">L</a>
+                    <a href="#" class="social-chip-btn yt" title="يوتيوب">Y</a>
+                    <a href="#" class="social-chip-btn db" title="بيهانس">B</a>
+                </div>
+                
+                <button class="btn-author-about" id="btn-author-about">نبذة عن الكاتب</button>
+            </div>
+
+            <!-- Card 2: Follow Us Stacks -->
+            <div class="sidebar-card follow-card">
+                <h4 class="sidebar-card-title">تابع صِوان</h4>
+                
+                <div class="social-stack">
+                    <div class="social-stack-item pin" data-platform="pin">
+                        <span class="social-icon-box">P</span>
+                        <span class="social-name">بينتريست</span>
+                        <span class="social-counter" id="count-pin">٢٥,٠٠٠</span>
+                    </div>
+                    <div class="social-stack-item whatsapp" data-platform="wa">
+                        <span class="social-icon-box">W</span>
+                        <span class="social-name">واتساب</span>
+                        <span class="social-counter" id="count-wa">١,٢٠٠</span>
+                    </div>
+                    <div class="social-stack-item stackoverflow" data-platform="so">
+                        <span class="social-icon-box">S</span>
+                        <span class="social-name">سكايب</span>
+                        <span class="social-counter" id="count-so">١٥,٤٠٠</span>
+                    </div>
+                    <div class="social-stack-item behance" data-platform="be">
+                        <span class="social-icon-box">B</span>
+                        <span class="social-name">بيهانس</span>
+                        <span class="social-counter" id="count-be">٤٥,٦٠٠</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Custom Ads Banner -->
+            <div class="sidebar-card ad-card">
+                <div class="ad-banner-graphics">
+                    <!-- Animated geometric wave ad layout -->
+                    <svg viewBox="0 0 200 100" fill="none" class="ad-svg">
+                        <rect width="200" height="100" rx="8" fill="#583A89"/>
+                        <!-- Wave shapes -->
+                        <path d="M0,80 Q40,60 80,80 T160,80 T200,60 L200,100 L0,100 Z" fill="#714CAE" />
+                        <path d="M0,90 Q50,75 100,90 T200,80 L200,100 L0,100 Z" fill="#9065D6" />
+                        <!-- Circles -->
+                        <circle cx="160" cy="30" r="10" fill="#FFC107" fill-opacity="0.7"/>
+                        <circle cx="40" cy="40" r="6" fill="#00E676" fill-opacity="0.6"/>
+                    </svg>
+                    <span class="ad-badge-tag">إعلان فاخر</span>
+                    <div class="ad-content-overlay">
+                        <h5 class="ad-title">مساحة إبداعية للعمل</h5>
+                        <p class="ad-desc">احجز مقعدك الدراسي أو المهني الآن بخصم ٢٠٪</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Trending items -->
+            <div class="sidebar-card trending-card">
+                <h4 class="sidebar-card-title">الأكثر قراءة الآن</h4>
+                
+                <div class="trending-list" id="trending-list-container">
+                    <!-- Populated dynamically via app.js -->
+                </div>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- Full Article Slide-out Drawer Overlay (Slides from Left boundary in RTL) -->
+    <div class="article-drawer-overlay" id="reading-drawer" aria-hidden="true" role="dialog">
+        <div class="drawer-container">
+            <button class="drawer-close-btn" id="btn-close-drawer" aria-label="إغلاق المقال">×</button>
+            
+            <div class="drawer-content-body" id="drawer-article-content">
+                <!-- Populated dynamically via app.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Subscribe Newsletter Modal Dialog -->
+    <div class="modal-dialog-overlay" id="subscribe-modal" aria-hidden="true">
+        <div class="dialog-box">
+            <button class="modal-close-btn" id="btn-close-subscribe-modal">×</button>
+            <h4>اشترك في نشرتنا الأسبوعية</h4>
+            <p>انضم لأكثر من ٥,٠٠٠ قارئ واحصل على نصائح أسبوعية ملهمة لتحسين جودة حياتك والتخلص من التوتر.</p>
+            <form id="subscribe-newsletter-form" class="modal-form">
+                <input type="email" id="subscribe-email-input" required placeholder="name@example.com" aria-label="البريد الإلكتروني">
+                <button type="submit" class="btn-modal-submit">اشترك الآن</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Feedback Dialog Toast -->
+    <div class="modal-dialog-overlay" id="success-feedback-dialog" aria-hidden="true">
+        <div class="dialog-box feedback-box">
+            <span class="success-check-icon">✓</span>
+            <h4 id="success-feedback-title">تم بنجاح!</h4>
+            <p id="success-feedback-msg">شكراً لك على تفاعلك مع صِوان.</p>
+            <button class="btn-dialog-ok" id="btn-feedback-ok">موافق</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>

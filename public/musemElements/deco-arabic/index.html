@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ديكو. | ابتكار صفحات هبوط استثنائية للمصممين والمطورين</title>
+    
+    <!-- Meta SEO -->
+    <meta name="description" content="ديكو هي المنصة الاحترافية الرائدة لتمكين مصممي واجهات المستخدم والمبرمجين من تصميم ونشر صفحات هبوط فاخرة ومتجاوبة في دقائق معدودة وبأداء سحابي فائق السرعة.">
+    <meta name="keywords" content="تصميم واجهات، صفحات هبوط، تعريب، تصميم مواقع، مطورين، مصممين، Deco Arabic">
+    <meta name="author" content="ديكو">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="google-site-verification" content="deco-arabic-verification">
+    
+    <!-- Google Fonts: Cairo (Headings) & Tajawal (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode">
+    <!-- Sticky Glassmorphism Header -->
+    <header class="main-header" id="header" role="banner">
+        <div class="container header-container">
+            <a href="#" class="logo" aria-label="الصفحة الرئيسية لديكو">
+                <span class="logo-dot"></span>ديكو<span>.</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu" role="navigation" aria-label="القائمة الرئيسية">
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link active">المعرض</a></li>
+                    <li><a href="#" class="nav-link">من نحن</a></li>
+                    <li><a href="#" class="nav-link">الدعم</a></li>
+                    <li class="dropdown">
+                        <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" id="forum-dropdown-btn">
+                            المنتدى <span class="arrow-icon">▼</span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="forum-dropdown-btn">
+                            <li><a href="#">النقاشات العامة</a></li>
+                            <li><a href="#">مشاركة التصاميم</a></li>
+                            <li><a href="#">الدروس والمقالات</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="nav-link">الوظائف</a></li>
+                    <li class="dropdown">
+                        <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false" id="lang-dropdown-btn">
+                            العربية <span class="arrow-icon">▼</span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="lang-dropdown-btn">
+                            <li><a href="#" class="active-lang">العربية (RTL)</a></li>
+                            <li><a href="#">English (LTR)</a></li>
+                            <li><a href="#">Français</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <!-- Theme Toggle Button -->
+                <button class="theme-toggle" id="theme-toggle" aria-label="تبديل المظهر المضيء والمظلم" title="تبديل المظهر">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                
+                <a href="#" class="btn btn-outline" id="download-btn">
+                    تحميل التطبيق
+                </a>
+                <a href="#" class="btn btn-primary">ابدأ مجاناً</a>
+                
+                <!-- Mobile Menu Toggle Button -->
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="فتح القائمة الرئيسية" aria-expanded="false" aria-controls="nav-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" role="region" aria-label="مقدمة ديكو">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    هنا يصنع 
+                    <span class="highlight-wrapper">
+                        <span class="highlight-text">المصممون</span>
+                    </span>
+                    صفحات هبوط استثنائية
+                </h1>
+                
+                <p class="hero-desc">
+                    مع ديكو (Deco)، يمكن لجميع مصممي واجهات المستخدم وحتى المبرمجين إنشاء صفحات هبوط بمختلف الأحجام ونشرها بكل سهولة وبأداء سريع لا يقارن.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary btn-large">ابدأ الآن مجاناً <span class="btn-arrow">←</span></a>
+                    <div class="download-dropdown-wrapper">
+                        <button class="btn btn-secondary btn-large" id="hero-download-btn">
+                            تحميل التطبيق <span class="arrow-icon">▼</span>
+                        </button>
+                        <ul class="download-menu" id="hero-download-menu">
+                            <li><a href="#">نسخة Windows (x64)</a></li>
+                            <li><a href="#">نسخة macOS (Apple Silicon)</a></li>
+                            <li><a href="#">نسخة macOS (Intel)</a></li>
+                            <li><a href="#">نسخة Linux (AppImage)</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <a href="#" class="hero-question-link">هل لديك أي استفسار؟ تواصل مع خبرائنا مباشرة.</a>
+            </div>
+            
+            <div class="hero-graphics">
+                <div class="image-wrapper hero-main-image-wrapper">
+                    <!-- Premium AI Generated Main Hero Skater Image -->
+                    <img src="assets/hero_skater.png" alt="شخصية مصممة بألوان زاهية وخطوط ديناميكية ترمز للسرعة والإبداع في منصة ديكو" class="hero-main-img">
+                </div>
+                
+                <!-- Floating Info Badge 1: Quickly Design -->
+                <div class="floating-badge badge-top-right reveal-on-load">
+                    <div class="badge-icon-box cyan-bg">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                    </div>
+                    <div class="badge-content">
+                        <h3>تصميم فائق السرعة</h3>
+                        <p>استمتع بأداء استثنائي وسرعة لا تقارن في إنجاز وتدشين تصاميمك.</p>
+                    </div>
+                </div>
+                
+                <!-- Floating Info Badge 2: Safe Cloud -->
+                <div class="floating-badge badge-bottom-left reveal-on-load">
+                    <div class="badge-icon-box green-bg">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                        </svg>
+                    </div>
+                    <div class="badge-content">
+                        <h3>سحابة آمنة ومحمية</h3>
+                        <p>تُحفظ وتُشفر جميع أعمالك سحابياً لتعرضها بأعلى جودة وفي أي وقت.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative subtle background gradients -->
+        <div class="hero-bg-gradient-1"></div>
+        <div class="hero-bg-gradient-2"></div>
+    </section>
+
+    <!-- Weekly Challenges & Process Section -->
+    <section class="challenges-section" role="region" aria-label="التحديات الأسبوعية وخطوات العمل">
+        <div class="container challenges-container">
+            <!-- Weekly Challenge Card -->
+            <div class="challenge-card scroll-reveal">
+                <div class="card-inner">
+                    <div class="challenge-badge">تحديات مميزة</div>
+                    <h2>تحدياتنا الأسبوعية</h2>
+                    <p>نطلق كل أسبوع تحديات ملهمة لمصممينا لاستكشاف قدرات مجتمعنا الإبداعي وتبادل الخبرات الفنية.</p>
+                    <div class="challenge-image-wrapper">
+                        <!-- Premium AI Generated Purple Skater Image -->
+                        <img src="assets/weekly_challenge.png" alt="رسم توضيحي يعبر عن التحدي الأسبوعي والمنافسة الإبداعية">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- How it works steps -->
+            <div class="process-steps scroll-reveal">
+                <div class="step-item">
+                    <div class="step-number-box">
+                        <span class="step-num">1</span>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-info">
+                        <h3>أولاً: حمّل تطبيق ديكو على جهازك</h3>
+                        <p>مع تطبيق ديكو، يمكن لجميع مصممي واجهات المستخدم والمبرمجين إنشاء صفحات هبوط بمختلف الأحجام ونشرها بكل سهولة.</p>
+                    </div>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number-box">
+                        <span class="step-num">2</span>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-info">
+                        <h3>ثانياً: ثبّت التطبيق وافتحه لتبدأ رحلتك</h3>
+                        <p>تثبيت فوري متوافق مع كافة أنظمة التشغيل وبواجهة استخدام بديهية تمكنك من البدء في ثوانٍ معدودة دون تعقيد.</p>
+                    </div>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number-box">
+                        <span class="step-num">3</span>
+                    </div>
+                    <div class="step-info">
+                        <h3>ثالثاً: اختر قالبك المفضل وابدأ الإبداع</h3>
+                        <p>مكتبة غنية بمئات القوالب الجاهزة المصممة بواسطة نخبة من الخبراء، ومعدة بالكامل لتناسب متطلبات مشروعك الخاص.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features Grid (3 Columns) -->
+    <section class="features-grid-section" role="region" aria-label="المزايا والخدمات الرئيسية">
+        <div class="container">
+            <div class="features-grid">
+                <!-- Card 1 -->
+                <div class="feature-grid-card orange-theme scroll-reveal">
+                    <div class="card-icon-container">
+                        <!-- Paper plane SVG -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </div>
+                    <h3>دروس تفاعلية سريعة</h3>
+                    <p>احصل على وصول كامل وحصري لكافة الدورات التدريبية السريعة والاحترافية مجاناً لترقية مهاراتك التصميمية.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="feature-grid-card pink-theme scroll-reveal">
+                    <div class="card-icon-container">
+                        <!-- Folder SVG -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3>مركز المعرفة والتوثيق</h3>
+                    <p>مكتبة مستندات تفصيلية تشرح كل أداة وخاصية في التطبيق لتساعدك على الوصول للإنتاجية القصوى بسرعة.</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="feature-grid-card blue-theme scroll-reveal">
+                    <div class="card-icon-container">
+                        <!-- Heart SVG -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </div>
+                    <h3>مساحة إبداعية مشتركة</h3>
+                    <p>تواصل مع زملائك، شارك تصاميمك، واحصل على تقييمات فورية وملهمة من خبراء ومحترفي مجتمع التصميم.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mid-Page Call To Action Section -->
+    <section class="mid-cta-section" role="region" aria-label="تحفيز لإنشاء صفحات هبوط">
+        <div class="container mid-cta-container">
+            <div class="mid-cta-graphic scroll-reveal">
+                <!-- Premium AI Generated Purple CTA Image -->
+                <img src="assets/creative_action.png" alt="تصميم إبداعي تفاعلي من ديكو" class="mid-cta-img">
+            </div>
+            
+            <div class="mid-cta-content scroll-reveal">
+                <h2>نساعدك في ابتكار أرقى صفحات الهبوط</h2>
+                <p>اكتشف، تعلّم، وحلّق في فضاء إبداعي متكامل يفتح لك آفاقاً جديدة للتطوير. استمتع بأدوات متطورة تجعل عملية التصميم متعة حقيقية وتزيد من معدلات التحويل لعملائك.</p>
+                <a href="#" class="btn btn-primary btn-large">ابدأ رحلتك الإبداعية الآن <span class="btn-arrow">←</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="faq-section" id="faq" role="region" aria-label="الأسئلة الشائعة">
+        <div class="container">
+            <h2 class="faq-title scroll-reveal">الأسئلة الشائعة والاستفسارات</h2>
+            
+            <!-- Category Tabs -->
+            <div class="faq-tabs scroll-reveal" role="tablist" aria-label="أقسام الأسئلة الشائعة">
+                <button class="faq-tab active" role="tab" aria-selected="true" aria-controls="faq-pane-1" id="tab-1">عام</button>
+                <button class="faq-tab" role="tab" aria-selected="false" aria-controls="faq-pane-2" id="tab-2">التصميم</button>
+                <button class="faq-tab" role="tab" aria-selected="false" aria-controls="faq-pane-3" id="tab-3">القوالب</button>
+                <button class="faq-tab" role="tab" aria-selected="false" aria-controls="faq-pane-4" id="tab-4">الحساب</button>
+            </div>
+            
+            <!-- Accordion Container -->
+            <div class="faq-accordion scroll-reveal" id="faq-accordion">
+                <!-- Accordion Item 1 -->
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="faq-answer-1" id="faq-q-1">
+                        <span class="faq-number">01</span>
+                        <span class="faq-question">كيف يعمل تطبيق ديكو (Deco)؟</span>
+                        <span class="accordion-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="accordion-content" id="faq-answer-1" role="region" aria-labelledby="faq-q-1" style="max-height: 0px;">
+                        <div class="accordion-body">
+                            <p>يعتمد تطبيق ديكو على محرك مرئي متطور يتيح لك سحب وإفلات العناصر وتخصيص الألوان والخطوط بكل سهولة. يمكنك نشر صفحة الهبوط الخاصة بك بضغطة زر واحدة على خوادمنا السريعة أو تصديرها ككود نظيف وجاهز للبرمجة.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 2 -->
+                <div class="accordion-item active">
+                    <button class="accordion-header" aria-expanded="true" aria-controls="faq-answer-2" id="faq-q-2">
+                        <span class="faq-number">02</span>
+                        <span class="faq-question">ما هي خطة عملنا التجارية؟</span>
+                        <span class="accordion-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="accordion-content" id="faq-answer-2" role="region" aria-labelledby="faq-q-2" style="max-height: none;">
+                        <div class="accordion-body">
+                            <p>نحن نقدم باقة مجانية متكاملة تشمل الأدوات الأساسية والعديد من القوالب المتميزة، بالإضافة إلى باقة احترافية (Premium) تمكنك من تخصيص النطاق (Custom Domain) والحصول على سعة سحابية غير محدودة ودعم ذكاء اصطناعي ذكي للتصميم والمساعدة البرمجية لتسريع إنجاز أعمالك.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 3 -->
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="faq-answer-3" id="faq-q-3">
+                        <span class="faq-number">03</span>
+                        <span class="faq-question">ما هي المنصات وأنظمة التشغيل المدعومة؟</span>
+                        <span class="accordion-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="accordion-content" id="faq-answer-3" role="region" aria-labelledby="faq-q-3" style="max-height: 0px;">
+                        <div class="accordion-body">
+                            <p>يدعم تطبيق ديكو العمل على متصفحات الويب مباشرة من أي جهاز، بالإضافة إلى توفير تطبيقات مخصصة لأنظمة macOS (بما فيها معالجات Apple Silicon) وأنظمة Windows و Linux لتقديم أداء محلي فائق السرعة وتجربة أوفلاين كاملة.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="main-footer" role="contentinfo">
+        <div class="container footer-container">
+            <div class="footer-grid">
+                <!-- Brand details & tagline -->
+                <div class="footer-brand-column">
+                    <a href="#" class="logo footer-logo">
+                        <span class="logo-dot"></span>ديكو<span>.</span>
+                    </a>
+                    <p class="footer-tagline">استمتع بالتصميم والتطوير معنا كفريق واحد وابتكر واجهات المستقبل.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="تويتر (إكس)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="لينكد إن">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="جيت هاب">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Links columns -->
+                <div class="footer-links-column">
+                    <h4>عن ديكو</h4>
+                    <ul>
+                        <li><a href="#">من نحن</a></li>
+                        <li><a href="#">فريق العمل</a></li>
+                        <li><a href="#">المدونة</a></li>
+                        <li><a href="#">الصحافة</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-column">
+                    <h4>ماذا نقدم</h4>
+                    <ul>
+                        <li><a href="#">ميزات التصميم</a></li>
+                        <li><a href="#">الاستضافة السحابية</a></li>
+                        <li><a href="#">العمل الجماعي</a></li>
+                        <li><a href="#">الذكاء الاصطناعي</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-column">
+                    <h4>المصادر</h4>
+                    <ul>
+                        <li><a href="#">مكتبة القوالب</a></li>
+                        <li><a href="#">المستندات التعليمية</a></li>
+                        <li><a href="#">مركز المساعدة</a></li>
+                        <li><a href="#">حالة النظام</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Community form column -->
+                <div class="footer-community-column">
+                    <div class="community-box">
+                        <div class="community-header">
+                            <span class="fire-icon">🔥</span>
+                            <h4>انضم لمجتمعنا الإبداعي</h4>
+                        </div>
+                        <p>اشترك في نشرتنا البريدية لتصلك أحدث التحديثات والتحديات الأسبوعية والدروس الحصرية.</p>
+                        <form class="community-form" id="newsletter-form" action="#" method="POST" role="search" aria-label="اشترك في النشرة البريدية">
+                            <div class="input-wrapper">
+                                <input type="email" placeholder="بريدك الإلكتروني..." required aria-label="البريد الإلكتروني" id="newsletter-email">
+                                <button type="submit" aria-label="ارسال بريد الكتروني للاشتراك" class="newsletter-submit">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">جميع الحقوق محفوظة &copy; 2026. شركة ديكو للتقنية المحدودة.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">شروط الخدمة</a>
+                    <a href="#">سياسة الخصوصية</a>
+                    <a href="#">ملفات تعريف الارتباط</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Script File -->
+    <script src="script.js"></script>
+</body>
+</html>

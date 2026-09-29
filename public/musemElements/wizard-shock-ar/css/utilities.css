@@ -1,0 +1,202 @@
+/* ─────────────────────────────────
+   CTA BUTTON
+───────────────────────────────── */
+.btn-cta {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: #000;
+    font-family: var(--font-arabic);
+    font-size: 0.95rem;
+    font-weight: 900;
+    padding: 14px 36px;
+    border: 3px solid #000;
+    box-shadow:
+        4px 4px 0 #000,
+        0 0 20px var(--color-accent-glow);
+    transition: var(--trans-bounce);
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%);
+}
+
+.btn-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, transparent 50%);
+    opacity: 0;
+    transition: var(--trans-fast);
+}
+
+.btn-cta:hover::before { opacity: 1; }
+
+.btn-cta:hover {
+    transform: translate(-3px, -3px);
+    box-shadow:
+        7px 7px 0 #000,
+        0 0 35px var(--color-accent-glow);
+    background-color: var(--color-accent-hover);
+}
+
+.btn-cta:active {
+    transform: translate(1px, 1px);
+    box-shadow: 2px 2px 0 #000;
+}
+
+/* ─────────────────────────────────
+   CHARACTER CARDS
+───────────────────────────────── */
+.char-card {
+    background-color: var(--color-bg-surface);
+    border: 2px solid #1a1435;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transition: var(--trans-med);
+    position: relative;
+    overflow: hidden;
+}
+
+.char-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 214, 0, 0.3);
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.5),
+        0 0 40px rgba(255, 214, 0, 0.08);
+}
+
+/* Image box */
+.char-img-box {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: var(--color-bg-deep);
+}
+
+.char-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--trans-med);
+    image-rendering: pixelated;
+}
+
+.char-card:hover .char-img-box img {
+    transform: scale(1.05);
+}
+
+/* Glow overlay on image */
+.char-glow {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
+}
+
+.char-card:hover .char-glow { opacity: 1; }
+
+.glow-pink   { box-shadow: inset 0 -60px 60px rgba(232, 62, 140, 0.25); background: linear-gradient(to top, rgba(232,62,140,0.15), transparent); }
+.glow-teal   { box-shadow: inset 0 -60px 60px rgba(32, 201, 151, 0.25); background: linear-gradient(to top, rgba(32,201,151,0.15), transparent); }
+.glow-blue   { box-shadow: inset 0 -60px 60px rgba(77, 171, 247, 0.25); background: linear-gradient(to top, rgba(77,171,247,0.15), transparent); }
+.glow-purple { box-shadow: inset 0 -60px 60px rgba(204, 93, 232, 0.25); background: linear-gradient(to top, rgba(204,93,232,0.15), transparent); }
+.glow-yellow { box-shadow: inset 0 -60px 60px rgba(255, 214, 0, 0.25);  background: linear-gradient(to top, rgba(255,214,0,0.15), transparent); }
+.glow-red    { box-shadow: inset 0 -60px 60px rgba(255, 107, 107, 0.25); background: linear-gradient(to top, rgba(255,107,107,0.15), transparent); }
+
+/* Character Info */
+.char-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    border-top: 2px solid rgba(255,255,255,0.05);
+}
+
+/* Collect Button */
+.btn-collect {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--color-accent);
+    color: #000;
+    padding: 9px 20px;
+    border: 2px solid #000;
+    box-shadow: 3px 3px 0 #000;
+    font-family: var(--font-arabic);
+    font-weight: 900;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: var(--trans-bounce);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%);
+    flex-direction: row-reverse; /* RTL: icon comes first visually on the right */
+}
+
+.btn-collect:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 #000;
+    background-color: var(--color-accent-hover);
+}
+
+.btn-collect:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 #000;
+}
+
+.btn-collect.collected {
+    background-color: #2b2b2b;
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    box-shadow: 3px 3px 0 var(--color-accent);
+}
+
+.btn-collect-icon {
+    font-size: 0.85rem;
+    line-height: 1;
+}
+
+/* ─────────────────────────────────
+   TOAST NOTIFICATIONS
+───────────────────────────────── */
+.toast {
+    background: linear-gradient(135deg, #1a1435, #120e28);
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
+    box-shadow:
+        3px 3px 0 #000,
+        0 0 20px var(--color-accent-glow);
+    padding: 12px 22px;
+    font-family: var(--font-arabic);
+    font-size: 0.85rem;
+    font-weight: 700;
+    direction: rtl;
+    text-align: right;
+    max-width: 320px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.25s var(--ease-bounce), opacity 0.25s ease;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%);
+}
+
+.toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* ─────────────────────────────────
+   PIXEL FLASH EFFECT on Collect
+───────────────────────────────── */
+@keyframes pixel-flash {
+    0%   { filter: brightness(1); }
+    25%  { filter: brightness(3); }
+    50%  { filter: brightness(1); }
+    75%  { filter: brightness(2); }
+    100% { filter: brightness(1); }
+}
+
+.flash-effect {
+    animation: pixel-flash 0.4s ease-in-out;
+}

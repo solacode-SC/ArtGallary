@@ -1,0 +1,56 @@
+/* ─── Star Twinkle ─── */
+@keyframes twinkle {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50%       { opacity: 0.2; transform: scale(0.5); }
+}
+
+/* ─── Scroll Reveal ─── */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 100ms; }
+.reveal-delay-2 { transition-delay: 220ms; }
+.reveal-delay-3 { transition-delay: 340ms; }
+
+/* ─── Card entrance ─── */
+@keyframes card-enter {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ─── Glow pulse on hero CTA ─── */
+@keyframes glow-pulse {
+    0%, 100% { box-shadow: 4px 4px 0 #000, 0 0 20px rgba(255,214,0,0.35); }
+    50%       { box-shadow: 4px 4px 0 #000, 0 0 45px rgba(255,214,0,0.7); }
+}
+
+.btn-cta { animation: glow-pulse 3s ease infinite; }
+.btn-cta:hover { animation: none; }
+
+/* ─── Character bounce on hover ─── */
+@keyframes char-bounce {
+    0%, 100% { transform: translateY(-6px); }
+    50%       { transform: translateY(-12px); }
+}
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+    }
+}

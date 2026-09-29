@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="دَفْتَر - مخططك ومذكراتك الرقمية الشخصية بتصميم ثلاثي الأبعاد فاخر وكتابة بخط الرقعة العربي الأصيل.">
+    <title>دَفْتَر | مذكراتي ويومياتي التفاعلية</title>
+    
+    <!-- Google Fonts: Alexandria for modern UI, Aref Ruqaa for elegant handwritten Arabic diary entries -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Right: Logo & Grid (RTL) -->
+            <div class="header-right">
+                <a href="#" class="logo" aria-label="شعار دفتر">
+                    <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                    </svg>
+                </a>
+                <button class="grid-btn" aria-label="عرض كل الصفحات">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+                        <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Center: Slide indicator (dots) -->
+            <div class="header-center">
+                <div class="dot-indicators" id="dot-indicators">
+                    <!-- Dots generated dynamically via app.js -->
+                </div>
+            </div>
+
+            <!-- Left: Search & Menu (RTL) -->
+            <div class="header-left">
+                <button class="header-action-btn" aria-label="البحث عن ملاحظات">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+                <button class="header-action-btn" aria-label="قائمة الخيارات">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main-content">
+        
+        <!-- Page Titles -->
+        <section class="page-title-section">
+            <h1 class="page-title" id="page-title-display">يوميّاتي</h1>
+            <p class="page-subtitle" id="page-count-display">١٧ صفحة</p>
+        </section>
+
+        <!-- 3D Card Deck Carousel Wrapper -->
+        <section class="carousel-deck-wrapper">
+            <!-- Right Arrow (RTL Prev) -->
+            <button class="deck-arrow prev" id="deck-prev" aria-label="الصفحة السابقة">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+
+            <div class="carousel-deck" id="carousel-deck">
+                <!-- Spreads generated dynamically via app.js for full interactive sliding and stacking -->
+            </div>
+
+            <!-- Left Arrow (RTL Next) -->
+            <button class="deck-arrow next" id="deck-next" aria-label="الصفحة التالية">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+        </section>
+
+        <!-- Control Action Footer -->
+        <section class="control-footer" aria-label="إجراءات التحكم بالصفحات">
+            <!-- Options button -->
+            <button class="control-btn" id="btn-options" aria-label="خيارات إضافية">
+                <span>•••</span>
+            </button>
+            <!-- Share/Export button -->
+            <button class="control-btn" id="btn-share" aria-label="تصدير ومشاركة الصفحة">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+                    <polyline points="16 6 12 2 8 6"/>
+                    <line x1="12" y1="2" x2="12" y2="15"/>
+                </svg>
+            </button>
+            <!-- Delete button -->
+            <button class="control-btn" id="btn-delete" aria-label="حذف الصفحة الحالية">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="3 6 5 6 21 6"/>
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                </svg>
+            </button>
+            <!-- Add Page button -->
+            <button class="control-btn btn-accent" id="btn-add-page" aria-label="إضافة صفحة جديدة">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+            </button>
+        </section>
+
+    </main>
+
+    <!-- Share Overlay Dialog -->
+    <div class="share-modal-overlay" id="share-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="share-card">
+            <h2 class="share-title">تصدير ومشاركة دفترك</h2>
+            <p class="share-desc">اختر صيغة التصدير أو شارك صفحة اليوميات الحالية مع الأصدقاء.</p>
+            <div class="share-options-grid">
+                <button class="share-option-btn" id="export-pdf">
+                    <span class="share-option-icon">📄</span>
+                    <span class="share-option-name">تصدير كـ PDF</span>
+                </button>
+                <button class="share-option-btn" id="share-link">
+                    <span class="share-option-icon">🔗</span>
+                    <span class="share-option-name">نسخ رابط المشاركة</span>
+                </button>
+            </div>
+            <button class="btn btn-close-modal" id="share-close-btn">إلغاء</button>
+        </div>
+    </div>
+
+    <!-- App Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>

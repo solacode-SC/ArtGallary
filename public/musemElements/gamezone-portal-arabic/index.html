@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة جيم زون للألعاب | أحدث أخبار ومراجعات الألعاب الإلكترونية</title>
+    
+    <!-- Meta SEO -->
+    <meta name="description" content="منصة جيم زون (GameZone) لأحدث أخبار الألعاب الإلكترونية، مراجعات حصرية للألعاب المميزة، مواعيد الإصدارات المرتقبة والرياضة الإلكترونية.">
+    <meta name="keywords" content="ألعاب إلكترونية، أخبار الألعاب، مراجعات ألعاب، إصدارات الألعاب، جيم زون، GameZone Arabic">
+    
+    <!-- Google Fonts: Cairo (Bold Angular Headings) & Readex Pro (Clean Technical Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="gamer-dark">
+    <!-- Sticky Glass Header -->
+    <header class="main-header" role="banner">
+        <div class="container header-container">
+            <!-- Logo -->
+            <a href="#" class="logo" aria-label="بوابة جيم زون للألعاب">
+                <span class="logo-prefix">GAME</span><span class="logo-suffix">ZONE</span>
+            </a>
+            
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="nav-menu" role="navigation" aria-label="أقسام جيم زون">
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link active">الرئيسية</a></li>
+                    <li><a href="#" class="nav-link">الأخبار</a></li>
+                    <li><a href="#" class="nav-link">الألعاب</a></li>
+                    <li><a href="#" class="nav-link">المراجعات</a></li>
+                    <li><a href="#" class="nav-link">الرياضة الإلكترونية</a></li>
+                    <li><a href="#" class="nav-link">عروض الفيديو</a></li>
+                    <li><a href="#" class="nav-link">المجتمع</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Actions -->
+            <div class="header-actions">
+                <!-- Search -->
+                <button class="action-btn" aria-label="البحث عن أخبار أو ألعاب">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+                
+                <!-- Notifications with active green dot -->
+                <button class="action-btn notification-btn" aria-label="الإشعارات">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                    <span class="green-indicator-dot"></span>
+                </button>
+
+                <!-- Login Button -->
+                <a href="#" class="btn btn-login">تسجيل الدخول</a>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="فتح القائمة" aria-expanded="false" aria-controls="nav-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Carousel Section -->
+    <section class="hero-carousel" role="region" aria-label="عروض الأخبار الكبرى الدوارة">
+        <!-- Slides Container (Managed by script.js) -->
+        <div class="carousel-slide active" id="hero-slide-bg">
+            <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1600&q=80" alt="ظل شجرة إرد - إيلدن رينغ" class="slide-bg-img">
+            <div class="slide-overlay"></div>
+            
+            <div class="container slide-content-container scroll-reveal">
+                <!-- Carousel text contents (Right aligned in RTL) -->
+                <div class="slide-text-wrapper">
+                    <span class="game-category-tag" id="hero-game-tag">إيلدن رينغ</span>
+                    <h1 class="hero-title" id="hero-game-title">ظل شجرة إرد</h1>
+                    <p class="hero-desc" id="hero-game-desc">
+                        تستمر الملحمة الأسطورية في الأراضي البينية. استكشف آفاقاً مجهولة، واجه خصوماً فتاكين، واكشف الغطاء عن أسرار شجرة إرد المفقودة.
+                    </p>
+                    
+                    <div class="hero-cta-buttons">
+                        <a href="#" class="btn btn-primary btn-read-more">اقرأ المزيد</a>
+                        <a href="#" class="btn btn-video-watch">
+                            <span class="play-circle-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="10,8 16,12 10,16" />
+                                </svg>
+                            </span>
+                            شاهد العرض
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel navigation arrows -->
+        <button class="carousel-arrow arrow-prev" id="carousel-prev" aria-label="الخبر السابق">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9,18 15,12 9,6"></polyline>
+            </svg>
+        </button>
+        <button class="carousel-arrow arrow-next" id="carousel-next" aria-label="الخبر التالي">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="15,18 9,12 15,6"></polyline>
+            </svg>
+        </button>
+
+        <!-- Carousel indicators dots at the bottom -->
+        <div class="carousel-indicators">
+            <span class="indicator-dot active" data-slide="0"></span>
+            <span class="indicator-dot" data-slide="1"></span>
+            <span class="indicator-dot" data-slide="2"></span>
+        </div>
+    </section>
+
+    <!-- Latest News Section -->
+    <section class="news-section" role="region" aria-label="أحدث أخبار الألعاب">
+        <div class="container news-container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">أحدث الأخبار</h2>
+                <a href="#" class="view-all-link">عرض جميع الأخبار <span class="arrow-icon">←</span></a>
+            </div>
+            
+            <div class="news-grid">
+                <!-- News Card 1 -->
+                <article class="news-card scroll-reveal">
+                    <div class="news-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=400&h=300&q=80" alt="توسعة Starfield">
+                    </div>
+                    <div class="news-info">
+                        <span class="news-tag">أخبار</span>
+                        <h3 class="news-title">الإعلان رسمياً عن توسعة Starfield: Shattered Space</h3>
+                        <span class="news-time">منذ ساعتين</span>
+                    </div>
+                </article>
+
+                <!-- News Card 2 -->
+                <article class="news-card scroll-reveal" style="animation-delay: 0.15s;">
+                    <div class="news-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?auto=format&fit=crop&w=400&h=300&q=80" alt="مبيعات Wukong">
+                    </div>
+                    <div class="news-info">
+                        <span class="news-tag">أخبار</span>
+                        <h3 class="news-title">مبيعات Black Myth: Wukong تتجاوز ١٠ ملايين نسخة</h3>
+                        <span class="news-time">منذ ٥ ساعات</span>
+                    </div>
+                </article>
+
+                <!-- News Card 3 -->
+                <article class="news-card scroll-reveal" style="animation-delay: 0.3s;">
+                    <div class="news-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=400&h=300&q=80" alt="ثلاثية Tomb Raider">
+                    </div>
+                    <div class="news-info">
+                        <span class="news-tag">أخبار</span>
+                        <h3 class="news-title">إطلاق ثلاثية Tomb Raider المحسّنة رسمياً الآن</h3>
+                        <span class="news-time">منذ يوم</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Games Section -->
+    <section class="games-section" role="region" aria-label="الألعاب الموصى بها">
+        <div class="container games-container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">الألعاب المميزة</h2>
+                <a href="#" class="view-all-link">عرض جميع الألعاب <span class="arrow-icon">←</span></a>
+            </div>
+            
+            <div class="games-grid">
+                <!-- Game Card 1 -->
+                <div class="game-card scroll-reveal">
+                    <div class="game-poster-wrapper">
+                        <img src="https://images.unsplash.com/photo-1627856013091-fed6e4e30025?auto=format&fit=crop&w=250&h=350&q=80" alt="Elden Ring">
+                        <span class="rating-badge">9.8</span>
+                    </div>
+                    <h3 class="game-card-title">إيلدن رينغ</h3>
+                </div>
+
+                <!-- Game Card 2 -->
+                <div class="game-card scroll-reveal" style="animation-delay: 0.1s;">
+                    <div class="game-poster-wrapper">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=250&h=350&q=80" alt="Call of Duty">
+                        <span class="rating-badge">8.7</span>
+                    </div>
+                    <h3 class="game-card-title">كول أوف ديوتي</h3>
+                </div>
+
+                <!-- Game Card 3 -->
+                <div class="game-card scroll-reveal" style="animation-delay: 0.2s;">
+                    <div class="game-poster-wrapper">
+                        <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=250&h=350&q=80" alt="Helldivers 2">
+                        <span class="rating-badge">9.1</span>
+                    </div>
+                    <h3 class="game-card-title">هيل دايفرز 2</h3>
+                </div>
+
+                <!-- Game Card 4 -->
+                <div class="game-card scroll-reveal" style="animation-delay: 0.3s;">
+                    <div class="game-poster-wrapper">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=250&h=350&q=80" alt="Horizon">
+                        <span class="rating-badge">8.9</span>
+                    </div>
+                    <h3 class="game-card-title">هورايزون الغرب المحظور</h3>
+                </div>
+
+                <!-- Game Card 5 -->
+                <div class="game-card scroll-reveal" style="animation-delay: 0.4s;">
+                    <div class="game-poster-wrapper">
+                        <img src="https://images.unsplash.com/photo-1608889175123-8ec330b86f84?auto=format&fit=crop&w=250&h=350&q=80" alt="Spider-Man 2">
+                        <span class="rating-badge">9.0</span>
+                    </div>
+                    <h3 class="game-card-title">سبايدرمان 2</h3>
+                </div>
+
+                <!-- Game Card 6 -->
+                <div class="game-card scroll-reveal" style="animation-delay: 0.5s;">
+                    <div class="game-poster-wrapper">
+                        <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=250&h=350&q=80" alt="Resident Evil 4">
+                        <span class="rating-badge">8.8</span>
+                    </div>
+                    <h3 class="game-card-title">ريزدنت إيفل 4</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Releases Section -->
+    <section class="releases-section" role="region" aria-label="جدول الإصدارات القادمة">
+        <div class="container releases-container">
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">إصدارات قادمة منتظرة</h2>
+                <a href="#" class="view-all-link">جدول الإصدارات <span class="arrow-icon">←</span></a>
+            </div>
+            
+            <div class="releases-list">
+                <!-- Release Row 1 -->
+                <div class="release-row scroll-reveal">
+                    <div class="release-date">
+                        <span class="date-month">يونيو</span>
+                        <span class="date-day">07</span>
+                    </div>
+                    <div class="release-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1553481187-be93c21490a9?auto=format&fit=crop&w=200&h=120&q=80" alt="The First Descendant">
+                    </div>
+                    <div class="release-info">
+                        <h3>The First Descendant</h3>
+                        <span class="genre">تصويب / تقمص أدوار</span>
+                    </div>
+                    <div class="release-platforms">
+                        <span>الحاسب الشخصي / PS5 / Xbox Series X|S</span>
+                    </div>
+                    <div class="release-actions">
+                        <button class="btn btn-wishlist" aria-label="أضف لقائمة الأمنيات">
+                            <span class="heart-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </span>
+                            قائمة الأمنيات
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Release Row 2 -->
+                <div class="release-row scroll-reveal" style="animation-delay: 0.15s;">
+                    <div class="release-date">
+                        <span class="date-month">يونيو</span>
+                        <span class="date-day">14</span>
+                    </div>
+                    <div class="release-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=200&h=120&q=80" alt="Frostpunk 2">
+                    </div>
+                    <div class="release-info">
+                        <h3>Frostpunk 2</h3>
+                        <span class="genre">استراتيجية / بقاء</span>
+                    </div>
+                    <div class="release-platforms">
+                        <span>الحاسب الشخصي</span>
+                    </div>
+                    <div class="release-actions">
+                        <button class="btn btn-wishlist" aria-label="أضف لقائمة الأمنيات">
+                            <span class="heart-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </span>
+                            قائمة الأمنيات
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Release Row 3 -->
+                <div class="release-row scroll-reveal" style="animation-delay: 0.3s;">
+                    <div class="release-date">
+                        <span class="date-month">يونيو</span>
+                        <span class="date-day">21</span>
+                    </div>
+                    <div class="release-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=200&h=120&q=80" alt="Final Fantasy XVI">
+                    </div>
+                    <div class="release-info">
+                        <h3>Final Fantasy XVI</h3>
+                        <span class="genre">تقمص أدوار / أكشن</span>
+                    </div>
+                    <div class="release-platforms">
+                        <span>PS5</span>
+                    </div>
+                    <div class="release-actions">
+                        <button class="btn btn-wishlist" aria-label="أضف لقائمة الأمنيات">
+                            <span class="heart-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </span>
+                            قائمة الأمنيات
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section" role="region" aria-label="إحصائيات جيم زون">
+        <div class="container stats-container scroll-reveal">
+            <!-- Stat Item 1 -->
+            <div class="stat-item">
+                <div class="stat-icon-wrapper">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                </div>
+                <div class="stat-data">
+                    <span class="stat-number">٢ مليون+</span>
+                    <span class="stat-label">لاعب مسجّل</span>
+                </div>
+            </div>
+
+            <!-- Stat Item 2 -->
+            <div class="stat-item">
+                <div class="stat-icon-wrapper">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                        <path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"></path>
+                    </svg>
+                </div>
+                <div class="stat-data">
+                    <span class="stat-number">١٥٠٠+</span>
+                    <span class="stat-label">لعبة متوفرة</span>
+                </div>
+            </div>
+
+            <!-- Stat Item 3 -->
+            <div class="stat-item">
+                <div class="stat-icon-wrapper">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                        <path d="M4 22h16"></path>
+                        <path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34"></path>
+                        <path d="M12 2a6 6 0 0 1 6 6v5a6 6 0 0 1-6 6 6 6 0 0 1-6-6V8a6 6 0 0 1 6-6z"></path>
+                    </svg>
+                </div>
+                <div class="stat-data">
+                    <span class="stat-number">٢٥+</span>
+                    <span class="stat-label">بطولة رياضة إلكترونية</span>
+                </div>
+            </div>
+
+            <!-- Stat Item 4 -->
+            <div class="stat-item">
+                <div class="stat-icon-wrapper">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                </div>
+                <div class="stat-data">
+                    <span class="stat-number">١٠٠ ألف+</span>
+                    <span class="stat-label">عضو نشط</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer" role="contentinfo">
+        <div class="container footer-container scroll-reveal">
+            <div class="footer-top">
+                <a href="#" class="logo footer-logo" aria-label="شعار جيم زون بالتذييل">
+                    <span class="logo-prefix">GAME</span><span class="logo-suffix">ZONE</span>
+                </a>
+                <div class="footer-links">
+                    <a href="#">الرئيسية</a>
+                    <a href="#">الأخبار</a>
+                    <a href="#">الألعاب</a>
+                    <a href="#">المجتمع</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">جميع الحقوق محفوظة &copy; 2026. شبكة جيم زون للألعاب الإلكترونية.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script File -->
+    <script src="script.js"></script>
+</body>
+</html>

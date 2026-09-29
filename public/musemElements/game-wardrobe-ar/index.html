@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>غرفة الملابس — تخصيص الشخصية</title>
+    <meta name="description" content="اختر ملابسك وزيّني شخصيتك بأسلوبك الفريد في عالم مغامرات لا تنتهي.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@400;600;700;800&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome via kit-free CDN (no 404) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="game-screen" id="game-screen">
+
+    <!-- Background layers -->
+    <div class="bg-layer"></div>
+    <div class="bg-vignette"></div>
+
+    <!-- Floating room decorations -->
+    <div class="room-deco deco-a">🌸</div>
+    <div class="room-deco deco-b">⭐</div>
+    <div class="room-deco deco-c">💛</div>
+    <div class="room-deco deco-d">✨</div>
+    <div class="room-deco deco-e">🍃</div>
+
+    <!-- ══ TOP BAR ══ -->
+    <div class="top-bar">
+        <!-- Outfit label -->
+        <div class="outfit-label">
+            <span class="label-icon">👗</span>
+            <span class="label-text">الأزياء</span>
+            <button class="help-btn" id="help-btn" title="مساعدة">❓</button>
+        </div>
+
+        <!-- Category tabs strip -->
+        <div class="cat-strip" id="cat-strip" role="tablist" aria-label="فئات الملابس">
+            <!-- JS renders tabs here -->
+        </div>
+
+        <!-- Controller hints -->
+        <div class="ctrl-hints">
+            <span class="ctrl-chip">L2</span>
+            <span class="ctrl-sep">◂ ▸</span>
+            <span class="ctrl-chip">R2</span>
+        </div>
+    </div>
+
+    <!-- ══ MAIN AREA ══ -->
+    <div class="main-area">
+
+        <!-- Character preview -->
+        <div class="char-panel">
+            <!-- Rotate controls -->
+            <div class="rotate-col">
+                <button class="rot-btn" id="btn-rot-r" title="تدوير">↻</button>
+                <button class="rot-btn" id="btn-rot-l" title="عكس">↺</button>
+                <button class="rot-btn" id="btn-zoom"  title="تكبير">🔍</button>
+            </div>
+
+            <!-- Stage -->
+            <div class="char-stage" id="char-stage">
+                <div class="stage-glow"></div>
+                <div class="stage-shadow"></div>
+                <img
+                    src="assets/character.png"
+                    id="char-img"
+                    class="char-img"
+                    alt="شخصية المستكشفة"
+                    onerror="this.style.display='none'; document.getElementById('char-fallback').style.display='flex';"
+                >
+                <!-- Fallback if image fails -->
+                <div id="char-fallback" class="char-fallback" style="display:none;">🧒‍♀️</div>
+                <!-- Equipped label -->
+                <div class="equipped-tag" id="equipped-tag">
+                    <span id="equipped-name">زي المستكشفة</span>
+                    ✅
+                </div>
+            </div>
+        </div>
+
+        <!-- Outfit picker -->
+        <div class="picker-panel">
+            <!-- Header -->
+            <div class="picker-header">
+                <span class="pick-title">اختر الزي</span>
+                <div class="search-wrap">
+                    <span class="search-icon">🔍</span>
+                    <input
+                        type="search"
+                        id="search-input"
+                        placeholder="ابحث..."
+                        aria-label="ابحث عن زي"
+                    >
+                </div>
+            </div>
+
+            <!-- Items grid -->
+            <div class="items-grid" id="items-grid" role="list"></div>
+
+            <!-- Empty state -->
+            <div class="empty-state" id="empty-state" style="display:none;">
+                <div class="empty-icon">🔎</div>
+                <p>لا توجد نتائج</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══ BOTTOM BAR ══ -->
+    <div class="bottom-bar">
+        <div class="sel-info" id="sel-info">
+            <span class="sel-dot" id="sel-dot"></span>
+            <span id="sel-label">لم يُختَر أي زي</span>
+        </div>
+        <div class="action-btns">
+            <button class="btn btn-fav" id="btn-fav" aria-pressed="false">
+                <span class="btn-icon" id="fav-icon">🤍</span>
+                <span>الأزياء المفضلة</span>
+            </button>
+            <button class="btn btn-save" id="btn-save">
+                <span class="btn-icon">💾</span>
+                <span>حفظ</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ══ TOAST ══ -->
+    <div class="toast" id="toast" role="alert" aria-live="assertive">
+        <span id="toast-msg"></span>
+    </div>
+
+    <!-- ══ HELP MODAL ══ -->
+    <div class="modal-wrap" id="modal-wrap" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="modal-h">
+        <div class="modal-box">
+            <button class="modal-close" id="modal-close">✕</button>
+            <div class="modal-hero">👗</div>
+            <h2 id="modal-h">كيفية استخدام غرفة الملابس</h2>
+            <ol class="modal-steps">
+                <li><span class="step-n">١</span> اختر فئة من الشريط العلوي (قبعات، أزياء، أحذية...)</li>
+                <li><span class="step-n">٢</span> انقر على أي زي لمعاينته على شخصيتك</li>
+                <li><span class="step-n">٣</span> اضغط "حفظ" لتأكيد اختيارك</li>
+                <li><span class="step-n">٤</span> أضف أزياءك المفضلة للوصول السريع</li>
+            </ol>
+            <button class="btn btn-save" id="modal-ok" style="width:100%;justify-content:center;margin-top:8px;">
+                فهمت! لنبدأ 🎉
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<!-- JS: plain script — no type=module to avoid CORS issues on file:// -->
+<script src="js/main.js"></script>
+</body>
+</html>

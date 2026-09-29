@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ويزارد شوك — مجموعة الشخصيات السحرية</title>
+    <meta name="description" content="ويزارد شوك: قلعة مليئة بالسحر والمغامرات والسحرة. اكتشف مجموعتنا الحصرية من الشخصيات الفريدة.">
+    <meta property="og:title" content="ويزارد شوك — مجموعة الشخصيات السحرية">
+    <meta property="og:description" content="عالم من السحر والأشرار والأبطال. ابدأ رحلتك الآن.">
+
+    <!-- Arabic Typography: Cairo — clean, geometric, premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Press+Start+2P&family=Tajawal:wght@400;500;700;900&family=Rubik:wght@400;700;900&family=Mada:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/hero.css">
+</head>
+<body>
+
+    <!-- ====== CINEMATIC HERO ====== -->
+    <header class="site-hero" id="top">
+
+        <!-- Particle Canvas -->
+        <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+
+        <!-- Deep radial vignette -->
+        <div class="hero-vignette" aria-hidden="true"></div>
+
+        <!-- Scanline overlay (pixel aesthetic) -->
+        <div class="hero-scanlines" aria-hidden="true"></div>
+
+        <!-- Floating magic orbs -->
+        <div class="hero-orbs" aria-hidden="true">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+
+        <!-- Social Bar -->
+        <nav class="social-bar" role="navigation" aria-label="روابط التواصل الاجتماعي">
+            <a href="#" class="social-link" aria-label="تويتر"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="إنستغرام"><i class="fa-brands fa-instagram"></i></a>
+        </nav>
+
+        <!-- Pixel Skyline -->
+        <div class="skyline-container" aria-hidden="true">
+            <svg class="skyline-svg" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
+                <!-- Dark pixel buildings -->
+                <rect x="0" y="180" width="60" height="120" fill="#1a1230"/>
+                <rect x="10" y="160" width="40" height="20" fill="#1a1230"/>
+                <rect x="18" y="140" width="24" height="20" fill="#1a1230"/>
+                <!-- Windows -->
+                <rect x="15" y="185" width="8" height="8" fill="#ffd600" opacity="0.8"/>
+                <rect x="35" y="185" width="8" height="8" fill="#ffd600" opacity="0.5"/>
+                <rect x="15" y="205" width="8" height="8" fill="#ffd600" opacity="0.3"/>
+                <rect x="35" y="205" width="8" height="8" fill="#ffd600" opacity="0.9"/>
+
+                <rect x="70" y="140" width="80" height="160" fill="#150f28"/>
+                <rect x="80" y="120" width="60" height="20" fill="#150f28"/>
+                <rect x="100" y="100" width="20" height="20" fill="#150f28"/>
+                <!-- Wizard tower -->
+                <polygon points="110,80 95,100 125,100" fill="#2a1a4a"/>
+                <!-- Windows -->
+                <rect x="85" y="150" width="10" height="10" fill="#ffd600" opacity="0.7"/>
+                <rect x="105" y="150" width="10" height="10" fill="#ffd600" opacity="0.4"/>
+                <rect x="125" y="150" width="10" height="10" fill="#ffd600" opacity="0.9"/>
+                <rect x="85" y="170" width="10" height="10" fill="#ffd600" opacity="0.2"/>
+                <rect x="125" y="170" width="10" height="10" fill="#ffd600" opacity="0.6"/>
+
+                <rect x="160" y="160" width="50" height="140" fill="#1a1230"/>
+                <polygon points="185,140 165,165 205,165" fill="#2a1a4a"/>
+                <rect x="170" y="175" width="8" height="8" fill="#ffd600" opacity="0.8"/>
+                <rect x="192" y="175" width="8" height="8" fill="#ffd600" opacity="0.5"/>
+                <rect x="170" y="195" width="8" height="8" fill="#ffd600" opacity="0.3"/>
+
+                <rect x="220" y="120" width="100" height="180" fill="#0f0c22"/>
+                <rect x="240" y="100" width="60" height="20" fill="#0f0c22"/>
+                <rect x="255" y="80" width="30" height="20" fill="#0f0c22"/>
+                <polygon points="270,60 250,85 290,85" fill="#1a0f35"/>
+                <rect x="230" y="130" width="12" height="12" fill="#7b5ea7" opacity="0.6"/>
+                <rect x="255" y="130" width="12" height="12" fill="#ffd600" opacity="0.8"/>
+                <rect x="280" y="130" width="12" height="12" fill="#ffd600" opacity="0.4"/>
+                <rect x="230" y="155" width="12" height="12" fill="#ffd600" opacity="0.7"/>
+                <rect x="255" y="155" width="12" height="12" fill="#7b5ea7" opacity="0.5"/>
+                <rect x="280" y="155" width="12" height="12" fill="#ffd600" opacity="0.9"/>
+                <rect x="230" y="180" width="12" height="12" fill="#ffd600" opacity="0.3"/>
+                <rect x="280" y="180" width="12" height="12" fill="#ffd600" opacity="0.6"/>
+
+                <rect x="330" y="150" width="70" height="150" fill="#1a1230"/>
+                <rect x="340" y="130" width="50" height="20" fill="#1a1230"/>
+                <polygon points="365,110 345,135 385,135" fill="#2a1a4a"/>
+                <rect x="343" y="160" width="10" height="10" fill="#ffd600" opacity="0.7"/>
+                <rect x="363" y="160" width="10" height="10" fill="#ffd600" opacity="0.4"/>
+                <rect x="383" y="160" width="10" height="10" fill="#ffd600" opacity="0.9"/>
+
+                <rect x="410" y="100" width="90" height="200" fill="#130e25"/>
+                <rect x="415" y="80" width="80" height="20" fill="#130e25"/>
+                <rect x="435" y="60" width="40" height="20" fill="#130e25"/>
+                <rect x="450" y="40" width="10" height="20" fill="#7b5ea7"/>
+                <!-- Moon -->
+                <circle cx="500" cy="50" r="25" fill="#ffd600" opacity="0.15"/>
+                <circle cx="510" cy="45" r="18" fill="#0a0818"/>
+
+                <rect x="420" y="115" width="12" height="12" fill="#ffd600" opacity="0.7"/>
+                <rect x="445" y="115" width="12" height="12" fill="#ffd600" opacity="0.4"/>
+                <rect x="470" y="115" width="12" height="12" fill="#7b5ea7" opacity="0.8"/>
+                <rect x="420" y="140" width="12" height="12" fill="#ffd600" opacity="0.9"/>
+                <rect x="470" y="140" width="12" height="12" fill="#ffd600" opacity="0.3"/>
+                <rect x="420" y="165" width="12" height="12" fill="#7b5ea7" opacity="0.5"/>
+                <rect x="445" y="165" width="12" height="12" fill="#ffd600" opacity="0.8"/>
+                <rect x="470" y="165" width="12" height="12" fill="#ffd600" opacity="0.6"/>
+
+                <rect x="510" y="130" width="65" height="170" fill="#1a1230"/>
+                <polygon points="542,110 520,135 565,135" fill="#2a1a4a"/>
+                <rect x="520" y="145" width="10" height="10" fill="#ffd600" opacity="0.7"/>
+                <rect x="545" y="145" width="10" height="10" fill="#ffd600" opacity="0.3"/>
+                <rect x="520" y="168" width="10" height="10" fill="#ffd600" opacity="0.9"/>
+                <rect x="545" y="168" width="10" height="10" fill="#7b5ea7" opacity="0.7"/>
+
+                <rect x="585" y="160" width="80" height="140" fill="#0a0818"/>
+                <rect x="595" y="140" width="60" height="20" fill="#0a0818"/>
+                <rect x="615" y="120" width="20" height="20" fill="#0a0818"/>
+                <rect x="593" y="170" width="12" height="12" fill="#ffd600" opacity="0.5"/>
+                <rect x="615" y="170" width="12" height="12" fill="#ffd600" opacity="0.8"/>
+                <rect x="638" y="170" width="12" height="12" fill="#7b5ea7" opacity="0.6"/>
+                <rect x="615" y="193" width="12" height="12" fill="#ffd600" opacity="0.4"/>
+
+                <rect x="675" y="110" width="100" height="190" fill="#150f28"/>
+                <rect x="685" y="90" width="80" height="20" fill="#150f28"/>
+                <rect x="705" y="70" width="40" height="20" fill="#150f28"/>
+                <polygon points="725,50 703,75 747,75" fill="#1a0f35"/>
+                <rect x="688" y="125" width="12" height="12" fill="#ffd600" opacity="0.8"/>
+                <rect x="713" y="125" width="12" height="12" fill="#ffd600" opacity="0.4"/>
+                <rect x="738" y="125" width="12" height="12" fill="#ffd600" opacity="0.7"/>
+                <rect x="688" y="150" width="12" height="12" fill="#7b5ea7" opacity="0.5"/>
+                <rect x="738" y="150" width="12" height="12" fill="#ffd600" opacity="0.9"/>
+                <rect x="713" y="175" width="12" height="12" fill="#ffd600" opacity="0.6"/>
+                <rect x="688" y="200" width="12" height="12" fill="#ffd600" opacity="0.3"/>
+                <rect x="738" y="200" width="12" height="12" fill="#7b5ea7" opacity="0.7"/>
+
+                <rect x="785" y="150" width="70" height="150" fill="#1a1230"/>
+                <polygon points="820,130 798,155 842,155" fill="#2a1a4a"/>
+                <rect x="795" y="165" width="10" height="10" fill="#ffd600" opacity="0.7"/>
+                <rect x="820" y="165" width="10" height="10" fill="#ffd600" opacity="0.4"/>
+                <rect x="795" y="188" width="10" height="10" fill="#ffd600" opacity="0.9"/>
+                <rect x="820" y="188" width="10" height="10" fill="#7b5ea7" opacity="0.5"/>
+
+                <rect x="865" y="120" width="90" height="180" fill="#0f0c22"/>
+                <rect x="875" y="100" width="70" height="20" fill="#0f0c22"/>
+                <rect x="895" y="80" width="30" height="20" fill="#0f0c22"/>
+                <polygon points="910,60 890,85 930,85" fill="#1a0f35"/>
+                <rect x="878" y="135" width="12" height="12" fill="#ffd600" opacity="0.7"/>
+                <rect x="903" y="135" width="12" height="12" fill="#7b5ea7" opacity="0.5"/>
+                <rect x="928" y="135" width="12" height="12" fill="#ffd600" opacity="0.8"/>
+                <rect x="878" y="160" width="12" height="12" fill="#ffd600" opacity="0.4"/>
+                <rect x="928" y="160" width="12" height="12" fill="#ffd600" opacity="0.6"/>
+                <rect x="903" y="185" width="12" height="12" fill="#ffd600" opacity="0.9"/>
+
+                <rect x="965" y="165" width="60" height="135" fill="#1a1230"/>
+                <polygon points="995,145 972,170 1018,170" fill="#2a1a4a"/>
+                <rect x="973" y="180" width="10" height="10" fill="#ffd600" opacity="0.8"/>
+                <rect x="998" y="180" width="10" height="10" fill="#ffd600" opacity="0.3"/>
+                <rect x="973" y="203" width="10" height="10" fill="#7b5ea7" opacity="0.7"/>
+
+                <rect x="1035" y="130" width="80" height="170" fill="#130e25"/>
+                <rect x="1045" y="110" width="60" height="20" fill="#130e25"/>
+                <rect x="1065" y="90" width="20" height="20" fill="#130e25"/>
+                <rect x="1043" y="145" width="12" height="12" fill="#ffd600" opacity="0.6"/>
+                <rect x="1068" y="145" width="12" height="12" fill="#ffd600" opacity="0.9"/>
+                <rect x="1093" y="145" width="12" height="12" fill="#7b5ea7" opacity="0.5"/>
+                <rect x="1043" y="170" width="12" height="12" fill="#ffd600" opacity="0.3"/>
+                <rect x="1093" y="170" width="12" height="12" fill="#ffd600" opacity="0.8"/>
+
+                <rect x="1125" y="150" width="75" height="150" fill="#0a0818"/>
+                <polygon points="1162,130 1140,155 1185,155" fill="#1a0f35"/>
+                <rect x="1133" y="165" width="10" height="10" fill="#ffd600" opacity="0.7"/>
+                <rect x="1158" y="165" width="10" height="10" fill="#ffd600" opacity="0.4"/>
+                <rect x="1133" y="188" width="10" height="10" fill="#ffd600" opacity="0.9"/>
+                <rect x="1158" y="188" width="10" height="10" fill="#7b5ea7" opacity="0.5"/>
+
+                <!-- Ground -->
+                <rect x="0" y="295" width="1200" height="5" fill="#0a0818"/>
+            </svg>
+        </div>
+
+        <!-- Hero Main Content -->
+        <div class="hero-content">
+
+            <!-- Badge row -->
+            <div class="hero-badge-row" aria-label="إحصائيات المجموعة">
+                <span class="hero-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> ٦ شخصيات نادرة</span>
+                <span class="hero-badge-dot" aria-hidden="true"></span>
+                <span class="hero-badge"><i class="fa-solid fa-shield-halved"></i> قلعة سحرية واحدة</span>
+                <span class="hero-badge-dot" aria-hidden="true"></span>
+                <span class="hero-badge"><i class="fa-solid fa-dragon"></i> عالم لا نهاية له</span>
+            </div>
+
+            <!-- Giant Animated Title -->
+            <div class="hero-title-block">
+                <h1 class="hero-title" aria-label="ويزارد شوك">
+                    <span class="hero-title-word" id="hero-word-1">ويزارد</span>
+                    <span class="hero-title-word hero-title-accent" id="hero-word-2">شوك</span>
+                </h1>
+                <!-- Shimmer bar under title -->
+                <div class="hero-title-bar" aria-hidden="true"></div>
+            </div>
+
+            <!-- Subtitle -->
+            <p class="hero-subtitle">
+                قلعة مليئة بالسحر، والأشرار، والأبطال — <em>من سيُنقذ العالم؟</em>
+            </p>
+
+            <!-- CTA Group -->
+            <div class="hero-cta-group">
+                <a href="#collection" class="btn-cta btn-cta-primary" id="btn-cta-hero">
+                    <i class="fa-solid fa-wand-sparkles" aria-hidden="true"></i>
+                    <span>استعرض المجموعة</span>
+                </a>
+                <a href="#intro" class="btn-cta btn-cta-ghost">
+                    <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                    <span>اعرف القصة</span>
+                </a>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="hero-scroll-hint" aria-hidden="true">
+                <div class="scroll-chevrons">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Pixel Skyline (kept, sits behind content) -->
+        <div class="skyline-container" aria-hidden="true">
+            <svg class="skyline-svg" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="180" width="60" height="120" fill="#1a1230"/>
+                <rect x="10" y="160" width="40" height="20" fill="#1a1230"/>
+                <rect x="18" y="140" width="24" height="20" fill="#1a1230"/>
+                <rect x="15" y="185" width="8" height="8" fill="#ffd600" opacity="0.8"/>
+                <rect x="35" y="185" width="8" height="8" fill="#ffd600" opacity="0.5"/>
+                <rect x="15" y="205" width="8" height="8" fill="#ffd600" opacity="0.3"/>
+                <rect x="35" y="205" width="8" height="8" fill="#ffd600" opacity="0.9"/>
+                <rect x="70" y="140" width="80" height="160" fill="#150f28"/>
+                <rect x="80" y="120" width="60" height="20" fill="#150f28"/>
+                <rect x="100" y="100" width="20" height="20" fill="#150f28"/>
+                <polygon points="110,80 95,100 125,100" fill="#2a1a4a"/>
+                <rect x="85" y="150" width="10" height="10" fill="#ffd600" opacity="0.7"/>
+                <rect x="105" y="150" width="10" height="10" fill="#ffd600" opacity="0.4"/>
+                <rect x="125" y="150" width="10" height="10" fill="#ffd600" opacity="0.9"/>
+                <rect x="85" y="170" width="10" height="10" fill="#ffd600" opacity="0.2"/>
+                <rect x="125" y="170" width="10" height="10" fill="#ffd600" opacity="0.6"/>
+                <rect x="160" y="160" width="50" height="140" fill="#1a1230"/>
+                <polygon points="185,140 165,165 205,165" fill="#2a1a4a"/>
+                <rect x="170" y="175" width="8" height="8" fill="#ffd600" opacity="0.8"/>
+                <rect x="192" y="175" width="8" height="8" fill="#ffd600" opacity="0.5"/>
+                <rect x="170" y="195" width="8" height="8" fill="#ffd600" opacity="0.3"/>
+                <rect x="220" y="120" width="100" height="180" fill="#0f0c22"/>
+                <rect x="240" y="100" width="60" height="20" fill="#0f0c22"/>
+                <rect x="255" y="80" width="30" height="20" fill="#0f0c22"/>
+                <polygon points="270,60 250,85 290,85" fill="#1a0f35"/>
+                <rect x="230" y="130" width="12" height="12" fill="#7b5ea7" opacity="0.6"/>
+                <rect x="255" y="130" width="12" height="12" fill="#ffd600" opacity="0.8"/>
+                <rect x="280" y="130" width="12" height="12" fill="#ffd600" opacity="0.4"/>
+                <rect x="230" y="155" width="12" height="12" fill="#ffd600" opacity="0.7"/>
+                <rect x="255" y="155" width="12" height="12" fill="#7b5ea7" opacity="0.5"/>
+                <rect x="280" y="155" width="12" height="12" fill="#ffd600" opacity="0.9"/>
+                <rect x="330" y="150" width="70" height="150" fill="#1a1230"/>
+                <rect x="340" y="130" width="50" height="20" fill="#1a1230"/>
+                <polygon points="365,110 345,135 385,135" fill="#2a1a4a"/>
+                <rect x="343" y="160" width="10" height="10" fill="#ffd600" opacity="0.7"/>
+                <rect x="363" y="160" width="10" height="10" fill="#ffd600" opacity="0.4"/>
+                <rect x="383" y="160" width="10" height="10" fill="#ffd600" opacity="0.9"/>
+                <rect x="410" y="100" width="90" height="200" fill="#130e25"/>
+                <rect x="415" y="80" width="80" height="20" fill="#130e25"/>
+                <rect x="435" y="60" width="40" height="20" fill="#130e25"/>
+                <rect x="450" y="40" width="10" height="20" fill="#7b5ea7"/>
+                <circle cx="500" cy="50" r="25" fill="#ffd600" opacity="0.15"/>
+                <circle cx="510" cy="45" r="18" fill="#0a0818"/>
+                <rect x="420" y="115" width="12" height="12" fill="#ffd600" opacity="0.7"/>
+                <rect x="445" y="115" width="12" height="12" fill="#ffd600" opacity="0.4"/>
+                <rect x="470" y="115" width="12" height="12" fill="#7b5ea7" opacity="0.8"/>
+                <rect x="420" y="140" width="12" height="12" fill="#ffd600" opacity="0.9"/>
+                <rect x="470" y="140" width="12" height="12" fill="#ffd600" opacity="0.3"/>
+                <rect x="420" y="165" width="12" height="12" fill="#7b5ea7" opacity="0.5"/>
+                <rect x="445" y="165" width="12" height="12" fill="#ffd600" opacity="0.8"/>
+                <rect x="470" y="165" width="12" height="12" fill="#ffd600" opacity="0.6"/>
+                <rect x="510" y="130" width="65" height="170" fill="#1a1230"/>
+                <polygon points="542,110 520,135 565,135" fill="#2a1a4a"/>
+                <rect x="520" y="145" width="10" height="10" fill="#ffd600" opacity="0.7"/>
+                <rect x="545" y="145" width="10" height="10" fill="#ffd600" opacity="0.3"/>
+                <rect x="520" y="168" width="10" height="10" fill="#ffd600" opacity="0.9"/>
+                <rect x="545" y="168" width="10" height="10" fill="#7b5ea7" opacity="0.7"/>
+                <rect x="585" y="160" width="80" height="140" fill="#0a0818"/>
+                <rect x="595" y="140" width="60" height="20" fill="#0a0818"/>
+                <rect x="615" y="120" width="20" height="20" fill="#0a0818"/>
+                <rect x="593" y="170" width="12" height="12" fill="#ffd600" opacity="0.5"/>
+                <rect x="615" y="170" width="12" height="12" fill="#ffd600" opacity="0.8"/>
+                <rect x="638" y="170" width="12" height="12" fill="#7b5ea7" opacity="0.6"/>
+                <rect x="615" y="193" width="12" height="12" fill="#ffd600" opacity="0.4"/>
+                <rect x="675" y="110" width="100" height="190" fill="#150f28"/>
+                <rect x="685" y="90" width="80" height="20" fill="#150f28"/>
+                <rect x="705" y="70" width="40" height="20" fill="#150f28"/>
+                <polygon points="725,50 703,75 747,75" fill="#1a0f35"/>
+                <rect x="688" y="125" width="12" height="12" fill="#ffd600" opacity="0.8"/>
+                <rect x="713" y="125" width="12" height="12" fill="#ffd600" opacity="0.4"/>
+                <rect x="738" y="125" width="12" height="12" fill="#ffd600" opacity="0.7"/>
+                <rect x="688" y="150" width="12" height="12" fill="#7b5ea7" opacity="0.5"/>
+                <rect x="738" y="150" width="12" height="12" fill="#ffd600" opacity="0.9"/>
+                <rect x="713" y="175" width="12" height="12" fill="#ffd600" opacity="0.6"/>
+                <rect x="688" y="200" width="12" height="12" fill="#ffd600" opacity="0.3"/>
+                <rect x="738" y="200" width="12" height="12" fill="#7b5ea7" opacity="0.7"/>
+                <rect x="785" y="150" width="70" height="150" fill="#1a1230"/>
+                <polygon points="820,130 798,155 842,155" fill="#2a1a4a"/>
+                <rect x="795" y="165" width="10" height="10" fill="#ffd600" opacity="0.7"/>
+                <rect x="820" y="165" width="10" height="10" fill="#ffd600" opacity="0.4"/>
+                <rect x="795" y="188" width="10" height="10" fill="#ffd600" opacity="0.9"/>
+                <rect x="820" y="188" width="10" height="10" fill="#7b5ea7" opacity="0.5"/>
+                <rect x="865" y="120" width="90" height="180" fill="#0f0c22"/>
+                <rect x="875" y="100" width="70" height="20" fill="#0f0c22"/>
+                <rect x="895" y="80" width="30" height="20" fill="#0f0c22"/>
+                <polygon points="910,60 890,85 930,85" fill="#1a0f35"/>
+                <rect x="878" y="135" width="12" height="12" fill="#ffd600" opacity="0.7"/>
+                <rect x="903" y="135" width="12" height="12" fill="#7b5ea7" opacity="0.5"/>
+                <rect x="928" y="135" width="12" height="12" fill="#ffd600" opacity="0.8"/>
+                <rect x="878" y="160" width="12" height="12" fill="#ffd600" opacity="0.4"/>
+                <rect x="928" y="160" width="12" height="12" fill="#ffd600" opacity="0.6"/>
+                <rect x="903" y="185" width="12" height="12" fill="#ffd600" opacity="0.9"/>
+                <rect x="965" y="165" width="60" height="135" fill="#1a1230"/>
+                <polygon points="995,145 972,170 1018,170" fill="#2a1a4a"/>
+                <rect x="973" y="180" width="10" height="10" fill="#ffd600" opacity="0.8"/>
+                <rect x="998" y="180" width="10" height="10" fill="#ffd600" opacity="0.3"/>
+                <rect x="973" y="203" width="10" height="10" fill="#7b5ea7" opacity="0.7"/>
+                <rect x="1035" y="130" width="80" height="170" fill="#130e25"/>
+                <rect x="1045" y="110" width="60" height="20" fill="#130e25"/>
+                <rect x="1065" y="90" width="20" height="20" fill="#130e25"/>
+                <rect x="1043" y="145" width="12" height="12" fill="#ffd600" opacity="0.6"/>
+                <rect x="1068" y="145" width="12" height="12" fill="#ffd600" opacity="0.9"/>
+                <rect x="1093" y="145" width="12" height="12" fill="#7b5ea7" opacity="0.5"/>
+                <rect x="1043" y="170" width="12" height="12" fill="#ffd600" opacity="0.3"/>
+                <rect x="1093" y="170" width="12" height="12" fill="#ffd600" opacity="0.8"/>
+                <rect x="1125" y="150" width="75" height="150" fill="#0a0818"/>
+                <polygon points="1162,130 1140,155 1185,155" fill="#1a0f35"/>
+                <rect x="1133" y="165" width="10" height="10" fill="#ffd600" opacity="0.7"/>
+                <rect x="1158" y="165" width="10" height="10" fill="#ffd600" opacity="0.4"/>
+                <rect x="1133" y="188" width="10" height="10" fill="#ffd600" opacity="0.9"/>
+                <rect x="1158" y="188" width="10" height="10" fill="#7b5ea7" opacity="0.5"/>
+                <rect x="0" y="295" width="1200" height="5" fill="#0a0818"/>
+            </svg>
+        </div>
+
+    </header>
+
+    <!-- ====== INTRO SECTION ====== -->
+    <section class="intro-section" id="intro">
+        <div class="intro-container">
+            <div class="intro-block">
+                <p class="intro-lead">
+                    ويزارد شوك هو قلعة مليئة بالسحر، والمغامرات، والساحرات، والسحرة.
+                </p>
+                <p class="intro-body">
+                    ساحر شرير يشنّ هجماته على السحرة والساحرات وعامة الناس!
+                    العالم ينهار والأرواح تُزهق — لا بدّ أن يظهر بطل. لكن من يكون؟
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CHARACTER COLLECTION ====== -->
+    <section class="collection-section" id="collection">
+        <div class="collection-container">
+
+            <!-- Row 1 -->
+            <div class="characters-grid" role="list">
+
+                <!-- Character 1: Leopold The Old -->
+                <article class="char-card" role="listitem" id="card-leopold-old">
+                    <div class="char-img-box">
+                        <img src="assets/images/leopold-old.png" alt="ليوبولد الشيخ — ساحر يرتدي رداءً بنفسجياً يحمل عصا سحرية">
+                        <div class="char-glow glow-pink" aria-hidden="true"></div>
+                    </div>
+                    <div class="char-info">
+                        <h2 class="char-name">ليوبولد الشيخ</h2>
+                        <button class="btn-collect" id="collect-leopold-old" data-char="ليوبولد الشيخ" aria-label="اقتنِ شخصية ليوبولد الشيخ">
+                            <span class="btn-collect-text">اقتنِ</span>
+                            <span class="btn-collect-icon" aria-hidden="true">⚡</span>
+                        </button>
+                        <p class="char-desc">
+                            منارة نور وحكمة لجيل الشباب من السحرة في زمن الفوضى والانهيار.
+                            للأسف، لا يُحسن الطهو — ولا يعرف حتى كيف يصنع شطيرة.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Character 2: Dark Lord Merciless -->
+                <article class="char-card" role="listitem" id="card-dark-lord">
+                    <div class="char-img-box">
+                        <img src="assets/images/dark-lord.png" alt="السيد المظلم اللارحيم — شرير بدرع سوداء يحمل مشعلاً أخضر">
+                        <div class="char-glow glow-teal" aria-hidden="true"></div>
+                    </div>
+                    <div class="char-info">
+                        <h2 class="char-name">السيد المظلم اللارحيم</h2>
+                        <button class="btn-collect" id="collect-dark-lord" data-char="السيد المظلم" aria-label="اقتنِ شخصية السيد المظلم">
+                            <span class="btn-collect-text">اقتنِ</span>
+                            <span class="btn-collect-icon" aria-hidden="true">⚡</span>
+                        </button>
+                        <p class="char-desc">
+                            يسعى إلى أن يُعترف به سيداً مطلقاً وأستاذاً للسحر الأسود.
+                            غير أن السحر الأسود لا وجود له في الواقع — لونه المفضل زهري الفراولة،
+                            وأمه لا تزال تناديه باسمه الحقيقي: إيان.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Character 3: Recresha -->
+                <article class="char-card" role="listitem" id="card-recresha">
+                    <div class="char-img-box">
+                        <img src="assets/images/recresha.png" alt="ريكريشا وذئبها — ساحرة صغيرة مع ذئب أبيض">
+                        <div class="char-glow glow-blue" aria-hidden="true"></div>
+                    </div>
+                    <div class="char-info">
+                        <h2 class="char-name">ريكريشا وذئبها</h2>
+                        <button class="btn-collect" id="collect-recresha" data-char="ريكريشا" aria-label="اقتنِ شخصية ريكريشا">
+                            <span class="btn-collect-text">اقتنِ</span>
+                            <span class="btn-collect-icon" aria-hidden="true">⚡</span>
+                        </button>
+                        <p class="char-desc">
+                            ريكريشا ذكية للغاية ولا تنفك تُعاوِنها صديقتها المخلصة،
+                            الذئبة الوفية التي لا تفارقها قط.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Row 2 -->
+            <div class="characters-grid" role="list">
+
+                <!-- Character 4: Norris Pickle -->
+                <article class="char-card" role="listitem" id="card-norris">
+                    <div class="char-img-box">
+                        <img src="assets/images/norris.png" alt="نوريس المخلل — ساحر صغير بعباءة سوداء">
+                        <div class="char-glow glow-purple" aria-hidden="true"></div>
+                    </div>
+                    <div class="char-info">
+                        <h2 class="char-name">نوريس المخلل</h2>
+                        <button class="btn-collect" id="collect-norris" data-char="نوريس المخلل" aria-label="اقتنِ شخصية نوريس المخلل">
+                            <span class="btn-collect-text">اقتنِ</span>
+                            <span class="btn-collect-icon" aria-hidden="true">⚡</span>
+                        </button>
+                        <p class="char-desc">
+                            فاشل في السحر، يكره الدغدغة. يعتقد في بعض الأحيان أن المخلل يمثل قوة.
+                            يحمل دائماً زيت الأستاذ ليحمي نفسه من الوحوش المرعبة والذئاب والندوب.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Character 5: Leopold The Gold -->
+                <article class="char-card" role="listitem" id="card-leopold-gold">
+                    <div class="char-img-box">
+                        <img src="assets/images/leopold-gold.png" alt="ليوبولد الذهبي — ساحر شاب بأرداء ذهبية">
+                        <div class="char-glow glow-yellow" aria-hidden="true"></div>
+                    </div>
+                    <div class="char-info">
+                        <h2 class="char-name">ليوبولد الذهبي</h2>
+                        <button class="btn-collect" id="collect-leopold-gold" data-char="ليوبولد الذهبي" aria-label="اقتنِ شخصية ليوبولد الذهبي">
+                            <span class="btn-collect-text">اقتنِ</span>
+                            <span class="btn-collect-icon" aria-hidden="true">⚡</span>
+                        </button>
+                        <p class="char-desc">
+                            الأخ التعيس لليوبولد الشيخ. بعد مشاهدته درساً في الكيمياء على ويزارد تيوب،
+                            حوّل المملكة بأسرها إلى ذهب صافٍ — فانهار الاقتصاد وأُحرقت مكتبة الاحتفالات
+                            للتدفئة.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Character 6: Randall Mawr -->
+                <article class="char-card" role="listitem" id="card-randall">
+                    <div class="char-img-box">
+                        <img src="assets/images/randall.png" alt="رانديل ماور — محارب شاب بدرع أحمر ذهبي">
+                        <div class="char-glow glow-red" aria-hidden="true"></div>
+                    </div>
+                    <div class="char-info">
+                        <h2 class="char-name">رانديل ماور</h2>
+                        <button class="btn-collect" id="collect-randall" data-char="رانديل ماور" aria-label="اقتنِ شخصية رانديل ماور">
+                            <span class="btn-collect-text">اقتنِ</span>
+                            <span class="btn-collect-icon" aria-hidden="true">⚡</span>
+                        </button>
+                        <p class="char-desc">
+                            الابن الوحيد للملك وان. تخلّى عن حقه في العرش اختياراً،
+                            وسار مع قبائل الشمال بحثاً عن المغامرة — فوجد نفسه ضائعاً في
+                            عصيدة الجبل في أفينا.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-brand">© ويزارد شوك</p>
+            <div class="footer-socials">
+                <a href="#" aria-label="تويتر"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="إنستغرام"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container" role="status" aria-live="polite"></div>
+
+    <script src="js/main.js" type="module"></script>
+
+</body>
+</html>

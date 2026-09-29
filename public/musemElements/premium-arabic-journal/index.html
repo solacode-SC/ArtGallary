@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="سكون - دفتر اليوميات الرقمي والتأمل الشخصي لمراجعة الأفكار والمشاعر اليومية بتصميم عربي فاخر وتكامل تفاعلي للكتابة.">
+    <title>سُكُون | دفتر التأمل واليوميات الذكي</title>
+    
+    <!-- Google Fonts: Tajawal for structural UI and Aref Ruqaa for elegant handwritten content -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Aref+Ruqaa:wght@400;700&family=Alexandria:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Main Navigation Header -->
+    <header class="journal-header">
+        <div class="header-container">
+            <!-- Left: Logo (RTL mirrored to start) -->
+            <div class="header-left">
+                <a href="#" class="logo-wrap" aria-label="الصفحة الرئيسية لسكون">
+                    <svg class="logo-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        <path d="M2 12h20"/>
+                    </svg>
+                    <span class="logo-title">سُكُون</span>
+                </a>
+                <nav class="nav-links-menu" aria-label="روابط التنقل">
+                    <a href="#" class="nav-link active">الرئيسية</a>
+                    <a href="#" class="nav-link">الأسعار</a>
+                    <a href="#" class="nav-link">المدونة</a>
+                </nav>
+            </div>
+
+            <!-- Right: Dropdowns & Avatar Profile (RTL mirrored to end) -->
+            <div class="header-right">
+                <!-- Language Selector -->
+                <div class="lang-selector">
+                    <button class="lang-btn" id="lang-menu-btn">
+                        <span>العربية</span>
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                </div>
+                <!-- Theme Toggle (Light/Dark mode) -->
+                <button class="theme-toggle-btn" aria-label="تغيير المظهر">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                </button>
+                <!-- Profile Avatar user -->
+                <div class="user-avatar-wrap">
+                    <div class="avatar-circle">
+                        <span>ص أ</span> <!-- Initials for صوفيا أحمد -->
+                    </div>
+                    <span class="avatar-name">صوفيا</span>
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Workspace Layout (RTL Split) -->
+    <main class="journal-layout-container">
+        <div class="journal-layout">
+            
+            <!-- RIGHT SIDEBAR: Date History list (Mirrored for RTL) -->
+            <aside class="date-history-sidebar" aria-label="سجل الأيام السابقة">
+                <!-- Search bar for diary contents -->
+                <div class="sidebar-search-wrap">
+                    <input type="text" id="sidebar-search-input" placeholder="ابحث في اليوميات..." aria-label="البحث في اليوميات">
+                </div>
+
+                <div class="sidebar-scroll-wrapper">
+                    <!-- Today day card -->
+                    <button class="date-card-btn active" data-date-key="today">
+                        <span class="card-day-lbl">اليوم</span>
+                        <span class="card-day-num">٢٧</span>
+                        <span class="card-month-lbl">يوليو</span>
+                    </button>
+
+                    <!-- Yesterday card -->
+                    <button class="date-card-btn" data-date-key="yesterday">
+                        <span class="card-day-lbl">الأحد</span>
+                        <span class="card-day-num">٢٦</span>
+                        <span class="card-month-lbl">ديسمبر</span>
+                    </button>
+
+                    <!-- Past dates -->
+                    <button class="date-card-btn" data-date-key="may25">
+                        <span class="card-day-lbl">السبت</span>
+                        <span class="card-day-num">٢٥</span>
+                        <span class="card-month-lbl">مايو</span>
+                    </button>
+
+                    <button class="date-card-btn" data-date-key="apr29">
+                        <span class="card-day-lbl">الجمعة</span>
+                        <span class="card-day-num">٢٩</span>
+                        <span class="card-month-lbl">أبريل</span>
+                    </button>
+
+                    <button class="date-card-btn" data-date-key="mar23">
+                        <span class="card-day-lbl">الخميس</span>
+                        <span class="card-day-num">٢٣</span>
+                        <span class="card-month-lbl">مارس</span>
+                    </button>
+
+                    <button class="date-card-btn" data-date-key="nov19">
+                        <span class="card-day-lbl">الأربعاء</span>
+                        <span class="card-day-num">١٩</span>
+                        <span class="card-month-lbl">نوفمبر</span>
+                    </button>
+
+                    <!-- Additional content entries -->
+                    <button class="date-card-btn" data-date-key="june12">
+                        <span class="card-day-lbl">الخميس</span>
+                        <span class="card-day-num">١٢</span>
+                        <span class="card-month-lbl">يونيو</span>
+                    </button>
+
+                    <button class="date-card-btn" data-date-key="oct04">
+                        <span class="card-day-lbl">السبت</span>
+                        <span class="card-day-num">٠٤</span>
+                        <span class="card-month-lbl">أكتوبر</span>
+                    </button>
+                </div>
+            </aside>
+
+            <!-- CENTER: Realistic Open Binder Notebook Spread -->
+            <section class="binder-notebook-spread" aria-label="دفتر المذكرات المفتوح">
+                <div class="notebook-outer-cover">
+                    <!-- Stacked 3D Page Sheets to show binder thickness -->
+                    <div class="notebook-page-sheet sheet-left"></div>
+                    <div class="notebook-page-sheet sheet-right"></div>
+
+                    <div class="notebook-inner-pages">
+                        
+                        <!-- LEFT PAGE: Ruled calligraphic reflection, dynamic prompts (Mirrored LTR left page) -->
+                        <div class="notebook-page left-page">
+                            
+                            <!-- Daily Reflection Prompt Card -->
+                            <div class="prompt-glass-card">
+                                <div class="prompt-card-header">
+                                    <div class="prompt-header-right">
+                                        <span class="prompt-icon">🎧</span>
+                                        <span class="prompt-title">لحظة تأمل اليوم</span>
+                                    </div>
+                                    <span class="prompt-time">١٠:٠٠ م</span>
+                                </div>
+                                <p class="prompt-core-quote" id="prompt-quote-txt">أبطئ من خطاي لأستمع إلى تفتح الزهور وأشعر باللمسة اللطيفة للنسيم المداعب لروحي.</p>
+                                <div class="prompt-card-footer">
+                                    <button class="prompt-action-btn" id="btn-refresh-prompt" title="توليد خاطرة تأملية جديدة">
+                                        <span>🔄</span>
+                                    </button>
+                                    <button class="prompt-action-btn" id="btn-like-prompt" title="أعجبني">
+                                        <span>❤️</span>
+                                    </button>
+                                    <button class="prompt-action-btn" id="btn-copy-prompt" title="نسخ الخاطرة">
+                                        <span>📋</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Write Prompt Directions label -->
+                            <div class="journal-input-instructions">
+                                <span class="pencil-icon">✍️</span>
+                                <span class="instructions-txt">استخدم خاطرة اليوم لاتخاذ خطوة صغيرة، أو تأمل فكرة واكتبها:</span>
+                            </div>
+
+                            <!-- Ruled calligraphic reflection handwriting notes textarea -->
+                            <div class="reflection-ruled-paper">
+                                <textarea id="journal-ruled-textarea" placeholder="اكتب مشاعرك وأفكارك وتأملاتك اليومية هنا..." aria-label="نص اليوميات"></textarea>
+                            </div>
+
+                            <!-- Location pin input -->
+                            <div class="location-pin-wrapper">
+                                <span class="pin-icon">📍</span>
+                                <input type="text" id="journal-location-input" placeholder="أين أنت الآن..." aria-label="الموقع الجغرافي">
+                            </div>
+
+                        </div>
+
+                        <!-- CENTER METAL BINDER RINGS BINDING -->
+                        <div class="notebook-binder-spine" aria-hidden="true">
+                            <div class="binder-ring ring-1">
+                                <span class="ring-back"></span><span class="ring-front"></span>
+                            </div>
+                            <div class="binder-ring ring-2">
+                                <span class="ring-back"></span><span class="ring-front"></span>
+                            </div>
+                            <div class="binder-ring ring-3">
+                                <span class="ring-back"></span><span class="ring-front"></span>
+                            </div>
+                            <!-- Bookmark Ribbon decoration -->
+                            <div class="spine-bookmark-ribbon"></div>
+                        </div>
+
+                        <!-- RIGHT PAGE: Weather, Polaroid Photo, Week calendar strip, Streak footer (Mirrored LTR right page) -->
+                        <div class="notebook-page right-page">
+                            
+                            <!-- Weather Widget Details -->
+                            <div class="weather-widget-row">
+                                <div class="weather-info">
+                                    <span class="weather-sun-icon">☀️</span>
+                                    <div class="weather-text-wrap">
+                                        <span class="weather-day-txt">الثلاثاء</span>
+                                        <span class="weather-date-txt" id="journal-page-date">٢٩ يوليو ٢٠٢٥</span>
+                                    </div>
+                                </div>
+                                <button class="weather-settings-btn" aria-label="تصفية وتعديل الخيارات">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+                                        <line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/>
+                                        <line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/>
+                                        <line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/>
+                                        <line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/>
+                                        <line x1="17" y1="16" x2="23" y2="16"/>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- Polaroid Photo Frame container -->
+                            <div class="polaroid-photo-frame">
+                                <div class="polaroid-tape-top-right"></div>
+                                <div class="polaroid-tape-top-left"></div>
+                                <div class="polaroid-photo-wrapper">
+                                    <img src="assets/polaroid_photo.png" alt="لقطة تأمل طبيعية">
+                                </div>
+                                <div class="polaroid-caption-wrap">
+                                    <!-- Editable polaroid caption in calligraphic Aref Ruqaa script -->
+                                    <span class="polaroid-caption-input" id="polaroid-caption-text" contenteditable="true" title="انقر لتعديل عنوان الصورة">أين يكمن جمال هذا العالم المليء بالسلام؟</span>
+                                </div>
+                            </div>
+
+                            <!-- Daily Mood Selector Grid -->
+                            <div class="mood-selector-wrap">
+                                <span class="mood-lbl-title">مزاج اليوم:</span>
+                                <div class="mood-options-row" id="mood-options-row">
+                                    <button class="mood-btn" data-mood="calm" title="هادئ">🧘</button>
+                                    <button class="mood-btn" data-mood="happy" title="سعيد">😊</button>
+                                    <button class="mood-btn" data-mood="tired" title="متعب">💤</button>
+                                    <button class="mood-btn" data-mood="anxious" title="قلق">💭</button>
+                                </div>
+                            </div>
+
+                            <!-- Weekly Calendar Strip Selector -->
+                            <div class="week-calendar-strip-wrap">
+                                <div class="week-days-row">
+                                    <button class="week-day-btn active"><span class="lbl">الإثنين</span><span class="num">٢٧</span></button>
+                                    <button class="week-day-btn"><span class="lbl">الثلاثاء</span><span class="num">٢٨</span></button>
+                                    <button class="week-day-btn"><span class="lbl">الأربعاء</span><span class="num">٢٩</span></button>
+                                    <button class="week-day-btn"><span class="lbl">الخميس</span><span class="num">٣٠</span></button>
+                                    <button class="week-day-btn"><span class="lbl">الجمعة</span><span class="num">٣١</span></button>
+                                    <button class="week-day-btn"><span class="lbl">السبت</span><span class="num">١</span></button>
+                                    <button class="week-day-btn"><span class="lbl">الأحد</span><span class="num">٢</span></button>
+                                </div>
+                            </div>
+
+                            <!-- Footer Streak Tracker Section -->
+                            <div class="streak-tracker-footer">
+                                <div class="streak-header">
+                                    <div class="streak-days-wrap">
+                                        <span class="streak-fire-icon" id="streak-fire-emoji">🔥</span>
+                                        <span class="streak-val-num" id="streak-days-count">١ يوم</span>
+                                        <span class="streak-lbl">سلسلة تأمل</span>
+                                    </div>
+                                    <div class="streak-checkbox-wrap">
+                                        <input type="checkbox" id="streak-check-input" aria-label="تأكيد إنهاء جلسة التأمل اليوم">
+                                        <label for="streak-check-input">تم التأمل اليوم</label>
+                                    </div>
+                                </div>
+                                <p class="streak-subtext" id="streak-motivate-txt">حافظ على شعلة التأمل متقدة كل يوم!</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- App Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -44,7 +44,7 @@ function Home() {
     navigate(`/gallery?filter=${filter}`);
   };
 
-  const featuredItems = galleryData.slice(0, 8);
+  const featuredItems = galleryData;
 
   return (
     <>

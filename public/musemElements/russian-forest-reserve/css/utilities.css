@@ -1,0 +1,409 @@
+/* --- Buttons --- */
+.btn {
+    padding: 14px 28px;
+    border-radius: 40px;
+    font-family: var(--font-family-main);
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-filled {
+    background-color: var(--color-text-white);
+    color: var(--color-bg);
+    border: 1.5px solid var(--color-text-white);
+}
+
+.btn-filled:hover {
+    background-color: transparent;
+    color: var(--color-text-white);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.08);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--color-text-white);
+    border: 1.5px solid var(--border-color);
+}
+
+.btn-outline:hover {
+    border-color: var(--color-text-white);
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* --- Walk/Route Cards --- */
+.walk-card {
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 9 / 11;
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.card-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    transition: var(--transition-slow);
+}
+
+.walk-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.1);
+    border-color: var(--border-color-focus);
+}
+
+.walk-card:hover .card-bg {
+    transform: scale(1.05);
+}
+
+/* Card Content Overlay gradient */
+.walk-card::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top, rgba(9, 26, 19, 0.95) 0%, rgba(9, 26, 19, 0.2) 65%, transparent 100%);
+    z-index: -1;
+}
+
+.card-content {
+    padding: 30px;
+    color: #fff;
+    width: 100%;
+}
+
+.card-content h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+}
+
+.card-content p {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* Button Card styled as card box */
+.walk-btn-card {
+    border-radius: var(--border-radius-lg);
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1.5px solid var(--border-color);
+    aspect-ratio: 9 / 11;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: var(--font-family-main);
+    font-size: 0.95rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.walk-btn-card:hover {
+    border-color: var(--color-text-white);
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.walk-btn-card span i {
+    margin-left: 10px;
+    transition: transform 0.2s;
+}
+
+.walk-btn-card:hover span i {
+    transform: translateX(4px);
+}
+
+/* --- Slide-out Detail Sidebar Panel --- */
+.detail-sidebar {
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: 450px;
+    background-color: var(--color-bg-dark);
+    border-left: 1px solid var(--border-color);
+    box-shadow: -15px 0 45px rgba(0, 0, 0, 0.15);
+    padding: 60px 40px;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.detail-sidebar.show {
+    transform: translateX(0);
+}
+
+.close-sidebar-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#sidebar-walk-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.sidebar-difficulty {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-accent-lime);
+    margin-top: -15px;
+    text-transform: uppercase;
+}
+
+.sidebar-img-box {
+    width: 100%;
+    height: 220px;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.sidebar-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.walk-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.stat-box {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: 16px;
+    text-align: center;
+}
+
+.stat-val {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 2px;
+}
+
+.stat-lbl {
+    font-size: 0.65rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Weather forecast widget */
+.weather-widget {
+    border-top: 1.5px dashed var(--border-color);
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.weather-widget h4 {
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+
+.weather-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.day-forecast {
+    background-color: rgba(255, 255, 255, 0.02);
+    border-radius: var(--border-radius-sm);
+    padding: 10px;
+    text-align: center;
+}
+
+.day-forecast span {
+    display: block;
+    font-size: 0.65rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.day-forecast strong {
+    font-size: 0.95rem;
+    font-weight: 800;
+}
+
+.day-forecast p {
+    font-size: 0.65rem;
+    margin-top: 2px;
+    font-weight: 600;
+}
+
+.btn-book-trail {
+    width: 100%;
+}
+
+/* --- Registration Modal Dialog --- */
+.modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(5, 16, 12, 0.65);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+}
+
+.modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background-color: var(--color-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    padding: 40px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+.modal-content h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.modal-subtitle {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+/* Forms details */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+.form-group input {
+    padding: 12px 16px;
+    border-radius: var(--border-radius-sm);
+    border: 1.5px solid var(--border-color);
+    background-color: rgba(255,255,255,0.02);
+    color: #fff;
+    font-family: var(--font-family-main);
+    font-size: 0.85rem;
+    font-weight: 700;
+    outline: none;
+    transition: var(--transition-fast);
+}
+
+.form-group input:focus {
+    border-color: var(--border-color-focus);
+}
+
+.btn-submit-reg {
+    margin-top: 10px;
+}
+
+/* --- Toast Notification --- */
+.toast-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 2000;
+}
+
+.toast {
+    background-color: var(--color-bg-dark);
+    color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: 12px 24px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.25s, opacity 0.25s;
+}
+
+.toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .detail-sidebar {
+        width: 100%;
+    }
+}

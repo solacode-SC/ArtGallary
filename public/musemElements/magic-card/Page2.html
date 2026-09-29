@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Card</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0a0a0f;
+            background-image: 
+                radial-gradient(ellipse at 20% 50%, rgba(120, 80, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(255, 100, 50, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(50, 200, 255, 0.05) 0%, transparent 50%);
+            padding: 40px 20px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .card-container {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 360px;
+        }
+
+        .card {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            border-radius: 24px;
+            overflow: hidden;
+            background: rgba(20, 20, 28, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 
+                0 0 0 1px rgba(255, 255, 255, 0.03),
+                0 20px 60px rgba(0, 0, 0, 0.6),
+                0 8px 24px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.06);
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+                        box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-12px) rotateX(2deg);
+            box-shadow: 
+                0 0 0 1px rgba(255, 255, 255, 0.06),
+                0 30px 80px rgba(0, 0, 0, 0.7),
+                0 12px 40px rgba(0, 0, 0, 0.5),
+                0 0 60px rgba(120, 80, 255, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        /* Top Image Section */
+        .card-image-section {
+            position: relative;
+            height: 50%;
+            overflow: visible;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        /* Radial glow behind character */
+        .card-image-section::before {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140%;
+            height: 100%;
+            background: radial-gradient(ellipse at center bottom, rgba(255, 160, 60, 0.25) 0%, rgba(255, 100, 50, 0.1) 30%, transparent 70%);
+            pointer-events: none;
+            z-index: 1;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .card:hover .card-image-section::before {
+            opacity: 1.4;
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        /* Secondary glow - cooler tone */
+        .card-image-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120%;
+            height: 80%;
+            background: radial-gradient(ellipse at center bottom, rgba(120, 80, 255, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .character-image {
+            position: relative;
+            z-index: 2;
+            width: 125%;
+            max-width: none;
+            height: auto;
+            object-fit: contain;
+            object-position: bottom center;
+            transform: translateY(15%);
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), filter 0.5s ease;
+            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5)) drop-shadow(0 8px 12px rgba(0, 0, 0, 0.3));
+        }
+
+        .card:hover .character-image {
+            transform: translateY(15%) scale(1.06);
+            filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.6)) drop-shadow(0 12px 20px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 30px rgba(255, 160, 60, 0.2));
+        }
+
+        /* Bottom Content Section */
+        .card-content-section {
+            height: 50%;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: relative;
+            z-index: 3;
+            background: rgba(20, 20, 28, 0.5);
+        }
+
+        /* Subtle top border glow for content section */
+        .card-content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        }
+
+        .card-rarity {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+
+        .rarity-badge {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #ff9f43;
+            background: rgba(255, 159, 67, 0.1);
+            border: 1px solid rgba(255, 159, 67, 0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .rarity-stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .star {
+            color: #ff9f43;
+            font-size: 12px;
+        }
+
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.15;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-description {
+            font-size: 13.5px;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+            max-height: 65px;
+            overflow: hidden;
+        }
+
+        .card-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+            backdrop-filter: blur(10px);
+        }
+
+        .card-cta:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateX(4px);
+        }
+
+        .card-cta svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .card-cta:hover svg {
+            transform: translateX(3px);
+        }
+
+        /* Shine effect overlay */
+        .card-shine {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.03),
+                transparent
+            );
+            transform: skewX(-20deg);
+            transition: left 0.7s ease;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .card:hover .card-shine {
+            left: 150%;
+        }
+
+        /* Corner accents */
+        .corner-accent {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .corner-accent.top-left {
+            top: 16px;
+            left: 16px;
+            border-top: 2px solid rgba(255, 159, 67, 0.3);
+            border-left: 2px solid rgba(255, 159, 67, 0.3);
+            border-radius: 8px 0 0 0;
+        }
+
+        .corner-accent.top-right {
+            top: 16px;
+            right: 16px;
+            border-top: 2px solid rgba(255, 159, 67, 0.3);
+            border-right: 2px solid rgba(255, 159, 67, 0.3);
+            border-radius: 0 8px 0 0;
+        }
+
+        .corner-accent.bottom-left {
+            bottom: 16px;
+            left: 16px;
+            border-bottom: 2px solid rgba(255, 159, 67, 0.3);
+            border-left: 2px solid rgba(255, 159, 67, 0.3);
+            border-radius: 0 0 0 8px;
+        }
+
+        .corner-accent.bottom-right {
+            bottom: 16px;
+            right: 16px;
+            border-bottom: 2px solid rgba(255, 159, 67, 0.3);
+            border-right: 2px solid rgba(255, 159, 67, 0.3);
+            border-radius: 0 0 8px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .card-container {
+                max-width: 300px;
+            }
+            .card-title {
+                font-size: 22px;
+            }
+            .card-content-section {
+                padding: 20px;
+            }
+            .card-description {
+                font-size: 12.5px;
+            }
+        }
+
+        /* Floating particles background */
+        .bg-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <div class="bg-particles" id="particles"></div>
+
+    <div class="card-container">
+        <div class="card">
+            <div class="card-shine"></div>
+
+            <div class="corner-accent top-left"></div>
+            <div class="corner-accent top-right"></div>
+            <div class="corner-accent bottom-left"></div>
+            <div class="corner-accent bottom-right"></div>
+
+            <!-- Top: Image Section -->
+            <div class="card-image-section">
+                <img 
+                    src="eee.jpg" 
+                    alt="Hero Character" 
+                    class="character-image"
+                    onerror="this.src='https://png.pngitem.com/pimgs/s/200-2007103_thief-video-game-characters-hd-png-download.png'"
+                >
+            </div>
+
+            <!-- Bottom: Content Section -->
+            <div class="card-content-section">
+                <div class="card-rarity">
+                    <span class="rarity-badge">Legendary</span>
+                    <div class="rarity-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                </div>
+
+                <h2 class="card-title">Ignis, the Eternal Flame</h2>
+
+                <p class="card-description">
+                    A master of arcane fire magic who wields the primordial flames of creation. His power grows with every battle fought in the shadow realm.
+                </p>
+
+                <a href="#" class="card-cta">
+                    View Details
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create floating background particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Subtle 3D tilt effect on mouse move
+        const card = document.querySelector('.card');
+        const container = document.querySelector('.card-container');
+
+        container.addEventListener('mousemove', (e) => {
+            const rect = container.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
+
+            card.style.transform = `translateY(-12px) rotateX(${2 + rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        container.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+    </script>
+</body>
+</html>

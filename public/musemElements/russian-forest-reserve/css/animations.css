@@ -1,0 +1,27 @@
+/* --- Scroll Reveal Animations --- */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1),
+                transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.scroll-reveal.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay modifiers for scroll reveals */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+
+/* Micro-interaction pulses */
+@keyframes pulse-light {
+    0%, 100% { opacity: 0.9; }
+    50% { opacity: 0.7; }
+}
+
+.pulsing-element {
+    animation: pulse-light 2s infinite;
+}

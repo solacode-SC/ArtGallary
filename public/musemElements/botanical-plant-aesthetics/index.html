@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>식물미감 (植物美感) - Botanical Aesthetics</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Persistent Header: Cart Trigger -->
+    <header class="app-header">
+        <div class="logo">
+            <h2>식물미감</h2>
+        </div>
+        <button class="cart-trigger" id="cart-trigger-btn">
+            <i class="fa-solid fa-basket-shopping"></i>
+            <span class="cart-badge" id="cart-badge-count">0</span>
+        </button>
+    </header>
+
+    <div class="page-wrapper">
+        
+        <!-- ================= HERO BANNER ================= -->
+        <section class="hero-section">
+            <div class="hero-banner-inner">
+                <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Foliage focus" class="hero-img">
+                
+                <!-- Tall Calligraphy Translucent Overlay Card -->
+                <div class="calligraphy-card">
+                    <div class="calligraphy-vertical">
+                        <span class="main-char">식</span>
+                        <span class="sub-char">植</span>
+                        <span class="main-char">물</span>
+                        <span class="sub-char">物</span>
+                        <span class="main-char">미</span>
+                        <span class="sub-char">美</span>
+                        <span class="main-char">감</span>
+                        <span class="sub-char">感</span>
+                    </div>
+                    <div class="calligraphy-subtext">
+                        당신의 공간에 추천하고 싶은 식물 브랜드 3
+                    </div>
+                    <div class="discount-badge">-55%</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PLANT SECTION 01: JARDIN DU SOLEIL ================= -->
+        <section class="plant-row-section scroll-reveal" id="sec-jardin">
+            <!-- Left Images Grid -->
+            <div class="images-grid-column">
+                <div class="backing-box backing-yellow"></div>
+                
+                <div class="img-frame frame-cactus">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Cactus">
+                </div>
+                <div class="img-frame frame-hanging">
+                    <img src="https://images.unsplash.com/photo-1530968033775-2c9273f08f2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hanging Ivy">
+                </div>
+            </div>
+            
+            <!-- Right Slate-Blue Card -->
+            <div class="text-card-column">
+                <div class="card-header-row">
+                    <h3>JARDIN DU SOLEIL</h3>
+                    <span class="card-num">01</span>
+                </div>
+                <p class="subtitle">[ 태양의 정원 ]</p>
+                
+                <p class="description">
+                    심플하지만 결코 심심하지 않은, 미니멀리즘을 꿈꾸는 당신의 공간에는 깔끔한 무광 화분에 담긴 식물이나 포인트가 되는 행잉 식물을 추천해요.
+                </p>
+                
+                <button class="btn-more-view" data-plant="Jardin Du Soleil">MORE VIEW <i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- ================= PLANT SECTION 02: DEARMENT ================= -->
+        <section class="plant-row-section reverse scroll-reveal" id="sec-dearment">
+            <!-- Left Slate-Blue Card -->
+            <div class="text-card-column">
+                <div class="card-header-row">
+                    <span class="card-num">02</span>
+                    <h3>DEARMENT</h3>
+                </div>
+                <p class="subtitle">[ 디어먼트 ]</p>
+                
+                <p class="description">
+                    분위기가 좋으면 연남동의 그 카페처럼 빈티지한 감성이 담긴 당신의 공간에는 불규칙적인 외형이 매력적인 코로키아 혹은 가을에 만개할 목수국을 추천해요.
+                </p>
+                
+                <button class="btn-more-view" data-plant="Dearment">MORE VIEW <i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+
+            <!-- Right Large Image -->
+            <div class="images-grid-column single-large">
+                <div class="backing-box backing-turquoise"></div>
+                
+                <div class="img-frame frame-large">
+                    <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Silver pot plant">
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PLANT SECTION 03: GREENLAB ================= -->
+        <section class="plant-row-section scroll-reveal" id="sec-greenlab">
+            <!-- Left Images Grid -->
+            <div class="images-grid-column">
+                <div class="backing-box backing-blue"></div>
+                
+                <div class="img-frame frame-cactus">
+                    <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Palm leaves">
+                </div>
+                <div class="img-frame frame-hanging">
+                    <img src="https://images.unsplash.com/photo-1525498128493-380d1990a112?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pothos water">
+                </div>
+            </div>
+            
+            <!-- Right Slate-Blue Card -->
+            <div class="text-card-column">
+                <div class="card-header-row">
+                    <h3>GREENLAB</h3>
+                    <span class="card-num">03</span>
+                </div>
+                <p class="subtitle">[ 식물 연구소 ]</p>
+                
+                <p class="description">
+                    취향이 고스란히 묻어 더욱 편안한, 홀로 라이프를 즐기는 당신의 공간에는 테이블 위에 두기 좋은 자그마한 식물이나 스킨답서스와 같은 수경 식물을 추천해요.
+                </p>
+                
+                <button class="btn-more-view" data-plant="Greenlab">MORE VIEW <i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Slide-in Details Sidebar & Watering Planner -->
+    <div class="details-sidebar" id="details-sidebar">
+        <button class="close-sidebar-btn" id="close-sidebar-btn"><i class="fa-solid fa-xmark"></i></button>
+        
+        <div class="sidebar-content">
+            <h2 id="sidebar-plant-name">Jardin Du Soleil</h2>
+            <p class="sidebar-subtitle" id="sidebar-plant-sub">[ 태양의 정원 - Cactus & Ivy ]</p>
+            
+            <div class="sidebar-img-box">
+                <img src="" id="sidebar-plant-img" alt="Plant Preview">
+            </div>
+
+            <!-- Watering interval calculator -->
+            <div class="calculator-panel">
+                <h4>💧 Interactive Watering Calculator</h4>
+                <p class="calc-desc">Configure your room conditions to schedule watering intervals.</p>
+                
+                <div class="form-group">
+                    <label for="room-temp">Average Room Temp</label>
+                    <select id="room-temp">
+                        <option value="cool">Cool (under 18°C)</option>
+                        <option value="moderate" selected>Moderate (18°C - 24°C)</option>
+                        <option value="warm">Warm (above 24°C)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="room-light">Indirect Sunlight Exposure</label>
+                    <select id="room-light">
+                        <option value="low">Low (Partial shade)</option>
+                        <option value="medium" selected>Medium (Filtered sun)</option>
+                        <option value="high">High (Bright sill)</option>
+                    </select>
+                </div>
+
+                <div class="calc-result" id="calc-result-lbl">
+                    Water every <strong>10 days</strong>.
+                </div>
+            </div>
+
+            <button class="btn-add-to-cart" id="add-to-cart-btn">Purchase Brand Bundle</button>
+        </div>
+    </div>
+
+    <!-- Persistent Cart Sidebar Drawer -->
+    <div class="cart-drawer" id="cart-drawer">
+        <button class="close-cart-btn" id="close-cart-btn"><i class="fa-solid fa-xmark"></i></button>
+        <h3>Your Botanical Basket</h3>
+        <p class="cart-desc">Muted designs for your architectural spaces</p>
+        
+        <div class="cart-items-list" id="cart-items-list">
+            <!-- Dynamic cart items go here -->
+        </div>
+
+        <div class="cart-total-row">
+            <span>Total price</span>
+            <span class="total-price" id="cart-total-price">$0.00</span>
+        </div>
+
+        <button class="btn-checkout" id="btn-checkout-trigger">Checkout items</button>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
