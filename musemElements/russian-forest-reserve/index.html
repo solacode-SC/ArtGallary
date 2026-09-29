@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Русский лес - Уникальный Заповедник</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+    <!-- Main Navigation Header -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-icon"><i class="fa-solid fa-tree"></i></span>
+            <h2>Русский лес</h2>
+        </div>
+        <div class="nav-links">
+            <a href="#about-section">о заповеднике</a>
+            <a href="#walks-section">маршруты</a>
+            <a href="#">правила</a>
+            <a href="#">как добраться</a>
+        </div>
+        <div class="nav-actions">
+            <button class="nav-icon-btn" aria-label="Профиль пользователя"><i class="fa-regular fa-user"></i></button>
+            <button class="nav-icon-btn" aria-label="Связаться по телефону"><i class="fa-solid fa-phone"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero Header Banner -->
+    <header class="hero-banner">
+        <div class="hero-bg-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Russian forest mountain landscape" class="hero-bg-img" id="hero-parallax-img">
+        
+        <div class="hero-content">
+            <h1>Ощути единение с<br>великой природой</h1>
+            <p>Маршруты по древнему русскому лесу вдоль сказочных троп</p>
+            
+            <div class="hero-buttons">
+                <a href="#about-section" class="btn btn-filled">Узнать больше</a>
+                <button class="btn btn-outline" id="btn-register-trigger">Зарегистрироваться</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= ABOUT THE RESERVE SECTION ================= -->
+    <section class="section-wrapper split-layout" id="about-section">
+        <!-- Left Column: Image Gallery Deck -->
+        <div class="gallery-column">
+            <div class="main-image-frame">
+                <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pine forest landscape" id="about-gallery-main">
+            </div>
+            
+            <div class="gallery-thumbnails">
+                <div class="thumb-frame active" data-src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                    <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Thumbnail 1">
+                </div>
+                <div class="thumb-frame" data-src="https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                    <img src="https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Thumbnail 2">
+                </div>
+                <div class="thumb-frame" data-src="https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                    <img src="https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Thumbnail 3">
+                </div>
+                <div class="thumb-frame" data-src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                    <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Thumbnail 4">
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Content -->
+        <div class="content-column">
+            <h2>О заповеднике</h2>
+            <p class="about-desc">
+                "Русский лес" - уникальный заповедник в центре России с древней природой. Здесь величественные дубы, могучие сосны, реки и озера образуют живописный ландшафт. В заповеднике обитает множество редких растений и животных.
+            </p>
+            <button class="btn btn-outline" id="about-readmore-btn">Узнать больше</button>
+        </div>
+    </section>
+
+    <!-- ================= WALKS GRID SECTION ================= -->
+    <section class="section-wrapper walks-section" id="walks-section">
+        <div class="walks-grid">
+            
+            <!-- Left Header Grid Cell -->
+            <div class="walks-intro">
+                <h2>Подбери идеальную прогулку для себя</h2>
+            </div>
+
+            <!-- Card 1: Forest path -->
+            <div class="walk-card" data-walk="Лесная тропинка" data-difficulty="Легкий" data-dist="5 км" data-duration="2 часа" data-img="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Лесная тропинка" class="card-bg">
+                <div class="card-content">
+                    <h3>Лесная тропинка</h3>
+                    <p>Маршрут для пенсионеров и семей с детьми</p>
+                </div>
+            </div>
+
+            <!-- Card 2: Path to the spring -->
+            <div class="walk-card" data-walk="Путь к источнику" data-difficulty="Средний" data-dist="18 км" data-duration="6 часов" data-img="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Путь к источнику" class="card-bg">
+                <div class="card-content">
+                    <h3>Путь к источнику</h3>
+                    <p>Дорога к месту особой красоты (18 км)</p>
+                </div>
+            </div>
+
+            <!-- Card 3: Forest odyssey -->
+            <div class="walk-card" data-walk="Лесная одиссея" data-difficulty="Сложный" data-dist="32 км" data-duration="4 дня" data-img="https://images.unsplash.com/photo-1501555088652-021faa106b9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Лесная одиссея" class="card-bg">
+                <div class="card-content">
+                    <h3>Лесная одиссея</h3>
+                    <p>4-х дневный поход по лесу со специальным оборудованием</p>
+                </div>
+            </div>
+
+            <!-- Button Card -->
+            <button class="walk-btn-card" id="btn-all-walks">
+                <span>Узнать больше <i class="fa-solid fa-arrow-right"></i></span>
+            </button>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <div class="logo-footer">
+            <span class="logo-icon"><i class="fa-solid fa-tree"></i></span>
+            <h2>Русский лес</h2>
+        </div>
+        <div class="footer-links">
+            <a href="#about-section">о заповеднике</a>
+            <a href="#walks-section">маршруты</a>
+            <a href="#">правила</a>
+            <a href="#">как добраться</a>
+        </div>
+        <div class="footer-contact">
+            <span class="phone-num">+7 (999) 999-99-99</span>
+            <div class="social-links">
+                <a href="#">telegram</a>
+                <a href="#">whatsapp</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Slide-out Sidebar: Walk Customizer / Detail View -->
+    <div class="detail-sidebar" id="walk-sidebar">
+        <button class="close-sidebar-btn" id="close-sidebar-btn" aria-label="Закрыть боковую панель"><i class="fa-solid fa-xmark"></i></button>
+        
+        <div class="sidebar-content">
+            <h2 id="sidebar-walk-title">Лесная тропинка</h2>
+            <p class="sidebar-difficulty" id="sidebar-difficulty">Сложность: Легкий</p>
+            
+            <div class="sidebar-img-box">
+                <img src="" id="sidebar-walk-img" alt="Walk route preview">
+            </div>
+
+            <div class="walk-stats-grid">
+                <div class="stat-box">
+                    <span class="stat-val" id="sidebar-dist">5 км</span>
+                    <span class="stat-lbl">Дистанция</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-val" id="sidebar-duration">2 часа</span>
+                    <span class="stat-lbl">Время пути</span>
+                </div>
+            </div>
+
+            <!-- Simulated weather widget -->
+            <div class="weather-widget">
+                <h4>🌥️ Прогноз погоды на тропе</h4>
+                <div class="weather-row">
+                    <div class="day-forecast">
+                        <span>Завтра</span>
+                        <strong>+16°C</strong>
+                        <p>Ясно</p>
+                    </div>
+                    <div class="day-forecast">
+                        <span>Сб</span>
+                        <strong>+14°C</strong>
+                        <p>Облачно</p>
+                    </div>
+                    <div class="day-forecast">
+                        <span>Вс</span>
+                        <strong>+15°C</strong>
+                        <p>Дождь</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-filled btn-book-trail" id="btn-book-trail">Забронировать маршрут</button>
+        </div>
+    </div>
+
+    <!-- Registration Slide-in Modal -->
+    <div class="modal" id="register-modal">
+        <div class="modal-content">
+            <button class="modal-close-btn" id="close-register-btn"><i class="fa-solid fa-xmark"></i></button>
+            <h3>Регистрация посещения</h3>
+            <p class="modal-subtitle">Заполните форму для прохода на территорию заповедника</p>
+            
+            <form class="register-form" id="register-form">
+                <div class="form-group">
+                    <label for="visitor-name">ФИО</label>
+                    <input type="text" id="visitor-name" placeholder="Иванов Иван Иванович" required>
+                </div>
+                <div class="form-group">
+                    <label for="visit-date">Дата визита</label>
+                    <input type="date" id="visit-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="visitor-phone">Контактный телефон</label>
+                    <input type="tel" id="visitor-phone" placeholder="+7 (999) 999-99-99" required>
+                </div>
+                <div class="form-group">
+                    <label for="visitor-count">Количество посетителей</label>
+                    <input type="number" id="visitor-count" min="1" max="10" value="1" required>
+                </div>
+                <button type="submit" class="btn btn-filled btn-submit-reg">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+:root {
+    /* Color Palette */
+    --color-bg: #091a13;         /* Deep dark green base background */
+    --color-bg-dark: #05100c;    /* Absolute dark green for overlays/footers */
+    --color-text-white: #ffffff;
+    --color-text-muted: rgba(255, 255, 255, 0.7);
+    --color-accent-lime: #a3e635; /* Accent lime green */
+    
+    /* Layout Tokens */
+    --border-color: rgba(255, 255, 255, 0.12);
+    --border-color-focus: rgba(255, 255, 255, 0.35);
+    --border-radius-lg: 24px;
+    --border-radius-md: 16px;
+    --border-radius-sm: 8px;
+    
+    /* Font scale */
+    --font-family-main: 'Montserrat', sans-serif;
+    
+    /* Spacing scale */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 40px;
+    --spacing-xl: 80px;
+    
+    /* Transitions */
+    --transition-smooth: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --transition-fast: all 0.15s ease;
+}

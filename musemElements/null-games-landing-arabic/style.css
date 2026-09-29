@@ -1,0 +1,796 @@
+/* ==========================================================================
+   Null Games Arabic - Premium 3D Cartridge Landing Page CSS
+   Space Dark Aesthetics, Alternating RTL Grids & Glow Animations
+   ========================================================================== */
+
+/* --- Theme Variables --- */
+:root {
+    --font-headings: 'Alexandria', sans-serif;
+    --font-body: 'Readex Pro', sans-serif;
+    
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 28px;
+    --radius-full: 9999px;
+    
+    --color-orange: #f59e0b;
+    --color-red: #ef4444;
+    --color-blue: #3b82f6;
+    
+    --tag-roguelite-bg: rgba(244, 63, 94, 0.1);
+    --tag-roguelite-text: #fb7185;
+    --tag-fps-bg: rgba(16, 185, 129, 0.1);
+    --tag-fps-text: #34d399;
+    --tag-rpg-bg: rgba(14, 165, 233, 0.1);
+    --tag-rpg-text: #38bdf8;
+    --tag-strategy-bg: rgba(245, 158, 11, 0.1);
+    --tag-strategy-text: #fbbf24;
+    --tag-pitch-bg: rgba(139, 92, 246, 0.1);
+    --tag-pitch-text: #a78bfa;
+}
+
+/* --- Dark Mode (Default Theme from reference) --- */
+body.dark-mode {
+    --bg-primary: #05060a;
+    --bg-secondary: #0b0d13;
+    --bg-tertiary: #131720;
+    --text-primary: #f1f4f9;
+    --text-secondary: #8c98ad;
+    --text-muted: #64738a;
+    --border-color: #1d2432;
+    --card-bg: #0b0d13;
+    --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    --header-bg: rgba(5, 6, 10, 0.75);
+    
+    --manifest-text-color: #38bdf8;
+}
+
+/* --- Light Mode (Warm Retro Beige) --- */
+body.light-mode {
+    --bg-primary: #f5f3ed;
+    --bg-secondary: #eae7dd;
+    --bg-tertiary: #dfdacd;
+    --text-primary: #0c0f13;
+    --text-secondary: #485260;
+    --text-muted: #727e90;
+    --border-color: #c5bfb0;
+    --card-bg: #fcfbf9;
+    --card-shadow: 0 10px 30px -10px rgba(12, 15, 19, 0.08);
+    --header-bg: rgba(245, 243, 237, 0.75);
+    
+    --manifest-text-color: #0284c7;
+}
+
+/* --- Reset & Core --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+    padding-top: 100px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headings);
+    font-weight: 800;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* --- Layout Utility --- */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* --- Buttons System --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: var(--font-headings);
+    font-weight: 700;
+    border-radius: var(--radius-full);
+    transition: all var(--transition-fast);
+    border: 2px solid transparent;
+}
+
+.btn-featured {
+    padding: 12px 28px;
+    font-size: 0.92rem;
+}
+
+/* Custom outline themed buttons */
+.btn-orange-outline {
+    border-color: var(--color-orange);
+    color: var(--color-orange);
+}
+.btn-orange-outline:hover {
+    background-color: var(--color-orange);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-red-outline {
+    border-color: var(--color-red);
+    color: var(--color-red);
+}
+.btn-red-outline:hover {
+    background-color: var(--color-red);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-blue-outline {
+    border-color: var(--color-blue);
+    color: var(--color-blue);
+}
+.btn-blue-outline:hover {
+    background-color: var(--color-blue);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-outline-pill {
+    padding: 10px 24px;
+    border: 2px solid var(--border-color);
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+}
+
+.btn-outline-pill:hover {
+    border-color: var(--text-primary);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.btn-pitch-oval {
+    padding: 14px 36px;
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+    font-size: 0.95rem;
+}
+
+.btn-pitch-oval:hover {
+    transform: scale(1.03) translateY(-2px);
+}
+
+/* --- Sticky Glassmorphism Header --- */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    z-index: 1000;
+    background-color: var(--header-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all var(--transition-normal);
+}
+
+body.light-mode .main-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    gap: 4px;
+}
+
+.logo-block {
+    width: 38px;
+    height: 38px;
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-headings);
+    font-weight: 900;
+    font-size: 1.4rem;
+    border-radius: 6px;
+    transition: all var(--transition-normal);
+}
+
+.logo:hover .logo-block {
+    transform: rotate(5deg) scale(1.05);
+}
+
+.logo:hover .logo-block:nth-child(2) {
+    transform: rotate(-8deg) scale(1.05);
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-link {
+    font-family: var(--font-headings);
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+}
+
+.pitch-link {
+    border: 2px dashed var(--border-color);
+}
+
+.pitch-link:hover {
+    border-style: solid;
+    background-color: var(--text-primary);
+    color: var(--bg-primary) !important;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: 1.5px solid var(--border-color);
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    transition: all var(--transition-fast);
+}
+
+.theme-toggle:hover {
+    background-color: var(--bg-secondary);
+    transform: scale(1.05);
+}
+
+.theme-toggle svg {
+    width: 18px;
+    height: 18px;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 28px;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-primary);
+    border-radius: 2px;
+}
+
+/* --- Featured Game Cartridges Section --- */
+.featured-cartridges {
+    padding: 60px 0 100px 0;
+}
+
+.featured-row {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+    align-items: center;
+    margin-bottom: 120px;
+}
+
+.featured-row:last-child {
+    margin-bottom: 0;
+}
+
+/* Reverse alternating layout */
+.featured-row.row-reverse {
+    grid-template-columns: 0.8fr 1.2fr;
+}
+
+.featured-row.row-reverse .featured-cartridge {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.featured-row.row-reverse .featured-details {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.featured-game-title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin-bottom: 24px;
+    letter-spacing: -0.03em;
+}
+
+.title-orange { color: var(--color-orange); }
+.title-red { color: var(--color-red); }
+.title-blue { color: var(--color-blue); }
+
+.featured-game-desc {
+    font-size: 1.12rem;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    line-height: 1.7;
+    max-width: 620px;
+}
+
+.featured-metadata {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 36px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+    max-width: 440px;
+}
+
+.meta-item {
+    display: flex;
+    gap: 16px;
+}
+
+.meta-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    min-width: 110px;
+}
+
+.meta-val {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* 3D Cartridge Container & Glow effect */
+.featured-cartridge {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartridge-img {
+    width: 100%;
+    max-width: 340px;
+    z-index: 10;
+    transition: transform var(--transition-slow);
+}
+
+.featured-cartridge:hover .cartridge-img {
+    transform: rotate(4deg) scale(1.05);
+}
+
+.glow-effect {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 1;
+    opacity: 0.15;
+    transition: opacity var(--transition-normal), transform var(--transition-normal);
+}
+
+.featured-cartridge:hover .glow-effect {
+    opacity: 0.3;
+    transform: scale(1.1);
+}
+
+.glow-orange { background-color: var(--color-orange); }
+.glow-red { background-color: var(--color-red); }
+.glow-blue { background-color: var(--color-blue); }
+
+/* Float Animation */
+.float-anim {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+/* --- Browse All Games Section --- */
+.browse-games-section {
+    padding: 100px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg-secondary);
+}
+
+.browse-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 900;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.game-card {
+    background-color: var(--card-bg);
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.game-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4);
+}
+
+.card-image-wrapper {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background-color: var(--bg-tertiary);
+    border-bottom: 1.5px solid var(--border-color);
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-details {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.title-tags-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.game-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.tags-group {
+    display: flex;
+    gap: 4px;
+}
+
+.tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.tag-roguelite { background-color: var(--tag-roguelite-bg); color: var(--tag-roguelite-text); }
+.tag-fps { background-color: var(--tag-fps-bg); color: var(--tag-fps-text); }
+.tag-rpg { background-color: var(--tag-rpg-bg); color: var(--tag-rpg-text); }
+.tag-strategy { background-color: var(--tag-strategy-bg); color: var(--tag-strategy-text); }
+.tag-pitch { background-color: var(--tag-pitch-bg); color: var(--tag-pitch-text); }
+
+.developer-name {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.pitch-card {
+    border-style: dashed;
+}
+
+/* --- Manifest/Philosophy Section --- */
+.manifest-section {
+    padding: 120px 0;
+}
+
+.manifest-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 48px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 24px;
+}
+
+.manifest-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--manifest-text-color);
+    letter-spacing: -0.03em;
+    max-width: 800px;
+}
+
+.dpad-icon {
+    width: 60px;
+    height: 60px;
+    color: var(--text-secondary);
+    opacity: 0.8;
+}
+
+.dpad-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.manifest-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+}
+
+.manifest-col p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+/* --- Bottom CTA Banner Bar --- */
+.bottom-cta-banner {
+    padding: 40px 0;
+    background-color: var(--bg-secondary);
+    border-top: 1.5px solid var(--border-color);
+    border-bottom: 1.5px solid var(--border-color);
+}
+
+.cta-banner-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.cta-message {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--bg-primary);
+    padding: 40px 0;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.copyright {
+    font-size: 0.88rem;
+    opacity: 0.6;
+}
+
+.footer-bottom-actions {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.privacy-link {
+    font-size: 0.88rem;
+    opacity: 0.6;
+}
+
+.privacy-link:hover {
+    opacity: 1;
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-links a {
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    transition: all var(--transition-fast);
+}
+
+.social-links a:hover {
+    opacity: 1;
+    border-color: var(--text-primary);
+    transform: translateY(-3px);
+}
+
+.social-links svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* --- Scroll Reveal Effects --- */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Responsive Media Queries --- */
+
+@media (max-width: 991px) {
+    .featured-row, .featured-row.row-reverse {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .featured-row.row-reverse .featured-cartridge {
+        grid-column: auto;
+        grid-row: auto;
+    }
+    .featured-row.row-reverse .featured-details {
+        grid-column: auto;
+        grid-row: auto;
+    }
+    
+    .featured-game-desc {
+        margin: 0 auto 32px auto;
+    }
+    
+    .featured-metadata {
+        margin: 0 auto 36px auto;
+    }
+    
+    .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .manifest-columns {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    .manifest-title {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 80px;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: calc(100vh - 80px);
+        background-color: var(--bg-primary);
+        border-inline-end: 2px solid var(--border-color);
+        padding: 40px 24px;
+        transition: left var(--transition-normal);
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+    
+    .nav-link {
+        display: block;
+        padding: 10px 16px;
+    }
+    
+    .featured-game-title {
+        font-size: 2.2rem;
+    }
+    
+    .manifest-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+    .cta-banner-container {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+}
+
+/* Reduced Motion preference */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+    .scroll-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

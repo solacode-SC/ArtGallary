@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ألعاب نول | تصفح ونشر الألعاب المستقلة الرائدة</title>
+    
+    <!-- Meta SEO -->
+    <meta name="description" content="نول (Null Games) هي منصة نشر ألعاب مستقلة تدعم المطورين وتوفر ألعاباً مميزة لأجهزة الكمبيوتر، الماك، والمنصات المنزلية. تصفح الألعاب واعرض مشروعك معنا.">
+    <meta name="keywords" content="ألعاب مستقلة، ناشر ألعاب، روجلايت، استراتيجية، نول للألعاب، Null Games Arabic">
+    
+    <!-- Google Fonts: Alexandria (Retro Geometric Headings) & Readex Pro (Clean Modern Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700;800;900&family=Readex+Pro:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode">
+    <!-- Premium Header -->
+    <header class="main-header" role="banner">
+        <div class="container header-container">
+            <!-- Retro Styled Blocky Logo -->
+            <a href="#" class="logo" aria-label="شعار ألعاب نول">
+                <span class="logo-block">ن</span>
+                <span class="logo-block">و</span>
+                <span class="logo-block">ل</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu" role="navigation" aria-label="التنقل الرئيسي">
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link active">الألعاب</a></li>
+                    <li><a href="#" class="nav-link">الأخبار</a></li>
+                    <li><a href="#" class="nav-link">المتجر</a></li>
+                    <li><a href="#" class="nav-link">من نحن</a></li>
+                    <li><a href="#" class="nav-link pitch-link">اعرض لعبتك</a></li>
+                    <li><a href="#" class="nav-link">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <!-- Theme Toggle Button -->
+                <button class="theme-toggle" id="theme-toggle" aria-label="تبديل المظهر المضيء والمظلم" title="تبديل المظهر">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                
+                <!-- Mobile Toggle Menu -->
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="فتح القائمة" aria-expanded="false" aria-controls="nav-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="main-content container" role="main">
+        <!-- Title & Search Row -->
+        <div class="search-title-row">
+            <h1 class="page-title">تصفح قائمة الألعاب</h1>
+            
+            <div class="search-box">
+                <input type="text" id="game-search" placeholder="ابحث عن لعبة..." aria-label="ابحث عن لعبة">
+                <span class="search-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </span>
+            </div>
+        </div>
+        
+        <!-- Filter Tabs / Categories -->
+        <div class="categories-filter" role="tablist" aria-label="تصفية الألعاب">
+            <button class="filter-tab active" data-category="all" role="tab" aria-selected="true">جميع الألعاب</button>
+            <button class="filter-tab" data-category="roguelite" role="tab" aria-selected="false">روجلايت</button>
+            <button class="filter-tab" data-category="strategy" role="tab" aria-selected="false">استراتيجية تبادل الأدوار</button>
+            <button class="filter-tab" data-category="fps" role="tab" aria-selected="false">منظور الشخص الأول (FPS)</button>
+            <button class="filter-tab" data-category="rpg" role="tab" aria-selected="false">تقمص الأدوار (RPG)</button>
+        </div>
+        
+        <!-- Games Grid -->
+        <div class="games-grid" id="games-grid">
+            <!-- Game Card 1: Demon Spore -->
+            <article class="game-card" data-title="ديمن سبور demon spore بذرة الشيطان" data-categories="roguelite" role="article">
+                <div class="card-image-wrapper">
+                    <img src="assets/demon_spore.png" alt="غلاف لعبة ديمن سبور - بذرة الشيطان">
+                </div>
+                <div class="card-details">
+                    <div class="title-tags-row">
+                        <h2 class="game-name">ديمن سبور</h2>
+                        <div class="tags-list">
+                            <span class="tag tag-roguelite">روجلايت</span>
+                        </div>
+                    </div>
+                    <p class="developer-name">تطوير: دينوبوس ليميتد (DINOBOSS LTD)</p>
+                </div>
+            </article>
+
+            <!-- Game Card 2: ExeKiller -->
+            <article class="game-card" data-title="إكزي كيلر exekiller قاتل الأنظمة" data-categories="fps rpg" role="article">
+                <div class="card-image-wrapper">
+                    <img src="assets/exekiller.png" alt="غلاف لعبة إكزي كيلر - قاتل الأنظمة">
+                </div>
+                <div class="card-details">
+                    <div class="title-tags-row">
+                        <h2 class="game-name">إكزي كيلر</h2>
+                        <div class="tags-list">
+                            <span class="tag tag-fps">إطلاق نار</span>
+                            <span class="tag tag-rpg">تقمص أدوار</span>
+                        </div>
+                    </div>
+                    <p class="developer-name">تطوير: استوديو بارادارك (PARADARK STUDIO)</p>
+                </div>
+            </article>
+
+            <!-- Game Card 3: Athena Crisis -->
+            <article class="game-card" data-title="أزمة أثينا athena crisis" data-categories="strategy" role="article">
+                <div class="card-image-wrapper">
+                    <img src="assets/athena_crisis.png" alt="غلاف لعبة أزمة أثينا">
+                </div>
+                <div class="card-details">
+                    <div class="title-tags-row">
+                        <h2 class="game-name">أزمة أثينا</h2>
+                        <div class="tags-list">
+                            <span class="tag tag-strategy">استراتيجية</span>
+                        </div>
+                    </div>
+                    <p class="developer-name">تطوير: ناكازاوا تيك (NAKAZAWA TECH)</p>
+                </div>
+            </article>
+
+            <!-- Game Card 4: Tape to Tape -->
+            <article class="game-card" data-title="تيب تو تيب tape to tape من شريط لشريط" data-categories="roguelite" role="article">
+                <div class="card-image-wrapper">
+                    <img src="assets/tape_to_tape.png" alt="غلاف لعبة تيب تو تيب - من شريط لشريط">
+                </div>
+                <div class="card-details">
+                    <div class="title-tags-row">
+                        <h2 class="game-name">تيب تو تيب</h2>
+                        <div class="tags-list">
+                            <span class="tag tag-roguelite">روجلايت</span>
+                        </div>
+                    </div>
+                    <p class="developer-name">تطوير: إكسلنت ريكتانجل (EXCELLENT RECTANGLE)</p>
+                </div>
+            </article>
+
+            <!-- Game Card 5: Pitch Us -->
+            <article class="game-card pitch-card" data-title="لعبتك هنا أضف مشروعك الخاص pitch us your game here" data-categories="pitch" role="article">
+                <div class="card-image-wrapper">
+                    <img src="assets/your_game_here.png" alt="صورة تعبيرية لعرض مشروع لعبتك المستقلة">
+                </div>
+                <div class="card-details">
+                    <div class="title-tags-row">
+                        <h2 class="game-name">لعبتك هنا!</h2>
+                        <div class="tags-list">
+                            <span class="tag tag-pitch">اعرض مشروعك</span>
+                        </div>
+                    </div>
+                    <p class="developer-name">تطوير: استوديو الخاص بك (YOUR STUDIO)</p>
+                </div>
+            </article>
+        </div>
+        
+        <!-- Empty State (No games found) -->
+        <div class="empty-state" id="empty-state" style="display: none;" role="status">
+            <div class="empty-icon">📭</div>
+            <h3>لم نعثر على أي ألعاب تطابق بحثك</h3>
+            <p>جرّب كلمات بحث أخرى أو تصفح فئات ألعاب مختلفة.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer" role="contentinfo">
+        <div class="container footer-container">
+            <div class="footer-top">
+                <div class="footer-brand-section">
+                    <a href="#" class="logo footer-logo" aria-label="شعار ألعاب نول">
+                        <span class="logo-block">ن</span>
+                        <span class="logo-block">و</span>
+                        <span class="logo-block">ل</span>
+                    </a>
+                    <p class="brand-desc">نول (Null Games) ناشر ألعاب مستقلة يركز على دعم المطورين، ونشر تجارب استثنائية لأجهزة الكمبيوتر، الماك، ومنصات الألعاب المنزلية.</p>
+                </div>
+                
+                <div class="footer-links-group">
+                    <div class="links-column">
+                        <a href="#">الألعاب</a>
+                        <a href="#">من نحن</a>
+                    </div>
+                    <div class="links-column">
+                        <a href="#">الأخبار</a>
+                        <a href="#">اتصل بنا</a>
+                    </div>
+                    <div class="links-column">
+                        <a href="#">المتجر</a>
+                        <a href="#">اعرض لعبتك</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-middle">
+                <div class="newsletter-info">
+                    <p>اشترك في نشرتنا البريدية الهادئة والمحترمة للخصوصية لتكن أول من يعلم بالإصدارات والأخبار الحصرية القادمة.</p>
+                </div>
+                <form class="newsletter-form" id="newsletter-form" action="#" method="POST" aria-label="الاشتراك في النشرة البريدية">
+                    <input type="email" id="newsletter-email" placeholder="البريد الإلكتروني..." required aria-label="البريد الإلكتروني">
+                    <button type="submit">اشترك الآن</button>
+                </form>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">جميع الحقوق محفوظة &copy; 2026 لشركة ألعاب نول.</p>
+                <div class="footer-bottom-actions">
+                    <a href="#" class="privacy-link">سياسة الخصوصية</a>
+                    <div class="social-links">
+                        <a href="#" aria-label="انستغرام">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="لينكد إن">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="تويتر">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="فيسبوك">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script File -->
+    <script src="script.js"></script>
+</body>
+</html>

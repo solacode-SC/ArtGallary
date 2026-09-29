@@ -1,0 +1,755 @@
+/* ==========================================================================
+   CSS Design System - دَفْتَر (Daftar) Premium Arabic Diary
+   ========================================================================== */
+
+/* --- Custom Variables & Styling Tokens --- */
+:root {
+    --bg-dark: #121420;             /* Midnight Velvet Dark */
+    --bg-slate: #1A1D2B;            /* Deep Slate Navy */
+    --text-light: #F3F4F6;
+    --text-muted: #9CA3AF;
+    
+    --color-accent: #8B5CF6;        /* Bright Violet / Amethyst */
+    --color-accent-hover: #7C3AED;
+    --color-accent-light: rgba(139, 92, 246, 0.2);
+    
+    --paper-color: #FCFAF7;         /* Elegant Warm Paper */
+    --ink-color: #2D3748;           /* Classic Diary Ink */
+    
+    --border-radius-circle: 50%;
+    --border-radius-md: 16px;
+    --border-radius-lg: 24px;
+    
+    --transition-bounce: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.12);
+    --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    
+    /* Fonts */
+    --font-ui: 'Alexandria', sans-serif;
+    --font-diary: 'Aref Ruqaa', serif;
+}
+
+/* --- Global Resets --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--bg-slate);
+    color: var(--text-light);
+    font-family: var(--font-ui);
+    line-height: 1.6;
+    direction: rtl;
+    text-align: right;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.03) 0%, transparent 45%);
+}
+
+*:focus-visible {
+    outline: 2px dashed var(--color-accent);
+    outline-offset: 4px;
+}
+
+button {
+    font-family: inherit;
+    transition: var(--transition-smooth);
+}
+
+/* --- Typography --- */
+.page-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+}
+
+.page-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Header Navigation
+   ========================================================================== */
+.header {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-right, .header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo {
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+}
+
+.grid-btn, .header-action-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+}
+
+.grid-btn:hover, .header-action-btn:hover {
+    color: var(--text-light);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Slide indicators (dots) */
+.dot-indicators {
+    display: flex;
+    gap: 6px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: var(--transition-smooth);
+}
+
+.dot.active {
+    background-color: var(--color-accent);
+    width: 18px;
+    border-radius: 10px;
+}
+
+/* ==========================================================================
+   Page Titles & Main Layout Centering
+   ========================================================================== */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.page-title-section {
+    text-align: center;
+    margin: 20px 0 10px 0;
+}
+
+/* ==========================================================================
+   3D Card Deck Carousel
+   ========================================================================== */
+.carousel-deck-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    perspective: 2000px; /* Enhanced perspective depth */
+    padding: 40px 80px; /* Added horizontal padding to house the arrows safely */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Navigation Arrows */
+.deck-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000; /* Increased z-index so cards never block clicks */
+    transition: var(--transition-smooth);
+}
+
+.deck-arrow:hover {
+    background-color: var(--color-accent);
+    color: white;
+    border-color: var(--color-accent);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+}
+
+.deck-arrow.prev {
+    right: 16px; /* Positioned inside the wrapper padding */
+}
+
+.deck-arrow.next {
+    left: 16px; /* Positioned inside the wrapper padding */
+}
+
+@media (max-width: 1024px) {
+    .carousel-deck-wrapper {
+        padding: 40px 60px; /* Slightly tighter padding on tablets */
+    }
+    .deck-arrow.prev {
+        right: 10px;
+        background-color: rgba(26, 29, 43, 0.7);
+        backdrop-filter: blur(5px);
+    }
+    .deck-arrow.next {
+        left: 10px;
+        background-color: rgba(26, 29, 43, 0.7);
+        backdrop-filter: blur(5px);
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-deck-wrapper {
+        padding: 40px 0px; /* Zero horizontal padding, swipe-only */
+    }
+    .deck-arrow {
+        display: none; /* Hide on small screens to avoid overlaying cards */
+    }
+}
+
+.carousel-deck {
+    position: relative;
+    width: 100%;
+    height: 460px;
+    transform-style: preserve-3d;
+}
+
+/* Slide Cards (Notebook Spreads) */
+.journal-card {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 680px;
+    height: 430px;
+    margin-left: -340px;
+    margin-top: -215px;
+    transform-style: preserve-3d;
+    transition: var(--transition-bounce);
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.carousel-deck.dragging .journal-card {
+    transition: none !important;
+}
+
+/* 3D Rotations (Mirrored for RTL)
+   In RTL, previous slides stack to the right, next slides to the left.
+*/
+.journal-card.active {
+    transform: translate3d(0, 0, 0) rotateY(0deg) scale(1);
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Stack to the right (RTL Previous slides) */
+.journal-card.prev {
+    transform: translate3d(220px, 0, -200px) rotateY(-28deg) scale(0.85);
+    z-index: 5;
+    opacity: 0.6;
+    visibility: visible;
+}
+
+.journal-card.prev:hover {
+    transform: translate3d(250px, 0, -160px) rotateY(-20deg) scale(0.88);
+    opacity: 0.8;
+}
+
+.journal-card.far-prev {
+    transform: translate3d(360px, 0, -320px) rotateY(-36deg) scale(0.72);
+    z-index: 2;
+    opacity: 0.25;
+    visibility: visible;
+}
+
+/* Stack to the left (RTL Next slides) */
+.journal-card.next {
+    transform: translate3d(-220px, 0, -200px) rotateY(28deg) scale(0.85);
+    z-index: 5;
+    opacity: 0.6;
+    visibility: visible;
+}
+
+.journal-card.next:hover {
+    transform: translate3d(-250px, 0, -160px) rotateY(20deg) scale(0.88);
+    opacity: 0.8;
+}
+
+.journal-card.far-next {
+    transform: translate3d(-360px, 0, -320px) rotateY(36deg) scale(0.72);
+    z-index: 2;
+    opacity: 0.25;
+    visibility: visible;
+}
+
+/* ==========================================================================
+   Notebook Spread Layout & Paper styling
+   ========================================================================== */
+.notebook-spread {
+    width: 100%;
+    height: 100%;
+    background-color: var(--paper-color);
+    border-radius: var(--border-radius-md);
+    border: 2px solid var(--color-dark);
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.4),
+        0 10px 20px rgba(0, 0, 0, 0.25),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hardcover leather edge wrapper */
+.notebook-spread::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--border-radius-md);
+    box-shadow: inset 0 0 0 6px #2E251B; /* Dark wood/leather book edge border */
+    pointer-events: none;
+    z-index: 9;
+}
+
+/* central spine binding */
+.binding-line {
+    position: absolute;
+    top: 6px;
+    bottom: 6px;
+    left: 50%;
+    width: 8px;
+    margin-left: -4px;
+    background: linear-gradient(to right, 
+        rgba(0,0,0,0.2) 0%, 
+        rgba(255,255,255,0.05) 50%, 
+        rgba(0,0,0,0.2) 100%);
+    box-shadow: inset 0 0 4px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+.notebook-page {
+    padding: 30px 30px 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    background-size: 16px 16px;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.05) 1.2px, transparent 1.2px); /* Dotted grid notebook texture */
+    margin: 6px;
+    border-radius: 8px;
+    background-color: var(--paper-color);
+}
+
+/* page spine shadow overlays for curves */
+.page-image-side {
+    border-inline-end: 1px solid rgba(0,0,0,0.05);
+    background-image: 
+        linear-gradient(to left, rgba(0,0,0,0.05) 0%, transparent 10%),
+        radial-gradient(circle, rgba(0,0,0,0.05) 1.2px, transparent 1.2px);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.diary-main-image-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    border: 1px solid rgba(0,0,0,0.06);
+    transition: var(--transition-smooth);
+}
+
+.diary-main-image-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+}
+
+.diary-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.page-content-side {
+    background-image: 
+        linear-gradient(to right, rgba(0,0,0,0.05) 0%, transparent 10%),
+        radial-gradient(circle, rgba(0,0,0,0.05) 1.2px, transparent 1.2px);
+    padding: 30px 36px 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.content-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4px;
+}
+
+.content-subtitle {
+    font-size: 0.85rem;
+    color: #4A5568;
+    font-weight: 700;
+    opacity: 0.85;
+}
+
+/* Calligraphic handwriting script notes */
+.diary-notes-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.calligraphy-note {
+    font-family: var(--font-diary);
+    font-size: 1.6rem;
+    color: var(--ink-color);
+    line-height: 1.35;
+    margin-bottom: 6px;
+    outline: none;
+    border: 1.5px dashed transparent;
+    border-radius: 4px;
+    padding: 4px;
+    transition: var(--transition-smooth);
+}
+
+.calligraphy-note:hover {
+    border-color: rgba(139, 92, 246, 0.25);
+    background-color: rgba(139, 92, 246, 0.02);
+}
+
+.calligraphy-note:focus {
+    border-color: var(--color-accent);
+    background-color: rgba(139, 92, 246, 0.04);
+}
+
+.calligraphy-subnote {
+    font-family: var(--font-diary);
+    font-size: 1.25rem;
+    color: #4A5568;
+    opacity: 0.8;
+}
+
+/* SVG indicator arrows positioning */
+.arrow-right-page, .arrow-left-page {
+    position: absolute;
+    color: var(--color-accent);
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.arrow-right-page {
+    bottom: 24px;
+    left: 24px;
+    transform: scaleX(-1) rotate(10deg); /* Mirror arrow direction */
+}
+
+.arrow-left-page {
+    top: 24px;
+    right: 24px;
+    transform: rotate(-10deg);
+}
+
+/* Color swatches */
+.swatches-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.swatch-circles {
+    display: flex;
+    gap: 6px;
+}
+
+.swatch-circle {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.15);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.swatch-label {
+    font-family: var(--font-diary);
+    font-size: 0.95rem;
+    color: var(--ink-color);
+    font-weight: 700;
+    outline: none;
+    border: 1px dashed transparent;
+}
+
+.swatch-label:focus {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent-light);
+}
+
+/* ==========================================================================
+   Control Action Footer
+   ========================================================================== */
+.control-footer {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding: 30px 0 50px 0;
+}
+
+.control-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: var(--transition-smooth);
+}
+
+.control-btn:hover {
+    background-color: var(--color-accent);
+    color: white;
+    border-color: var(--color-accent);
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+}
+
+.control-btn.btn-accent {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: white;
+}
+
+.control-btn.btn-accent:hover {
+    background-color: var(--color-accent-hover);
+    transform: scale(1.1) rotate(90deg);
+}
+
+/* ==========================================================================
+   Share Overlay Modal
+   ========================================================================== */
+.share-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(18, 20, 32, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-smooth);
+}
+
+.share-modal-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.share-card {
+    background-color: var(--bg-slate);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--border-radius-md);
+    padding: 32px;
+    max-width: 440px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    transform: scale(0.9);
+    transition: var(--transition-smooth);
+}
+
+.share-modal-overlay.open .share-card {
+    transform: scale(1);
+}
+
+.share-title {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.share-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.share-options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.share-option-btn {
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--border-radius-sm);
+    padding: 18px 10px;
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.share-option-btn:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: var(--color-accent);
+}
+
+.share-option-icon {
+    font-size: 1.6rem;
+}
+
+.share-option-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.btn-close-modal {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--text-muted);
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.btn-close-modal:hover {
+    color: var(--text-light);
+    border-color: var(--text-light);
+}
+
+/* ==========================================================================
+   Responsive Viewports
+   ========================================================================== */
+@media (max-width: 991px) {
+    .carousel-deck {
+        height: 400px;
+    }
+    .journal-card {
+        width: 600px;
+        height: 380px;
+        margin-left: -300px;
+        margin-top: -190px;
+    }
+    .journal-card.prev {
+        transform: translate3d(160px, 0, -200px) rotateY(-22deg) scale(0.85);
+    }
+    .journal-card.next {
+        transform: translate3d(-160px, 0, -200px) rotateY(22deg) scale(0.85);
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-deck {
+        height: 360px;
+    }
+    .journal-card {
+        width: 500px;
+        height: 340px;
+        margin-left: -250px;
+        margin-top: -170px;
+    }
+    .journal-card.prev {
+        transform: translate3d(100px, 0, -180px) rotateY(-16deg) scale(0.8);
+    }
+    .journal-card.next {
+        transform: translate3d(-100px, 0, -180px) rotateY(16deg) scale(0.8);
+    }
+    
+    .polaroid-frame {
+        width: 85px;
+        padding-bottom: 12px;
+    }
+    .polaroid-frame img {
+        height: 65px;
+    }
+    
+    .calligraphy-note {
+        font-size: 1.3rem;
+    }
+    .calligraphy-subnote {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 540px) {
+    /* Collapse open notebook spread into a single page stack on mobile for maximum legibility */
+    .notebook-spread {
+        grid-template-columns: 1fr;
+    }
+    
+    .page-image-side {
+        display: none; /* Hide image side on mobile card stacks to keep notes readable */
+    }
+    
+    .binding-line {
+        display: none;
+    }
+    
+    .journal-card {
+        width: 300px;
+        margin-left: -150px;
+    }
+    
+    .journal-card.prev {
+        transform: translate3d(60px, 0, -120px) rotateY(-12deg) scale(0.8);
+    }
+    .journal-card.next {
+        transform: translate3d(-60px, 0, -120px) rotateY(12deg) scale(0.8);
+    }
+}

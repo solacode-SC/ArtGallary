@@ -42,7 +42,7 @@ help:
 # Run development environment (forces generation of local .env if missing)
 dev:
 	@if [ ! -f .env ]; then cp .env.example .env; fi
-	$(COMPOSE_DEV) up --build
+	$(COMPOSE_DEV) up
 
 # Run production environment
 prod:

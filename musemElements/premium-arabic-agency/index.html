@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="بِنك - شريك نجاحك الرقمي. نقدم خدمات تصميم الهويات البصرية، واجهات المستخدم التفاعلية، وتطوير مواقع الويب الاحترافية بأسعار ثابتة وتعديلات غير محدودة.">
+    <title>بِنك | نجسد رؤيتك واقعاً إبداعياً ملموساً</title>
+    
+    <!-- Google Fonts: Alexandria for punchy neo-brutalist headings/numbers, IBM Plex Sans Arabic for clean body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Brand Logo -->
+            <a href="#" class="logo" aria-label="بِنك الرئيسية">
+                <span class="logo-text">بِنك<span class="logo-dot">.</span></span>
+            </a>
+
+            <!-- Capsule Nav Menu -->
+            <nav class="nav-menu" id="nav-menu" aria-label="القائمة الرئيسية">
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link active">الرئيسية</a></li>
+                    <li><a href="#services" class="nav-link">خدماتنا</a></li>
+                    <li><a href="#portfolio" class="nav-link">أعمالنا</a></li>
+                    <li><a href="#pricing" class="nav-link">باقاتنا</a></li>
+                    <li><a href="#contact" class="nav-link">اتصل بنا</a></li>
+                </ul>
+            </nav>
+
+            <!-- CTA Let's Talk -->
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-nav-cta">لنبدأ الحوار</a>
+                
+                <!-- Mobile Hamburger Menu -->
+                <button class="mobile-toggle" id="mobile-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="فتح قائمة التنقل">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Hero Section -->
+        <section class="hero-section" id="home">
+            <div class="hero-container">
+                
+                <!-- Hero Left: Text & CTA (RTL: Right side) -->
+                <div class="hero-text-block">
+                    <h1 class="hero-title">
+                        رحلة تصميم<br>
+                        <span class="text-underline">بلا عناء</span>
+                        <svg class="hero-arrow-svg" viewBox="0 0 100 20" width="120" height="30" fill="none" stroke="currentColor" stroke-width="3">
+                            <path d="M5 15 C 30 2, 80 2, 90 10 M 80 5 L 90 10 L 85 18" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </h1>
+                    <p class="hero-subtitle">
+                        وداعاً لرسائل البريد اللانهائية وتشتت المصممين. اختبر التصميم كما يجب أن يكون: لوحة تحكم خاصة بمشروعك، أسعار ثابتة مريحة، تعديلات غير محدودة، وتصاميم مذهلة تلبي تطلعاتك وتصنع فارقاً حقيقياً لعلامتك التجارية.
+                    </p>
+                    
+                    <div class="hero-actions">
+                        <a href="#pricing" class="btn btn-primary">ابدأ رحلتك</a>
+                        
+                        <!-- Floating play badge -->
+                        <div class="play-badge-wrapper" aria-hidden="true">
+                            <div class="play-badge">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right: Interactive Neo-Brutalist Canvas (RTL: Left side) -->
+                <div class="hero-visual-block" aria-hidden="true">
+                    <div class="canvas-container">
+                        <!-- Main Neon Card -->
+                        <div class="main-neon-card">
+                            <div class="dotted-box-selection">
+                                <div class="cursor-pointer">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                        <path d="M4 4l11.73 11.73-3.66.74 3 6.07-2.69 1.33-3-6.07-3.11 2.21Z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            
+                            <!-- Floating Black Eye Card -->
+                            <div class="floating-black-card">
+                                <div class="eye-illustrations">
+                                    <div class="eye-box">
+                                        <div class="eye-shape">
+                                            <div class="pupil"></div>
+                                        </div>
+                                    </div>
+                                    <div class="eye-box">
+                                        <div class="eye-shape">
+                                            <div class="pupil"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider-controls">
+                                    <span class="play-small-icon">▶</span>
+                                    <div class="scrubber-bar">
+                                        <div class="scrubber-progress" style="width: 65%;"></div>
+                                    </div>
+                                    <span class="time-stamp">١٤:٠٢</span>
+                                </div>
+                            </div>
+
+                            <!-- Floating Document Sheet -->
+                            <div class="floating-doc-sheet">
+                                <span class="doc-title-aa">Aa</span>
+                                <div class="doc-lines">
+                                    <span class="line-skeleton"></span>
+                                    <span class="line-skeleton"></span>
+                                </div>
+                                <div class="doc-badge-purple">
+                                    <!-- Star / Sparkle Drawing -->
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Decorative Floating Elements -->
+                            <div class="float-badge purple-circle-badge"></div>
+                            <div class="float-badge green-capsule-badge">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                    <path d="M9 18l6-6-6-6"/>
+                                </svg>
+                            </div>
+                            <div class="grid-helper-lines"></div>
+                        </div>
+                        
+                        <!-- Floating Big Star -->
+                        <div class="floating-star-purple">✦</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Social Proof Brand Bar -->
+            <div class="brands-section-wrapper">
+                <div class="brands-card">
+                    <span class="brands-label">شريك نجاح لـ</span>
+                    <span class="brands-pointer">
+                        <!-- Hand pointing left (RTL) -->
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                        </svg>
+                    </span>
+                    <div class="brands-grid">
+                        <div class="brand-item font-hm">H&M</div>
+                        <div class="brand-item font-levis">Levi's</div>
+                        <div class="brand-item font-local font-aramco">أرامكو</div>
+                        <div class="brand-item font-local font-sabic">سابك</div>
+                        <div class="brand-item font-local font-almarai">المراعي</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features / Brand Showcase Section (Navy Theme) -->
+        <section class="features-section" id="services">
+            <div class="features-container">
+                
+                <div class="features-header-block">
+                    <h2 class="features-heading">أبرز هويتك كالمحترفين</h2>
+                    <div class="features-sub-badge">
+                        <span>قدّم لعملائك التجربة الرقمية المتكاملة والأرقى</span>
+                    </div>
+                </div>
+
+                <!-- Dynamic Interactive Mockup Dashboard -->
+                <div class="dashboard-mockup">
+                    
+                    <!-- Dashboard Sidebar (RTL: Right Side) -->
+                    <aside class="db-sidebar" aria-label="تبديل لوحة التحكم">
+                        <!-- Tab 1: Visual Identity -->
+                        <button class="db-tab-btn active" data-tab="branding" aria-selected="true" role="tab">
+                            <span class="tab-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                            </span>
+                            <span class="tab-text">هوية بصرية راسخة</span>
+                        </button>
+
+                        <!-- Tab 2: Typography -->
+                        <button class="db-tab-btn" data-tab="typography" aria-selected="false" role="tab">
+                            <span class="tab-icon font-heavy">Aa</span>
+                            <span class="tab-text">تنسيق خطوط فريد</span>
+                        </button>
+
+                        <!-- Tab 3: Video Motion -->
+                        <button class="db-tab-btn" data-tab="motion" aria-selected="false" role="tab">
+                            <span class="tab-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polygon points="10 8 16 12 10 16 10 8"/>
+                                </svg>
+                            </span>
+                            <span class="tab-text">حركات ويب تفاعلية</span>
+                        </button>
+                    </aside>
+
+                    <!-- Dashboard Main Content Screen (RTL: Left Side) -->
+                    <div class="db-screen">
+                        
+                        <header class="db-screen-header">
+                            <div class="db-search-bar">
+                                <span class="db-search-icon">🔍</span>
+                                <span class="db-search-text">البحث في الهوية...</span>
+                            </div>
+                            <div class="db-header-dots">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </header>
+
+                        <div class="db-screen-body" id="db-content-area">
+                            <!-- Injected dynamically via JS, template for default 'branding' tab -->
+                            <div class="tab-view branding-view active">
+                                <div class="tab-text-card">
+                                    <span class="tab-view-tag">تطوير الهويات</span>
+                                    <h3 class="tab-view-title">تصميم تجربة مستخدم مبهر متناغم مع موقع تفاعلي</h3>
+                                    <p class="tab-view-desc">نقوم بدمج فلسفة علامتك التجارية ضمن واجهات ويب حية ومستقرة، تجمع بين جمالية التصميم وسرعة الاستجابة لخلق تجربة رقمية لا تُنسى لعملائك.</p>
+                                    <span class="tab-view-subtext">✦ الحركات التفاعلية للويب</span>
+                                </div>
+                                <div class="tab-visual-card">
+                                    <!-- Dynamic Avatar Overlapping -->
+                                    <img src="assets/avatar_dashboard.png" alt="أبرز هويتك كالمحترفين" class="tab-avatar-img">
+                                    <div class="avatar-glow"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Media Strip Controller Footer -->
+                        <footer class="db-screen-footer">
+                            <button class="db-play-btn" aria-label="تشغيل العرض التقديمي">▶</button>
+                            <div class="db-scrubber">
+                                <div class="db-scrubber-progress" style="width: 78%;"></div>
+                                <span class="db-scrubber-pin" style="right: 78%;"></span>
+                            </div>
+                            <span class="db-duration">١٥:٠٥</span>
+                        </footer>
+                    </div>
+
+                    <!-- Floating Badges / Client Details -->
+                    
+                    <!-- Speech Bubble Badge -->
+                    <div class="badge-bubble shadow-brutalist float-anim">
+                        <span class="bubble-icon">💬</span>
+                        <span class="bubble-text">تعديلات غير محدودة! حتى رضاك التام 100٪</span>
+                    </div>
+
+                    <!-- Client Badge Robin (Rami) -->
+                    <div class="client-badge-avatar badge-robin shadow-brutalist">
+                        <span class="client-icon">🎨</span>
+                        <span class="client-name">رامي</span>
+                    </div>
+
+                    <!-- Client Badge Matt (Marwan) -->
+                    <div class="client-badge-avatar badge-matt shadow-brutalist">
+                        <span class="client-icon">▶</span>
+                        <span class="client-name">مروان</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Final Vision / Call To Action Section -->
+        <section class="vision-section" id="pricing">
+            <div class="vision-container">
+                <div class="vision-card shadow-brutalist">
+                    <h2 class="vision-title">نجسد رؤيتك واقعاً ملموساً</h2>
+                    <div class="vision-sub-badge">
+                        <span>تماماً كما تخيلتها</span>
+                    </div>
+                    <p class="vision-desc">
+                        نحن لا نكتفي برسم الخطوط، بل نصنع تجارب رقمية تنبض بالحياة وتعزز نمو علامتك التجارية. اختر الباقة المناسبة لمشروعك الآن وابدأ فوراً في استلام تصاميمك.
+                    </p>
+                    <div class="vision-actions">
+                        <a href="#contact" class="btn btn-primary">احصل على استشارة مجانية</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Form & Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="contact-container">
+                <div class="contact-grid">
+                    
+                    <!-- Text details -->
+                    <div class="contact-info">
+                        <h2 class="contact-title">لنصنع شيئاً عظيماً معاً</h2>
+                        <p class="contact-desc">
+                            هل لديك فكرة مشروع أو ترغب في تطوير هويتك التجارية الحالية؟ املأ النموذج وسيتصل بك أحد كبار مصممينا خلال 24 ساعة لبدء النقاش.
+                        </p>
+                        <div class="contact-details-list">
+                            <div class="contact-item-row">
+                                <span class="contact-icon">📍</span>
+                                <span>الرياض، المملكة العربية السعودية</span>
+                            </div>
+                            <div class="contact-item-row">
+                                <span class="contact-icon">✉️</span>
+                                <span>hello@binke.sa</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Neo-Brutalist Form -->
+                    <div class="contact-form-wrapper shadow-brutalist">
+                        <form id="agency-contact-form" onsubmit="event.preventDefault(); alert('شكراً لتواصلك معنا! تم إرسال رسالتك بنجاح وسيتواصل معك فريقنا قريباً.'); this.reset();">
+                            <div class="form-group">
+                                <label for="form-name">الاسم الكريم</label>
+                                <input type="text" id="form-name" required placeholder="مثال: أحمد عبد الله">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">البريد الإلكتروني</label>
+                                <input type="email" id="form-email" required placeholder="name@company.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-message">تفاصيل مشروعك باختصار</label>
+                                <textarea id="form-message" rows="4" required placeholder="أخبرنا عن علامتك التجارية وتطلعاتك الإبداعية..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-full">إرسال الرسالة لبدء الحوار</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Area -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                
+                <!-- Col 1: Brand -->
+                <div class="footer-brand-col">
+                    <span class="logo-text">بِنك<span class="logo-dot">.</span></span>
+                    <p class="footer-pitch">
+                        وكالة تصميم إبداعية متكاملة تركز على صياغة تجارب مستخدم آسرة وهويات بصرية تفاعلية تليق بتطلعات عملائك.
+                    </p>
+                </div>
+
+                <!-- Col 2: Navigation Links -->
+                <div class="footer-links-col">
+                    <h4 class="footer-head">استكشف</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#services">الخدمات</a></li>
+                        <li><a href="#portfolio">المشاريع</a></li>
+                        <li><a href="#pricing">الباقات</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Services Details -->
+                <div class="footer-links-col">
+                    <h4 class="footer-head">ماذا نفعل؟</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#">تصميم الهويات البصرية</a></li>
+                        <li><a href="#">واجهات المستخدم UX/UI</a></li>
+                        <li><a href="#">الحركات التفاعلية للويب</a></li>
+                        <li><a href="#">تطوير مواقع Webflow & NextJS</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Licensing & Legal -->
+                <div class="footer-links-col">
+                    <h4 class="footer-head">التواصل</h4>
+                    <ul class="footer-links-list">
+                        <li>📍 الرياض، السعودية</li>
+                        <li>✉️ hello@binke.sa</li>
+                        <li>📞 +٩٦٦ ٥٠ ٠٠٠ ٠٠٠٠</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© ٢٠٢٦ وكالة بِنك الإبداعية. جميع الحقوق محفوظة ومحمية بموجب أنظمة حماية الملكية الفكرية.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

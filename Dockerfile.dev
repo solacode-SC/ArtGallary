@@ -1,21 +1,19 @@
 FROM node:18-alpine
 
 WORKDIR /app
-
-# Copy dependency definition files
-COPY package*.json ./
-
-# Install development dependencies
-RUN npm install
-
-# Copy application source code
-COPY . .
-
-# Set permissions for node user
-RUN chown -R node:node /app
+RUN chown node:node /app
 
 # Run container as non-root user
 USER node
+
+# Copy dependency definition files
+COPY --chown=node:node package*.json ./
+
+# Install development dependencies
+RUN npm ci --no-audit --no-fund
+
+# Copy application source code
+COPY --chown=node:node . .
 
 # Expose Vite dev server default port
 EXPOSE 5080

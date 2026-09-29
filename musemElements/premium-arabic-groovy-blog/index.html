@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="جروفي بلوغ - مدونة إبداعية تشارك مقالات في السفر، والصحة، والتكنولوجيا، وبناء الهوية البصرية الرقمية.">
+    <title>جُرُوفِي بْلُوغ | منصة التدوين الإبداعي</title>
+    
+    <!-- Google Fonts: Cairo for title/branding headers and Alexandria for body elements -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Alexandria:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Main Container Wrapper -->
+    <div class="blog-wrapper">
+
+        <!-- ==========================================================================
+             Navigation Header (Capsule shaped bar)
+             ========================================================================== -->
+        <header class="blog-header-capsule">
+            <div class="header-container-inner">
+                
+                <!-- Right side (RTL Right): Logo & Menu Links -->
+                <div class="header-right-side">
+                    <a href="#" class="logo-txt">groovy</a>
+                    <nav class="nav-menu" aria-label="التنقل الرئيسي">
+                        <a href="#" class="nav-link-item active">الرئيسية</a>
+                        <a href="#" class="nav-link-item">العضوية</a>
+                        <a href="#" class="nav-link-item">دليل التنسيق</a>
+                        <a href="#" class="nav-link-item">#وسوم</a>
+                        <a href="#" class="nav-link-item">المزيد</a>
+                    </nav>
+                </div>
+
+                <!-- Left side (RTL Left): Sign In & Social Handles -->
+                <div class="header-left-side">
+                    <button class="search-trigger-btn" aria-label="البحث في المدونة">🔍</button>
+                    <a href="#" class="btn-signin-capsule">تسجيل الدخول</a>
+                    <div class="header-socials">
+                        <a href="#" class="social-icon-link" aria-label="فيسبوك">📘</a>
+                        <a href="#" class="social-icon-link" aria-label="تويتر">🕊️</a>
+                        <a href="#" class="social-icon-link" aria-label="إنستغرام">📸</a>
+                        <a href="#" class="social-icon-link" aria-label="ملخص الخلاصة">📡</a>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- ==========================================================================
+             Main Content Grid (RTL Swapped: Feed on the Right, Sidebar on the Left)
+             ========================================================================== -->
+        <div class="blog-main-grid">
+
+            <!-- 1. RIGHT COLUMN (RTL): Main Feed list (Width ~ 68%) -->
+            <main class="grid-feed-col" aria-label="خلاصة المقالات الجديدة">
+                
+                <!-- Post Card 1 -->
+                <article class="post-card">
+                    <!-- Right side of card (RTL): Image illustration -->
+                    <div class="post-image-wrap">
+                        <img src="assets/post_bulb.jpg" alt="بناء جمهورك من خلال نماذج تسجيل المشتركين">
+                        <span class="img-badge-icon">💡</span>
+                    </div>
+                    <!-- Left side of card (RTL): Text details -->
+                    <div class="post-details-wrap">
+                        <div class="post-meta-row">
+                            <span class="category-badge travel-badge">سفر</span>
+                            <span class="post-date">٢٥ سبتمبر ٢٠٢٢</span>
+                            <span class="read-time">• ٣ دقائق قراءة</span>
+                        </div>
+                        <h2 class="post-title">بناء جمهورك من خلال نماذج تسجيل المشتركين</h2>
+                        <p class="post-snippet-desc">
+                            كيف تتيح لك المنصة تحويل القراء المجهولين إلى جمهور متفاعل من المشتركين النشطين، حتى تتمكن من معرفة ما ينجح وما لا ينجح لمشاريعك المستقبلية...
+                        </p>
+                        <div class="post-card-footer">
+                            <a href="#" class="btn-read-more">اكمل القراءة</a>
+                            <div class="post-author-chip">
+                                <img src="assets/avatar_jonathan.png" alt="جوناثان دو" class="author-avatar-mini">
+                                <span class="author-name">جوناثان دو</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post Card 2 -->
+                <article class="post-card">
+                    <!-- Right side of card (RTL): Image illustration -->
+                    <div class="post-image-wrap">
+                        <img src="assets/post_number.jpg" alt="بعيداً جداً، خلف جبال الكلمات الشاهقة">
+                        <span class="img-badge-icon">📍</span>
+                    </div>
+                    <!-- Left side of card (RTL): Text details -->
+                    <div class="post-details-wrap">
+                        <div class="post-meta-row">
+                            <span class="category-badge guide-badge">البداية</span>
+                            <span class="post-date">١٦ مارس ٢٠٢١</span>
+                            <span class="read-time">• ٣ دقائق قراءة</span>
+                        </div>
+                        <h2 class="post-title">بعيداً جداً، خلف جبال الكلمات الشاهقة</h2>
+                        <p class="post-snippet-desc">
+                            مرحباً بك في بيتك الجديد على الإنترنت! على عكس شبكات التواصل الاجتماعي، هذا المكان ملكك تماماً ونثق أنك ستبني هوية بصرية مذهلة وممتعة لمتابعيك...
+                        </p>
+                        <div class="post-card-footer">
+                            <a href="#" class="btn-read-more">اكمل القراءة</a>
+                            <div class="post-author-chip">
+                                <img src="assets/avatar_jonathan.png" alt="جوناثان دو" class="author-avatar-mini">
+                                <span class="author-name">جوناثان دو</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post Card 3 -->
+                <article class="post-card">
+                    <!-- Right side of card (RTL): Image illustration -->
+                    <div class="post-image-wrap">
+                        <img src="assets/post_pumpkins.jpg" alt="بيع العضويات من خلال الإيرادات المتكررة">
+                        <span class="img-badge-icon">🎃</span>
+                    </div>
+                    <!-- Left side of card (RTL): Text details -->
+                    <div class="post-details-wrap">
+                        <div class="post-meta-row">
+                            <span class="category-badge health-badge">الصحة</span>
+                            <span class="post-date">١٦ مارس ٢٠٢١</span>
+                            <span class="read-time">• دقيقة قراءة</span>
+                        </div>
+                        <h2 class="post-title">بيع العضويات من خلال الإيرادات المتكررة</h2>
+                        <p class="post-snippet-desc">
+                            للمبدعين ورواد الأعمال الطموحين الذين يتطلعون إلى توليد دخل مستدام من أعمالهم الإبداعية، نقدم لكم دليلاً حول كيفية تفعيل أنظمة العضوية...
+                        </p>
+                        <div class="post-card-footer">
+                            <a href="#" class="btn-read-more">اكمل القراءة</a>
+                            <div class="post-author-chip">
+                                <img src="assets/avatar_jonathan.png" alt="جوناثان دو" class="author-avatar-mini">
+                                <span class="author-name">جوناثان دو</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post Card 4 -->
+                <article class="post-card">
+                    <!-- Right side of card (RTL): Image illustration -->
+                    <div class="post-image-wrap">
+                        <img src="assets/post_iceberg.jpg" alt="تخصيص علامتك التجارية وإعدادات التصميم الخاص بك">
+                        <span class="img-badge-icon">❄️</span>
+                    </div>
+                    <!-- Left side of card (RTL): Text details -->
+                    <div class="post-details-wrap">
+                        <div class="post-meta-row">
+                            <span class="category-badge tech-badge">تكنولوجيا</span>
+                            <span class="post-date">١٦ مارس ٢٠٢١</span>
+                            <span class="read-time">• ٣ دقائق قراءة</span>
+                        </div>
+                        <h2 class="post-title">تخصيص علامتك التجارية وإعدادات التصميم الخاص بك</h2>
+                        <p class="post-snippet-desc">
+                            كما تمت مناقشته في منشور المقدمة، فإن أحد أفضل الأشياء في جروفي هو مدى قدرتك على تخصيص وتعديل موقعك ليصبح فريداً ويعبر عن هويتك الإبداعية...
+                        </p>
+                        <div class="post-card-footer">
+                            <a href="#" class="btn-read-more">اكمل القراءة</a>
+                            <div class="post-author-chip">
+                                <img src="assets/avatar_jonathan.png" alt="ماري بوزارد" class="author-avatar-mini">
+                                <span class="author-name">ماري بوزارد</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </main>
+
+            <!-- 2. LEFT COLUMN (RTL): Sidebar widgets (Width ~ 30%) -->
+            <aside class="grid-sidebar-col" aria-label="قائمة جانبية معلومات المبدعين">
+                
+                <!-- Widget 1: About Me -->
+                <section class="sidebar-widget widget-about-me">
+                    <h3 class="widget-header-title">عني</h3>
+                    <div class="widget-content">
+                        <div class="about-author-header">
+                            <img src="assets/avatar_jonathan.png" alt="جوناثان دو" class="about-avatar-img">
+                            <div class="about-author-meta">
+                                <h4 class="about-author-name">جوناثان دو</h4>
+                                <span class="about-author-title">المؤسس والناشر الرئيسي</span>
+                            </div>
+                        </div>
+                        <p class="about-author-desc">
+                            مرحباً بك! أنا جوناثان دو، أعمل كاتبًا ومطورًا لهويات الويب البصرية والمشاريع الإبداعية. نهدف في جروفي لتسهيل نشر أفكارك.
+                        </p>
+                        <div class="about-socials-row">
+                            <a href="#" class="social-icon-link">📘</a>
+                            <a href="#" class="social-icon-link">🕊️</a>
+                            <a href="#" class="social-icon-link">📸</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Widget 2: Featured Articles -->
+                <section class="sidebar-widget widget-featured">
+                    <h3 class="widget-header-title">المقالات المميزة</h3>
+                    <div class="widget-content flex-column-gap">
+                        
+                        <!-- List Item 1 -->
+                        <div class="featured-list-item">
+                            <span class="featured-badge-num">١</span>
+                            <div class="featured-item-details">
+                                <h4 class="featured-item-title"><a href="#">بناء جمهورك من خلال نماذج تسجيل المشتركين</a></h4>
+                                <span class="featured-item-date">٢٥ سبتمبر ٢٠٢٢</span>
+                            </div>
+                        </div>
+
+                        <!-- List Item 2 -->
+                        <div class="featured-list-item">
+                            <span class="featured-badge-num">٢</span>
+                            <div class="featured-item-details">
+                                <h4 class="featured-item-title"><a href="#">بيع العضويات من خلال الإيرادات المتكررة</a></h4>
+                                <span class="featured-item-date">١٦ مارس ٢٠٢١</span>
+                            </div>
+                        </div>
+
+                        <!-- List Item 3 -->
+                        <div class="featured-list-item">
+                            <span class="featured-badge-num">٣</span>
+                            <div class="featured-item-details">
+                                <h4 class="featured-item-title"><a href="#">تخصيص علامتك التجارية وإعدادات التصميم</a></h4>
+                                <span class="featured-item-date">١٦ مارس ٢٠٢١</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Widget 3: Follow Me -->
+                <section class="sidebar-widget widget-follow-us">
+                    <h3 class="widget-header-title">تابعنا!</h3>
+                    <div class="widget-content follow-links-list">
+                        <a href="#" class="follow-channel-btn">
+                            <span class="chan-icon">📘</span> Facebook
+                        </a>
+                        <a href="#" class="follow-channel-btn">
+                            <span class="chan-icon">🕊️</span> Twitter
+                        </a>
+                        <a href="#" class="follow-channel-btn">
+                            <span class="chan-icon">📸</span> Instagram
+                        </a>
+                        <a href="#" class="follow-channel-btn">
+                            <span class="chan-icon">📡</span> RSS Feed
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Widget 4: Tag Cloud -->
+                <section class="sidebar-widget widget-tags">
+                    <h3 class="widget-header-title">سحابة الوسوم</h3>
+                    <div class="widget-content tag-cloud-pills">
+                        <a href="#" class="tag-pill-item">البداية</a>
+                        <a href="#" class="tag-pill-item">سفر</a>
+                        <a href="#" class="tag-pill-item">صحة</a>
+                        <a href="#" class="tag-pill-item">تكنولوجيا</a>
+                    </div>
+                </section>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+    <!-- Webpage Footer -->
+    <footer>
+        جُرُوفِي بْلُوغ © ٢٠٢٦ | جميع الحقوق محفوظة لـ ناشيرتيك
+    </footer>
+
+</body>
+<script src="app.js"></script>
+</html>

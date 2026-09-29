@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="أسفار المشرق - بوابتك لاستكشاف أرقى المعالم السياحية والتراثية في شبه الجزيرة العربية. احجز رحلتك الفريدة الآن.">
+    <title>أَسْفَار المَشْرِق | استكشف سحر المغامرة</title>
+    
+    <!-- Google Fonts: Cairo for branding and Alexandria for readable details -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Alexandria:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ==========================================================================
+         Navigation Header (RTL Mirrored)
+         ========================================================================== -->
+    <header class="explore-header">
+        <div class="header-container">
+            
+            <!-- Right: Logo branding -->
+            <div class="header-logo-wrap">
+                <a href="#" class="explore-logo">أَسْفَار المَشْرِق</a>
+            </div>
+
+            <!-- Center: Navigation menu links -->
+            <nav class="explore-nav-menu" aria-label="قائمة التنقل الرئيسية">
+                <a href="#" class="nav-item active">الرئيسية</a>
+                <a href="#experience-section" class="nav-item">خبرتنا</a>
+                <a href="#destinations-section" class="nav-item">أبرز الوجهات</a>
+                <a href="#booking-section" class="nav-item">الرحلات</a>
+                <a href="#testimonials-section" class="nav-item">آراء العملاء</a>
+            </nav>
+
+            <!-- Left: Contact / Search triggers -->
+            <div class="header-left-actions">
+                <button class="btn-contact-nav" id="btn-pitch-modal-trigger">تواصل معنا</button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         Section 1: Our Experience (Cozy story & stats columns)
+         ========================================================================== -->
+    <section class="experience-section" id="experience-section">
+        <div class="section-container grid-two-cols">
+            
+            <!-- LEFT COLUMN: Portrait Photo Circle with overlay tags (order 2 in LTR, 1 in RTL flex) -->
+            <div class="experience-visual-col">
+                <div class="portrait-circle-frame">
+                    <img src="assets/traveler.png" alt="مصورة ومستكشفة عربية في الصحراء" class="portrait-img">
+                    
+                    <!-- Overlay Tag Right (RTL Mirrored) -->
+                    <div class="overlay-tag overlay-right">
+                        <span class="tag-icon">📍</span>
+                        <div class="tag-text">
+                            <span class="tag-val">٦٠٠+</span>
+                            <span class="tag-lbl">وجهة سياحية</span>
+                        </div>
+                    </div>
+
+                    <!-- Overlay Tag Left (RTL Mirrored) -->
+                    <div class="overlay-tag overlay-left">
+                        <span class="tag-icon">❤️</span>
+                        <div class="tag-text">
+                            <span class="tag-val">٥٠٠٠+</span>
+                            <span class="tag-lbl">عميل سعيد</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Text and stats rows -->
+            <div class="experience-text-col">
+                <span class="section-badge">خبرتنا السياحية</span>
+                <h1 class="main-heading">قصتنا في المغامرة واستكشاف أجمل الوجهات السياحية</h1>
+                <p class="section-desc">
+                    نؤمن في أسفار المشرق بأن كل رحلة تحمل في طياتها قصة فريدة. من خلال تجاربنا الطويلة، نوفر لك إلهامًا وتوصيات فريدة وقصصًا مثيرة من وجهات سياحية غنية بالثقافة والتراث الأصيل. هل أنت مستعد للبدء بكتابة قصتك الخاصة؟
+                </p>
+
+                <!-- Statistics boxes row -->
+                <div class="stats-cards-row">
+                    <div class="stat-card">
+                        <span class="stat-num">١٢ ألف+</span>
+                        <span class="stat-label">رحلات ناجحة</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num">١٦+</span>
+                        <span class="stat-label">جوائز تقديرية</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num">٢٠+</span>
+                        <span class="stat-label">عام من الخبرة</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 2: Top Destinations Collage Grid
+         ========================================================================== -->
+    <section class="destinations-section" id="destinations-section">
+        <div class="section-container">
+            
+            <div class="section-title-center">
+                <span class="section-badge">الوجهات الأكثر تميزًا</span>
+                <h2 class="section-title">أسباب تجعل هذه الوجهات خيارك المثالي القادم</h2>
+            </div>
+
+            <!-- Category filter capsules -->
+            <nav class="filter-capsules-bar" aria-label="تصنيفات الوجهات">
+                <button class="filter-capsule active" data-filter="all">الكل</button>
+                <button class="filter-capsule" data-filter="alula">العلا التاريخية</button>
+                <button class="filter-capsule" data-filter="asir">مرتفعات عسير</button>
+                <button class="filter-capsule" data-filter="oman">ظفار وصلالة</button>
+                <button class="filter-capsule" data-filter="tabuk">عجائب تبوك</button>
+                <button class="filter-capsule" data-filter="desert">الربع الخالي</button>
+            </nav>
+
+            <!-- Collage Grid System -->
+            <div class="destinations-collage-grid" id="destinations-collage-grid">
+                
+                <!-- Card 1: Wildlife Farasan -->
+                <div class="collage-card size-sm" data-category="oman">
+                    <img src="assets/oman.png" alt="جزر فرسان البحرية" class="collage-img">
+                    <div class="collage-card-overlay">
+                        <span class="rating-badge">⭐ ٤.٥</span>
+                        <div class="collage-meta-info">
+                            <span class="location-tag">ظفار</span>
+                            <h3 class="collage-title">حياة برية فريدة</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Rijal Almaa -->
+                <div class="collage-card size-sm" data-category="asir">
+                    <img src="assets/sawda.png" alt="رجال ألمع التراثية" class="collage-img">
+                    <div class="collage-card-overlay">
+                        <span class="rating-badge">⭐ ٤.٨</span>
+                        <div class="collage-meta-info">
+                            <span class="location-tag">عسير</span>
+                            <h3 class="collage-title">قرية رجال ألمع</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: AlUla (Large middle tall card) -->
+                <div class="collage-card size-lg" data-category="alula">
+                    <img src="assets/alula.png" alt="مقابر النبطية في العلا" class="collage-img">
+                    <div class="collage-card-overlay">
+                        <span class="rating-badge">⭐ ٤.٩</span>
+                        <div class="collage-meta-info">
+                            <span class="location-tag">العلا</span>
+                            <h3 class="collage-title">العلا - عبق التاريخ النبطي</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Salalah green hills -->
+                <div class="collage-card size-md" data-category="oman">
+                    <img src="assets/oman.png" alt="صلالة في الخريف" class="collage-img">
+                    <div class="collage-card-overlay">
+                        <span class="rating-badge">⭐ ٤.٧</span>
+                        <div class="collage-meta-info">
+                            <span class="location-tag">ظفار</span>
+                            <h3 class="collage-title">صلالة الخضراء في الخريف</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Disah Waterfall -->
+                <div class="collage-card size-sm" data-category="tabuk">
+                    <img src="assets/disah.png" alt="مياه وادي الديسة الجارية" class="collage-img">
+                    <div class="collage-card-overlay">
+                        <span class="rating-badge">⭐ ٤.٨</span>
+                        <div class="collage-meta-info">
+                            <span class="location-tag">تبوك</span>
+                            <h3 class="collage-title">وادي الديسة النضير</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: Empty Quarter Dunes -->
+                <div class="collage-card size-sm" data-category="desert">
+                    <img src="assets/desert.png" alt="كثبان الربع الخالي الذهبية" class="collage-img">
+                    <div class="collage-card-overlay">
+                        <span class="rating-badge">⭐ ٤.٩</span>
+                        <div class="collage-meta-info">
+                            <span class="location-tag">الربع الخالي</span>
+                            <h3 class="collage-title">رمال الربع الخالي الذهبية</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 3: Choose Destination cards grid
+         ========================================================================== -->
+    <section class="booking-section" id="booking-section">
+        <div class="section-container">
+            
+            <div class="section-title-center">
+                <span class="section-badge">باقات السفر الخاصة</span>
+                <h2 class="section-title">اختر وجهتك المفضلة وانطلق معنا</h2>
+            </div>
+
+            <div class="booking-cards-grid">
+                
+                <!-- Card 1: Raja Ampat equivalent (Farasan oases) -->
+                <div class="booking-card">
+                    <div class="card-photo-wrap">
+                        <img src="assets/alula.png" alt="رحلة مدائن صالح">
+                    </div>
+                    <div class="card-details-wrap">
+                        <h3 class="booking-card-title">رحلة الآثار النبطية، العلا</h3>
+                        <p class="booking-card-desc">استكشف مدائن صالح والآثار العتيقة المحفورة في الجبال الذهبية بصحبة مرشد تراثي مختص.</p>
+                        <div class="card-bottom-row">
+                            <span class="price-lbl">٩٠$ <span class="sub-lbl">/ للشخص</span></span>
+                            <button class="btn-book-now" onclick="openBooking('رحلة الآثار النبطية، العلا')">احجز الآن</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Kayaking equivalent (Disah canyon tour) -->
+                <div class="booking-card">
+                    <div class="card-photo-wrap">
+                        <img src="assets/disah.png" alt="مسار وادي الديسة">
+                    </div>
+                    <div class="card-details-wrap">
+                        <h3 class="booking-card-title">مغامرة وادي الديسة، تبوك</h3>
+                        <p class="booking-card-desc">رحلة سير بين النخيل الشاهق والجبال الحمراء الشاهقة والاستمتاع بخرير المياه الجارية العذبة.</p>
+                        <div class="card-bottom-row">
+                            <span class="price-lbl">٢٥$ <span class="sub-lbl">/ للشخص</span></span>
+                            <button class="btn-book-now" onclick="openBooking('مغامرة وادي الديسة، تبوك')">احجز الآن</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Komodo equivalent (Sawda heights tour) -->
+                <div class="booking-card">
+                    <div class="card-photo-wrap">
+                        <img src="assets/sawda.png" alt="قمم جبال السودة">
+                    </div>
+                    <div class="card-details-wrap">
+                        <h3 class="booking-card-title">مرتفعات السودة وضباب عسير</h3>
+                        <p class="booking-card-desc">استمتع بالأجواء المعتدلة والضباب الكثيف في أعلى قمة جبلية بقرية رجال ألمع والبيوت المعلقة.</p>
+                        <div class="card-bottom-row">
+                            <span class="price-lbl">٩٠$ <span class="sub-lbl">/ للشخص</span></span>
+                            <button class="btn-book-now" onclick="openBooking('مرتفعات السودة وضباب عسير')">احجز الآن</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section 4: Testimonials
+         ========================================================================== -->
+    <section class="testimonials-section" id="testimonials-section">
+        <div class="section-container">
+            
+            <div class="section-title-center">
+                <span class="section-badge">تجارب حقيقية</span>
+                <h2 class="section-title">ماذا يقول مسافرونا عن رحلاتهم معنا:</h2>
+            </div>
+
+            <div class="testimonial-bubble-card">
+                <div class="testimonial-quotes">“</div>
+                <p class="testimonial-quote-text" id="quote-text">
+                    "كانت رحلتي مع أسفار المشرق إلى العلا تجربة لا تُنسى. التنظيم كان دقيقًا للغاية، والمرشد التراثي أضاف عمقًا معرفيًا رائعًا لكل موقع زرناه."
+                </p>
+                <div class="testimonial-author-block">
+                    <span class="author-name" id="quote-author">سليمان عبد الله</span>
+                    <span class="author-location" id="quote-location">الرياض، المملكة العربية السعودية</span>
+                </div>
+                
+                <div class="slider-dots-wrap">
+                    <span class="slider-dot active" data-index="0"></span>
+                    <span class="slider-dot" data-index="1"></span>
+                    <span class="slider-dot" data-index="2"></span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         Footer Component
+         ========================================================================== -->
+    <footer class="explore-footer">
+        <div class="footer-container">
+            <span class="footer-brand">أَسْفَار المَشْرِق</span>
+            <p class="footer-desc">نصنع لك ذكريات تدوم مدى الحياة في أطهر وأعرق معالم الوطن العربي.</p>
+            <span class="copyrights-lbl">© ٢٠٢٦ شركة أسفار المشرق المحدودة. جميع الحقوق محفوظة.</span>
+        </div>
+    </footer>
+
+    <!-- ==========================================================================
+         Booking Modal Dialog Form
+         ========================================================================== -->
+    <div class="modal-dialog-overlay" id="booking-modal" aria-hidden="true" role="dialog">
+        <div class="modal-card">
+            <button class="modal-close-btn" id="btn-close-booking" aria-label="إغلاق">×</button>
+            <h3 class="modal-title" id="booking-target-title">حجز باقة رحلة</h3>
+            <p class="modal-subtitle">يرجى تعبئة بياناتك وسيتواصل معك مستشار السفر في أقرب وقت لتأكيد حجزك.</p>
+            
+            <form id="trip-booking-form" class="modal-form-body">
+                <div class="form-group">
+                    <label for="book-user-name">الاسم الكامل</label>
+                    <input type="text" id="book-user-name" required placeholder="مثال: عبد الرحمن بن محمد">
+                </div>
+                <div class="form-group">
+                    <label for="book-user-phone">رقم الجوال</label>
+                    <input type="tel" id="book-user-phone" required placeholder="مثال: 966500000000+">
+                </div>
+                <div class="form-group">
+                    <label for="book-trip-date">تاريخ السفر المفضل</label>
+                    <input type="date" id="book-trip-date" required>
+                </div>
+                <button type="submit" class="btn-submit-booking">تأكيد طلب الحجز</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DENSTEY 20 - Retro Gaming Station</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Pixelify+Sans:wght@400;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <!-- FontAwesome for retro social icons if needed, or we can use custom inline SVGs -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <header class="retro-header">
+        <div class="header-container">
+            <div class="logo-box">
+                <span class="logo-text">DENSTEY 20</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-btn">PLAY</a>
+                <a href="#" class="nav-btn">STORE</a>
+                <a href="#" class="nav-btn active">PARTIES</a>
+                <a href="#" class="nav-btn">GAMES</a>
+                <a href="#" class="nav-btn">COMMUNITY</a>
+                <a href="#" class="nav-btn">HELP</a>
+                <a href="#" class="nav-btn">STATUS</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with Retro monitor & perspective grid -->
+        <section class="hero-section">
+            <div class="stars-container" id="starsContainer">
+                <!-- Stars generated dynamically via JS, fallback static stars -->
+                <div class="star" style="top: 20%; left: 10%;"></div>
+                <div class="star" style="top: 15%; left: 40%; animation-delay: 1s;"></div>
+                <div class="star" style="top: 30%; left: 75%; animation-delay: 2s;"></div>
+                <div class="star" style="top: 10%; left: 85%; animation-delay: 0.5s;"></div>
+                <div class="star" style="top: 40%; left: 90%; animation-delay: 1.5s;"></div>
+            </div>
+            
+            <div class="crescent-moon"></div>
+
+            <div class="hero-visual">
+                <!-- Left console device -->
+                <div class="console-device device-left">
+                    <div class="device-body">
+                        <div class="device-screen-red">
+                            <div class="pixel-wave"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Center Main Monitor -->
+                <div class="monitor-console">
+                    <div class="monitor-case">
+                        <div class="monitor-screen-wrapper">
+                            <div class="monitor-screen">
+                                <img src="assets/monitor-screen.png" alt="Retro Monitor" id="mainMonitorImg">
+                                <div class="scanlines"></div>
+                                <div class="crt-glow"></div>
+                            </div>
+                        </div>
+                        <div class="monitor-brand">DEKKA</div>
+                    </div>
+                    <div class="monitor-base"></div>
+                </div>
+
+                <!-- Right console device connected by wire -->
+                <div class="console-device device-right">
+                    <div class="wire-connection"></div>
+                    <div class="device-body">
+                        <div class="device-screen-red">
+                            <div class="pixel-wave"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ground 3D Grid -->
+            <div class="grid-floor-container">
+                <div class="grid-floor"></div>
+                <!-- Pixel structures / containers on left and right sides of grid -->
+                <div class="floor-object left-pile">
+                    <div class="pixel-block red-block"></div>
+                    <div class="pixel-block green-block"></div>
+                    <div class="pixel-block orange-block"></div>
+                </div>
+                <div class="floor-object right-pile">
+                    <div class="pixel-block green-block"></div>
+                    <div class="pixel-block red-block"></div>
+                    <div class="pixel-block orange-block"></div>
+                </div>
+            </div>
+
+            <!-- Scalloped transition to beige section -->
+            <div class="scallop-divider">
+                <svg viewBox="0 0 1440 24" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0C60 0 60 16 120 16C180 16 180 0 240 0C300 0 300 16 360 16C420 16 420 0 480 0C540 0 540 16 600 16C660 16 660 0 720 0C780 0 780 16 840 16C900 16 900 0 960 0C1020 0 1020 16 1080 16C1140 16 1140 0 1200 0C1260 0 1260 16 1320 16C1380 16 1380 0 1440 0V24H0V0Z" fill="#faf7eb"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Main Content Section (Beige background) -->
+        <section class="content-section">
+            <div class="content-container">
+                
+                <!-- Main Header block -->
+                <div class="main-intro">
+                    <h1 class="pixel-title">TINAS TOUZE MT, ANP WRESS<br>WE,QIS. HAT THE EMPYNIALAS</h1>
+                    <p class="pixel-paragraph">
+                        The us bean..if The O'batyamly epe a dociaty ant your grona, voory orepeally the instanhl loal a or inl if your restoy place..a h taich Vouer, Is your abberlly stoy death.s has yesurld the feest.
+                    </p>
+                </div>
+
+                <!-- First Row: Column Split (The Specials vs Morrig) -->
+                <div class="row row-split">
+                    <!-- Left Column: Specials -->
+                    <div class="col col-specials">
+                        <div class="section-label">Specials</div>
+                        <h2 class="col-title">THE SCCALIN</h2>
+                        
+                        <div class="cards-grid-2">
+                            <!-- Card 1 -->
+                            <div class="game-card">
+                                <div class="card-screen">
+                                    <img src="assets/forest-game.png" alt="Forest Game">
+                                    <div class="card-scanline"></div>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-desc">Forest adventure inside retro forest game. Collect all tokens to survive.</p>
+                                    <a href="#" class="retro-btn">GAME DETAILS</a>
+                                </div>
+                            </div>
+                            <!-- Card 2 -->
+                            <div class="game-card">
+                                <div class="card-screen">
+                                    <img src="assets/space-game.png" alt="Space Game">
+                                    <div class="card-scanline"></div>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-desc">Space invader arcade simulation, destroy alien invaders.</p>
+                                    <a href="#" class="retro-btn">GAME DETAILS</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vertical Separator Line -->
+                    <div class="vertical-divider"></div>
+
+                    <!-- Right Column: Morrig -->
+                    <div class="col col-morrig">
+                        <div class="section-label">Gear</div>
+                        <h2 class="col-title">MORRIG</h2>
+
+                        <div class="cards-grid-2">
+                            <!-- Card 3 -->
+                            <div class="game-card">
+                                <div class="card-screen bicycle-screen">
+                                    <img src="assets/bicycle.png" alt="Cyber Bicycle">
+                                    <div class="card-scanline"></div>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-desc">The modern cybertech hacker bike. Designed for grid navigation.</p>
+                                    <a href="#" class="retro-btn">GAME DETAILS</a>
+                                </div>
+                            </div>
+                            <!-- Card 4 -->
+                            <div class="game-card">
+                                <div class="card-screen">
+                                    <img src="assets/hardware.png" alt="Hardware Terminal">
+                                    <div class="card-scanline"></div>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-desc">Control deck interface. Bypassing firewalls and network routing.</p>
+                                    <a href="#" class="retro-btn">GAME DETAILS</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Horizontal Separator Line -->
+                <hr class="section-divider">
+
+                <!-- Second Row: Apir Doitit (Three Columns) -->
+                <div class="row row-bottom">
+                    <div class="section-label">Games</div>
+                    <h2 class="col-title">APIR DOITIT</h2>
+
+                    <div class="cards-grid-3">
+                        <!-- Card 5 -->
+                        <div class="game-card">
+                            <div class="card-screen">
+                                <img src="assets/platformer.png" alt="Platformer Game">
+                                <div class="card-scanline"></div>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-desc">Jump over pixel hazards, navigate through levels to reach portal door.</p>
+                                <a href="#" class="retro-btn">GAME DETAILS</a>
+                            </div>
+                        </div>
+                        <!-- Card 6 -->
+                        <div class="game-card">
+                            <div class="card-screen">
+                                <img src="assets/mountains.png" alt="Mountain Expedition">
+                                <div class="card-scanline"></div>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-desc">Climb freezing mountain ranges and escape wolves under a pixel sky.</p>
+                                <a href="#" class="retro-btn">GAME DETAILS</a>
+                            </div>
+                        </div>
+                        <!-- Card 7 -->
+                        <div class="game-card">
+                            <div class="card-screen">
+                                <img src="assets/core.png" alt="Core Reactor">
+                                <div class="card-scanline"></div>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-desc">Align the energy cores to avoid power failure and reactor meltdown.</p>
+                                <a href="#" class="retro-btn">GAME DETAILS</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="retro-footer">
+        <!-- Scalloped transition to footer -->
+        <div class="scallop-divider scallop-footer-top">
+            <svg viewBox="0 0 1440 24" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 24C60 24 60 8 120 8C180 8 180 24 240 24C300 24 300 8 360 8C420 8 420 24 480 24C540 24 540 8 600 8C660 8 660 24 720 24C780 24 780 8 840 8C900 8 900 24 960 24C1020 24 1020 8 1080 8C1140 8 1140 24 1200 24C1260 24 1260 8 1320 8C1380 8 1380 24 1440 24V0H0V24Z" fill="#faf7eb"/>
+            </svg>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-logo">
+                <span class="logo-text">DENSTEY 20</span>
+            </div>
+            <div class="footer-links">
+                <a href="#">LAND</a>
+                <a href="#">RELEASES</a>
+                <a href="#">POSTS</a>
+                <a href="#">OFFICES</a>
+                <a href="#">STATISTICS TO</a>
+                <a href="#">MEETINGS</a>
+                <a href="#">PRODUCTION</a>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2026 Denstey Recreation. Retro Station by Antigravity OS.</p>
+                <div class="social-icons">
+                    <!-- Retro geometric social icons -->
+                    <a href="#" class="social-btn"><span class="icon-pixel"></span></a>
+                    <a href="#" class="social-btn"><span class="icon-pixel"></span></a>
+                    <a href="#" class="social-btn"><span class="icon-pixel"></span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

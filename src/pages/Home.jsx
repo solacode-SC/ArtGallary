@@ -87,7 +87,7 @@ function Home() {
             <img 
               src="assets/images/favicon.jpg" 
               alt="VibeGallery Logo" 
-              style={{ width: '24px', height: '24px', borderRadius: '6px', objectFit: 'cover', flexShrink: 0, border: '1px solid rgba(255, 255, 255, 0.25)' }} 
+              style={{ width: '26px', height: '26px', borderRadius: '6px', objectFit: 'cover', flexShrink: 0, border: '1px solid rgba(22, 42, 86, 0.22)' }} 
             />
             <span className="logo-text">VibeGallery</span>
           </Link>
@@ -104,6 +104,10 @@ function Home() {
         {/* Bottom Content Grid */}
         <div className="hero-bottom-grid">
           <div className="hero-main-column">
+            <div className="hero-botanical-eyebrow">
+              <span className="hero-hanko-seal" aria-hidden="true">雅</span>
+              <span className="hero-eyebrow-text">CURATED BOTANICAL ARCHIVE</span>
+            </div>
             <h1 className="hero-main-title">Build web interfaces that inspire while you sleep</h1>
             <div className="hero-form-pill">
               <input type="email" placeholder="Enter your email" className="hero-form-input" />

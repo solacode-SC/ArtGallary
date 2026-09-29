@@ -1,0 +1,527 @@
+/* CSS Stylesheet for Japanese Title Patterns Collection */
+
+:root {
+    --bg-page: #f1f3e9;
+    --text-dark: #4b4e54;
+    --text-muted: #8c8f96;
+    
+    /* Font Families */
+    --font-sans: 'M PLUS Rounded 1c', sans-serif;
+    --font-serif: 'Noto Serif JP', serif;
+    --font-display: 'Plus Jakarta Sans', sans-serif;
+    
+    /* Palette */
+    --color-pink: #e6b8c1;
+    --color-blue: #84a9ca;
+    --color-gold: #e2db95;
+    --color-teal: #97cbc1;
+    --color-moss: #bcc380;
+    --color-purple: #b9a6c0;
+    --color-orange: #deac72;
+    --color-blue-light: #bbcadb;
+    --color-coral: #e6a49a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-dark);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-page);
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd3c5;
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   Decorative Confetti Dots
+   ========================================================================== */
+.confetti-dots {
+    position: absolute;
+    top: 0;
+    display: flex;
+    gap: 16px;
+    z-index: 1;
+}
+
+.confetti-dots.top-left {
+    left: 40px;
+    top: 20px;
+}
+
+.confetti-dots.top-right {
+    right: 40px;
+    top: 20px;
+}
+
+.dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.d-1 { background-color: var(--color-pink); }
+.d-2 { background-color: var(--color-blue); }
+.d-3 { background-color: var(--color-gold); }
+.d-4 { background-color: var(--color-teal); }
+
+/* ==========================================================================
+   Page Layout & Header
+   ========================================================================== */
+.page-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+    position: relative;
+    z-index: 10;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.header-title {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   3x3 Patterns Showcase Grid
+   ========================================================================== */
+.patterns-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.pattern-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Card Shape Base */
+.card-shape {
+    width: 280px;
+    height: 280px;
+    background-color: #ffffff;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.02), 0px 1px 3px rgba(0, 0, 0, 0.01);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                box-shadow 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card-shape:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.04);
+}
+
+/* Color Swatches dots beneath cards */
+.color-swatches {
+    display: flex;
+    gap: 8px;
+}
+
+.color-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Pattern Tag Badge */
+.pattern-tag {
+    position: absolute;
+    font-family: var(--font-display);
+    font-size: 9px;
+    font-weight: 800;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 2px 10px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.05);
+}
+
+.tag-pink { background-color: var(--color-pink); top: 12px; left: 12px; }
+.tag-blue { background-color: var(--color-blue); top: 12px; right: 12px; }
+.tag-gold { background-color: #d1ca82; top: 12px; right: 12px; }
+.tag-teal { background-color: var(--color-teal); top: 12px; right: 12px; }
+.tag-moss { background-color: var(--color-moss); top: 12px; left: 12px; }
+.tag-purple { background-color: var(--color-purple); top: 12px; right: 12px; }
+.tag-orange { background-color: var(--color-orange); top: 12px; left: 50%; transform: translateX(-50%); }
+.tag-blue-light { background-color: var(--color-blue-light); top: 12px; right: 12px; }
+.tag-coral { background-color: var(--color-coral); top: 12px; right: 12px; }
+
+/* Inner Content Typography layouts */
+.inner-content {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-center {
+    align-items: center;
+    text-align: center;
+}
+
+.sub-small {
+    font-size: 9.5px;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.desc-small {
+    font-size: 10px;
+    color: var(--text-muted);
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.desc-tiny {
+    font-size: 9px;
+    color: var(--text-muted);
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+/* ==========================================================================
+   Individual Custom Card Shape Geometries
+   ========================================================================== */
+
+/* Pattern 01: Hexagon */
+.shape-octagon {
+    border-radius: 24% 76% 25% 75% / 77% 24% 76% 23%;
+    border: 1px solid rgba(230, 184, 193, 0.4);
+}
+
+.title-01 {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    font-weight: 800;
+    color: #6a5757;
+    line-height: 1.25;
+    margin-bottom: 10px;
+}
+
+.cursive-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 16px;
+    color: #6a5757;
+}
+
+/* Pattern 02: Vertical Capsule Blob */
+.shape-capsule {
+    border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%;
+    border: 1px solid rgba(132, 169, 202, 0.4);
+}
+
+.sub-monospace {
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.title-02 {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #616a7d;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+}
+
+/* Pattern 03: Overlapping Rectangles */
+.shape-overlap {
+    border-radius: 12px;
+    border: 1.5px solid rgba(0,0,0,0.03);
+}
+
+.overlap-under-bg {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-gold);
+    opacity: 0.35;
+    border-radius: 12px;
+    z-index: 1;
+}
+
+.shape-overlap .inner-content {
+    position: relative;
+    z-index: 5;
+}
+
+.text-gold {
+    color: #7a5a04;
+}
+
+.title-03 {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 900;
+    color: #7a5a04;
+    line-height: 1.35;
+    margin-bottom: 8px;
+}
+
+.serif-sub {
+    font-family: var(--font-serif);
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+/* Pattern 04: Cloud Teal shape */
+.shape-cloud-teal {
+    border-radius: 61% 39% 68% 32% / 37% 55% 45% 63%;
+    border: 1px solid rgba(151, 203, 193, 0.4);
+}
+
+.text-teal {
+    color: #46534d;
+}
+
+.title-04 {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 700;
+    color: #46534d;
+    line-height: 1.45;
+}
+
+/* Pattern 05: Vertical rectangular offset */
+.shape-vertical-bar {
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.bar-left-green {
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    bottom: 14px;
+    width: 8px;
+    background-color: var(--color-moss);
+    border-radius: 4px;
+}
+
+.vertical-layout {
+    margin-left: 20px;
+}
+
+.vert-text-box {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.vert-sub {
+    writing-mode: vertical-rl;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.vert-title {
+    font-family: var(--font-serif);
+    font-size: 26px;
+    font-weight: 900;
+    color: #606320;
+}
+
+.desc-tiny {
+    font-size: 8.5px;
+    color: var(--text-muted);
+}
+
+/* Pattern 06: Divider Card */
+.shape-divider-purple {
+    border-radius: 12px;
+    border: 1px solid rgba(185, 166, 192, 0.4);
+}
+
+.text-purple {
+    color: #754a4c;
+}
+
+.wavy-line-divider {
+    height: 1.5px;
+    background-color: var(--color-purple);
+    width: 60px;
+    margin: 8px auto 12px;
+}
+
+.title-06 {
+    font-family: var(--font-serif);
+    font-size: 19px;
+    font-weight: 800;
+    color: #754a4c;
+    margin-bottom: 6px;
+}
+
+.desc-serif {
+    font-family: var(--font-serif);
+    font-size: 9px;
+    color: var(--text-muted);
+}
+
+/* Pattern 07: Slanted Step Orange */
+.shape-slanted-orange {
+    border-radius: 12px;
+    border: 2px solid #deac72;
+    clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 100% 0%, 100% 85%, 85% 85%, 85% 100%, 0% 100%);
+}
+
+.title-07 {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 900;
+    color: #6f5300;
+    line-height: 1.35;
+    margin-bottom: 10px;
+}
+
+.text-orange {
+    color: #deac72;
+}
+
+/* Pattern 08: Oval Capsule Double-Border */
+.shape-oval-blue {
+    border-radius: 50% 50% 45% 55% / 50% 45% 55% 50%;
+    outline: 2px solid #bbcadb;
+    outline-offset: -8px;
+}
+
+.text-blue {
+    color: #3f6496;
+}
+
+.title-08 {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #3f6496;
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+/* Pattern 09: Heart/flower bubble cloud */
+.shape-bubble-coral {
+    border-radius: 46% 54% 53% 47% / 55% 44% 56% 45%;
+    border: 1px solid rgba(230, 164, 154, 0.4);
+}
+
+.text-coral {
+    color: #63474c;
+}
+
+.title-09-sub {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 700;
+    color: #63474c;
+    margin-top: 6px;
+    margin-bottom: 4px;
+}
+
+.title-09 {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 800;
+    color: #63474c;
+    margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   Footer waves & logos
+   ========================================================================== */
+.app-footer {
+    width: 100%;
+    background-color: var(--bg-page);
+    position: relative;
+    padding-top: 40px;
+}
+
+.footer-wave-graphic {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 45px;
+    z-index: 5;
+}
+
+.wave-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.footer-container {
+    background-color: #e9ebd9;
+    padding: 30px 24px;
+    text-align: center;
+}
+
+.footer-logo {
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 800;
+    color: #838575;
+    letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .patterns-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .patterns-grid {
+        grid-template-columns: 1fr;
+    }
+    .confetti-dots {
+        display: none; /* Hide top confetti on small mobiles */
+    }
+}
